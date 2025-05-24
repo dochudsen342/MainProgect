@@ -6,8 +6,8 @@ type Mode = Record<string,boolean | string>
 
 export function classNames (cls:string,mods:Mode,additional:string[]):string {
 
-    const modeCls = Object.entries(mods).map(item => {
-            if(item[1]) return item[0]
+    const modeCls = Object.entries(mods).map(([cls,boolean]) => {
+            if(boolean) return cls
         })
 
     return [
