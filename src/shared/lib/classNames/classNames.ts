@@ -17,5 +17,3 @@ export function classNames (cls:string,mods:Mode,additional:string[]):string {
     ]
     .join(' ')
 }
-
-classNames('app',{hovered:true,selected:false},['add','axa'])

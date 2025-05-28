@@ -5,8 +5,8 @@ export type BuildMod = 'production' | 'development'
 export interface BuildPath {
     entry:string,
     output:string,
-    html:string
-
+    html:string,
+    src:string,
 }
 
 

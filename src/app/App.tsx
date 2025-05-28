@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react';
 import './styles/index.scss'
-import { useTheme } from './theme/useTheme';
-import { classNames } from './helpers/classNames/ClassNames';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
 
 
 function App() {
@@ -16,4 +16,4 @@ function App() {
   )   
 }
 
-export default App;
+export default App; 
