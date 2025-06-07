@@ -8,3 +8,20 @@
     background-color: none;
     outline: none;
 }
+
+.background{
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border: none;
+}
+
+.backgroundInverted{
+    background-color: var(--bg-color);
+    color: var(--secondary-color);
+    border: none;
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+}

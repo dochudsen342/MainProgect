@@ -8,9 +8,6 @@
     padding-top: 10px;
 }
 
-.collapsed{
-    width: var(--sideBar-width-collapsed);
-}
 
 .switchers{
     position: absolute;
@@ -19,4 +16,53 @@
     justify-content: center;
     width: 100%;
 }
+
+.SideBarBtn{
+    position: absolute;
+    top: 40px;
+    right: 2px;
+    border: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 30px;
+    height: 40px;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    column-gap: 15px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+
+.items{
+    margin-top: 15px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 17px;
+}
+
+.icon{
+    fill: var(--primary-color);
+}
+
+.link{
+    opacity: 1;
+    transition: 0.3s;
+}
+
+.collapsed{
+    width: var(--sideBar-width-collapsed);
+    .link{
+        opacity: 0;
+        transition: 0.3s opacity;
+        width: 0;
+    }
+    
+}
+
 

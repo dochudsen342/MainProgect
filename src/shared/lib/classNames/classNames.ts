@@ -1,19 +1,19 @@
 
 
-type Mode = Record<string,boolean | string>
+type Mode = Record<string, boolean | string>
 
 
 
-export function classNames (cls:string,mods:Mode = {},additional:string[] = []):string {
+export function classNames(cls: string, mods: Mode = {}, additional: string[] = []): string {
 
-    const modeCls = Object.entries(mods).map(([cls,boolean]) => {
-            if(boolean) return cls
-        })
+  const modeCls = Object.entries(mods).map(([cls, boolean]) => {
+    if (boolean) return cls
+  })
 
-    return [
-        cls,
-        ...additional.filter(Boolean),
-        ...modeCls
-    ]
+  return [
+    cls,
+    ...additional.filter(Boolean),
+    ...modeCls
+  ]
     .join(' ')
 }
