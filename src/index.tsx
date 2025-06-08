@@ -5,6 +5,8 @@ import { ThemeProvider } from 'app/providers/ThemeProvider';
 import 'shared/config/i18n/i18n';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
+import 'app/styles/index.scss'
+
 const root = ReactDOM.createRoot(document.querySelector('#root'))
 
 root.render(

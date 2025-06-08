@@ -3,11 +3,16 @@
 @import './theme/dark.scss';
 @import './theme/normal.scss';
 
-.app{
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--text-color);
 
+.body{
+    font: var(--font-m);
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+.app{
+    color: var(--text-color);
+    background: var(--bg-color);
     min-height: 100vh;
 }
 
