@@ -9,16 +9,10 @@
     pointer-events: none;
     transition: 0.3s;
     z-index: -1;
-    color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
-.content.dark{
-    background-color: var(--modal-dark);
-}
 
-.content.light{
-    background-color: var(--modal-light);
-}
 
 .overlay{
     width: 100%;
@@ -30,20 +24,13 @@
     
 }
 
-// .primary{
-//     background-color: var(--content-color-dark);
-//     color: var(--text-color-dark);
-// }
 
-// .secondary{
-//     background-color: var(--content-color-normal);
-//     color: var(--text-color-normal);
-// }
 
 .content{
     padding: 20px;
     border-radius: 12px;
     transition: 0.3s transform;
+    background-color: var(--bg-color);
     transform: scale(0.5);
     max-width: 27%;
 }
