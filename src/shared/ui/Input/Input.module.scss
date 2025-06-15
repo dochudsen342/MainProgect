@@ -1,0 +1,8 @@
+.Input{
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+.Input::placeholder{
+    color:var(--secondary-color) ;
+}

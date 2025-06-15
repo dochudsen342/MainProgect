@@ -1,0 +1,25 @@
+.LoginForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.input{
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 10px;
+}
+
+.LoginBtn{
+    margin-top: 15px;
+    width: 50%;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+
+}
+
+

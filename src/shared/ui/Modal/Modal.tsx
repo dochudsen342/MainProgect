@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react'
-
+import React, { ReactNode, useEffect, useState } from 'react'
 import cl from './Modal.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import Portal from '../Portal/Portal'
@@ -11,17 +10,26 @@ import { useTheme } from 'app/providers/ThemeProvider'
 interface ModalProps {
     className?: string,
     children?: ReactNode,
-    isOpen: boolean,
-    onClose: () => void,
+    isOpen?: boolean,
+    onClose?: () => void,
+    lazy?: boolean,
 }
 
-const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
+const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
 
     const {theme} = useTheme()
+    const [isMounted,setIsMounted] = useState(false)
 
     const mods: Record<string, boolean> = {
         [cl.opened]: isOpen,
     }
+
+    useEffect(() =>{
+        if(isOpen){
+            setIsMounted(true)
+        }
+        
+    },[isOpen])
 
     const onCloseHandler = () => {
 
@@ -32,6 +40,10 @@ const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation()
+    }
+
+    if(lazy && !isMounted){
+        return null
     }
 
     return (
