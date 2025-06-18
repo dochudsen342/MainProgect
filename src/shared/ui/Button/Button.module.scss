@@ -7,6 +7,8 @@
     justify-content: center;
 }
 
+
+
 .clear{
     padding: 0;
     border: none;
@@ -34,7 +36,22 @@
     border: none;
 }
 
+.outline{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.disabled{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 .square {
     width: 60px;
     height: 60px;
 }
+
+
+
+

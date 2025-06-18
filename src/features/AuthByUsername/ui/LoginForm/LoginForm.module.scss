@@ -16,10 +16,17 @@
     margin-top: 15px;
     width: 50%;
     align-self: center;
-    border: none;
-    border-radius: 5px;
     transition: 0.3s;
+}
 
+.LoginForm_title{
+    font-size: var(--font-size-l);
+    margin-bottom: 10px;
+}
+
+.LoginForm_error{
+    font-size: var(--font-size-m);
+    color: var(--color-error);
 }
 
 

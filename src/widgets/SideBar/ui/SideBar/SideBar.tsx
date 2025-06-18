@@ -58,7 +58,7 @@ const SideBar = ({ className }: SideBarProps) => {
       </div>
       <div className={classNames(cl.switchers)}>
         <ThemeSwitcher />
-        <LangSwitcher />
+        <LangSwitcher collapsed = {collapsed}/>
       </div>
     </div>
   )

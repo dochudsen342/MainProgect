@@ -1,5 +1,13 @@
 {
     "Страница не найдена":"Page not found",
     "Главная": "Main",
-    "О нас":"About us"
+    "О нас":"About us",
+    "Главная страница":"Main page",
+    "Язык":"English",
+    "Короткий язык":"En",
+    "Форма авторизации":"Authorization form",
+    "Неверный логин или пароль": "Invalid username or password",
+    "Логин":"Login",
+    "Пароль":"password"
+    
 }

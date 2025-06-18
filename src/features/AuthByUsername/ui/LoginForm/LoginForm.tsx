@@ -2,7 +2,7 @@ import React, { memo, useCallback} from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cl from './LoginForm.module.scss'
-import Button from 'shared/ui/Button/Button'
+import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import Input from 'shared/ui/Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginAction } from '../../model/slice/loginSlice'
@@ -35,11 +35,12 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     
     return (
         <div className={classNames(cl.LoginForm)}>
-            {error && <div>{error}</div>}
-            <Input value={username} onChange={onChangeUsername} autoFocus = {true} placeholder='Login' className={cl.input} type='text'/>
-            <Input value={password} onChange={onChangePassword} placeholder='password' className={cl.input} type='text'/>
-            <Button disabled = {isLoading} onClick={onLoginClick} className={cl.LoginBtn}>
-                Войти
+            <h1 className={cl.LoginForm_title}>{t('Форма авторизации')}</h1>
+            {error && <div className={cl.LoginForm_error}>{t('Неверный логин или пароль')}</div>}
+            <Input value={username} onChange={onChangeUsername} autoFocus = {true} placeholder={t('Логин')} className={cl.input} type='text'/>
+            <Input value={password} onChange={onChangePassword} placeholder={t('Пароль')} className={cl.input} type='text'/>
+            <Button theme={ThemeButton.OUTLINE} disabled = {isLoading} onClick={onLoginClick} className={cl.LoginBtn}>
+                {t('Войти')}
             </Button>
         </div>
     )
