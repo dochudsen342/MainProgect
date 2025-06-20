@@ -9,4 +9,6 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     mainFiles: ['index'],
     alias: {}
   }
+
+  __IS_DEV__
 }

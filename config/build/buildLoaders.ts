@@ -17,6 +17,7 @@ export function buildLoaders({ isDev }: BuildOptions): webPack.RuleSetRule[] {
             },
         ],
     }
+    
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,

@@ -6,33 +6,33 @@ import { loginByUsername } from "../service/loginByUsername/loginByUsername"
 
 
 const initialState:LoginSchema = {
-    username: '',
-    password: '',
-    isLoading:false,
-    error: '',
+  username: '',
+  password: '',
+  isLoading:false,
+  error: '',
 }
 
 export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-   setUserName: (state,actions:PayloadAction<string>) => {
-    state.username = actions.payload
-   },
+    setUserName: (state,actions:PayloadAction<string>) => {
+      state.username = actions.payload
+    },
     setPassword: (state,actions:PayloadAction<string>) => {
-         state.password = actions.payload
-   }
+      state.password = actions.payload
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(loginByUsername.pending,(state) =>{
-        state.error = undefined
-        state.isLoading = true
+      state.error = undefined
+      state.isLoading = true
         
-    }).addCase(loginByUsername.fulfilled, (state,actions) => {
-        state.isLoading = false
+    }).addCase(loginByUsername.fulfilled, (state) => {
+      state.isLoading = false
     }).addCase(loginByUsername.rejected , (state,actions) =>{
-        state.isLoading = false
-        state.error = actions.payload
+      state.isLoading = false
+      state.error = actions.payload
     })
 
   }

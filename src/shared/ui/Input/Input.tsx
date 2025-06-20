@@ -15,31 +15,31 @@ interface InputProps extends HTMLInputProps {
 
 const Input = memo(({ className, type = 'text', value, onChange,placeholder,autoFocus, ...outherProps }: InputProps) => {
 
-    const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) =>{
-        onChange?.(e.target.value)
+  const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) =>{
+    onChange?.(e.target.value)
+  }
+
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() =>{
+    if(autoFocus){
+      inputRef.current.focus()
     }
+  },[autoFocus])
 
-     const inputRef = useRef<HTMLInputElement>(null)
-
-     useEffect(() =>{
-        if(autoFocus){
-            inputRef.current.focus()
-        }
-     },[autoFocus])
-
-    return (
-        <div>
-            <input
-                ref = {inputRef}
-                type={type}
-                onChange={onChangeHandler}
-                value={value}
-                placeholder ={placeholder}
-                className={classNames(cl.Input,{},[className])}
-                {...outherProps}
-            />
-        </div>
-    )
+  return (
+    <div>
+      <input
+        ref = {inputRef}
+        type={type}
+        onChange={onChangeHandler}
+        value={value}
+        placeholder ={placeholder}
+        className={classNames(cl.Input,{},[className])}
+        {...outherProps}
+      />
+    </div>
+  )
 })
 
 export default Input

@@ -4,22 +4,34 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cl from './LoginForm.module.scss'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import Input from 'shared/ui/Input/Input'
-import { useDispatch, useSelector } from 'react-redux'
-import { loginAction } from '../../model/slice/loginSlice'
-import { getLoginState } from 'features/AuthByUsername/model/selectors/getLoginState/getLoginState'
-import { loginByUsername } from 'features/AuthByUsername/model/service/loginByUsername/loginByUsername'
+import { useDispatch, useSelector, useStore } from 'react-redux'
+import { loginAction, loginReducer } from '../../model/slice/loginSlice'
+import { loginByUsername } from '../../model/service/loginByUsername/loginByUsername'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLodaing'
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
+import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 
 
-interface LoginFormProps {
+
+export interface LoginFormProps {
     className?: string
+}
+
+const initialReducers:ReducerList = {
+    loginForm:loginReducer
 }
 
 const LoginForm = memo(({ className }: LoginFormProps) => {
 
     const { t } = useTranslation()
     const dispatch = useDispatch()
-    const {username,password,error,isLoading} = useSelector(getLoginState)
-    console.log(error)
+    const username  = useSelector(getLoginUsername)
+    const password  = useSelector(getLoginPassword)
+    const isLoading  = useSelector(getLoginIsLoading)
+    const error  = useSelector(getLoginError)
+    
     const onChangeUsername = useCallback((value:string) =>{
         dispatch(loginAction.setUserName(value))
     },[dispatch])
@@ -34,7 +46,8 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     },[dispatch,username,password])
     
     return (
-        <div className={classNames(cl.LoginForm)}>
+        <DynamicReducerLoader  reducers={initialReducers} removeAfterUnmount={true}>
+            <div className={classNames(cl.LoginForm)}>
             <h1 className={cl.LoginForm_title}>{t('Форма авторизации')}</h1>
             {error && <div className={cl.LoginForm_error}>{t('Неверный логин или пароль')}</div>}
             <Input value={username} onChange={onChangeUsername} autoFocus = {true} placeholder={t('Логин')} className={cl.input} type='text'/>
@@ -43,6 +56,8 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
                 {t('Войти')}
             </Button>
         </div>
+        </DynamicReducerLoader>
+        
     )
 })
 

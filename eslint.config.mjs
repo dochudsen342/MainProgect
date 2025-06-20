@@ -4,6 +4,7 @@
 // import pluginHooks from 'eslint-plugin-react-hooks';
 // import typescriptEslint from 'typescript-eslint'
 // import react from 'eslint-plugin-react'
+// import { off } from 'process';
 
 // export default [
 //   { ignores: ['node_modules'] }, 
@@ -38,7 +39,10 @@
 //       'react':react.configs.recommended,
 //     },
 //     rules: {
-//       'indent':['error',2]
+//       'indent':['error',2],
+//       "typescript-eslint/no-require-imports":'off',
+//       'import/no-unresolved': 'off',
+//       'import/prefer-default-export': 'off',
 //     },
 //   },
 // ]

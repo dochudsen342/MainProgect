@@ -32,7 +32,6 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     },[isOpen])
 
     const onCloseHandler = () => {
-
         if (onClose) {
             onClose()
         }
