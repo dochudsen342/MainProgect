@@ -20,6 +20,5 @@ export function buildPlugins({path}:BuildOptions):webpack.WebpackPluginInstance[
       
     }),
     new ReactRefreshWebpackPlugin(),
-    new BundleAnalyzerPlugin(),
   ]
 }

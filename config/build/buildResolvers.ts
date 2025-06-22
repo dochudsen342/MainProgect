@@ -10,5 +10,4 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
     alias: {}
   }
 
-  __IS_DEV__
 }

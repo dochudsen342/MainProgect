@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback,useState } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cl from './Navbar.module.scss'
 import { useTranslation } from 'react-i18next'
@@ -6,6 +6,8 @@ import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAuthData, userAction } from 'entities/User'
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 
 
 interface NavbarProps {
@@ -16,13 +18,15 @@ export const Navbar = () => {
   const [isModalAuth, setIsModalAuth] = useState(false)
   const { t } = useTranslation()
   const userAuthData = useSelector(getAuthData)
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
+  
   const onToggleModal = useCallback(() => {
     setIsModalAuth(prev => !prev)
   }, [isModalAuth])
 
   const onLogout = useCallback(() =>{
     dispatch(userAction.logout())
+    setIsModalAuth(false)
   },[dispatch])
 
   if (userAuthData) {
