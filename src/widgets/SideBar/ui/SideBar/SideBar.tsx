@@ -1,5 +1,4 @@
 import { memo, useMemo, useState } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { LangSwitcher } from 'widgets/LangSwitcher'
@@ -16,7 +15,6 @@ interface SideBarProps {
 
 const SideBar = memo(({ className }: SideBarProps) => {
   const [collapsed, setCollapsed] = useState(false)
-  const { t } = useTranslation()
   const onToggle = () => {
     setCollapsed(prev => !prev)
   }
@@ -28,6 +26,7 @@ const SideBar = memo(({ className }: SideBarProps) => {
       key={item.path}
       />)
   ,[collapsed])
+
   return (
     <div className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className])}>
       <Button

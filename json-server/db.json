@@ -16,12 +16,12 @@
     }
   ],
    "profile": {
-    "name": "Dqizi",
+    "firstname": "Dqizi",
     "lastname":"dizivich",
     "age":21,
     "currency":"RUB",
     "country":"Russia",
     "city":"Volgograd",
-    "username":"admin"
+    "username":"admin" 
   }
 }

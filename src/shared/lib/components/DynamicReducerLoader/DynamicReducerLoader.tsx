@@ -1,9 +1,7 @@
-import React, { FC, ReactNode, useEffect } from 'react'
-import cl from './DynamicReducerLoader.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ReduxStoreWidhtManager, StateSchema } from 'app/providers/StoreProvider'
-import { StateSchemaKey } from 'app/providers/StoreProvider/config/stateSchema'
+import { FC, ReactNode, useEffect } from 'react'
 import { Reducer } from '@reduxjs/toolkit'
+import { ReduxStoreWidhtManager } from 'app/providers/StoreProvider'
+import { StateSchemaKey } from 'app/providers/StoreProvider/config/stateSchema'
 import { useDispatch, useStore } from 'react-redux'
 
 export type ReducerList = {
