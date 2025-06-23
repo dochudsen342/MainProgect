@@ -1,9 +1,9 @@
 import { configureStore, ReducersMapObject } from "@reduxjs/toolkit";
-import { StateSchema } from "./stateSchema";
 import { counterReducer } from "entities/Counter";
 import { userReducer } from "entities/User";
+import { $api } from "shared/api/api";
 import { createReducerManager } from "./reducerManager";
-import { useDispatch } from "react-redux";
+import { StateSchema } from "./stateSchema";
 
 
 
@@ -21,6 +21,13 @@ export function createReduxStore(initialState?:StateSchema){
     reducer:reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState:initialState,
+    middleware:(getDefaultMiddleware) => getDefaultMiddleware({
+        thunk:{
+            extraArgument:{
+                api:$api
+            }
+        }
+    })
 }) 
     //@ts-ignore
     store.reducerManager = reducerManager
