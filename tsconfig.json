@@ -6,6 +6,7 @@
     "target": "es2020",
     "jsx": "react-jsx",
     "allowJs": true,
+    "strict": false,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

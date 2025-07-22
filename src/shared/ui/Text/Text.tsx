@@ -12,7 +12,7 @@ interface TextProps {
 const Text = ({ className, title, text }: TextProps) => {
 
     return (
-        <div className={classNames(cl.Text, {}, [className])}>
+        <div className={classNames(cl.Text, {}, [className || ''])}>
             {title && <p className={cl.title}>{title}</p>}
             {text && <p className={cl.subtitle}>{text}</p>}
         </div>
