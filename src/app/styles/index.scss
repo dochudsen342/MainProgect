@@ -24,3 +24,14 @@
     flex-grow: 1;
     padding: 20px;
 }
+
+.error{
+    color: red;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.error__block{
+    display: flex;
+    flex-direction: column;
+}

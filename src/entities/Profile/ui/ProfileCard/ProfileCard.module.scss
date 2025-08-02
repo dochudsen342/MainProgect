@@ -1,19 +1,19 @@
 .ProfileCard{
+    display: flex;
+    column-gap: 20px;
     padding: 20px;
     border:2px solid var(--inverted-bg-color);
-    height: var(--profile-height);
 }
 
-
 .data{
-    margin-top: 70px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
 }
 
 
-.data_name{
+.data_input{
     display: flex;
     align-items: center;
     
@@ -34,6 +34,16 @@
     color: var(--color-error);
 }
 
+.editing{
+    border:2px solid var(--editing-color);
+}
+
 .error_advice{
     color: var(--secondary-color);
+}
+
+.avatar_img{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
 }

@@ -1,10 +1,10 @@
 
 
-type Mode = Record<string, boolean | string>
+export type Mods = Record<string, boolean | string>
 
 
 
-export function classNames(cls: string, mods: Mode = {}, additional: string[] = []): string {
+export function classNames(cls: string, mods: Mods = {}, additional: string[] = []): string {
 
   const modeCls = Object.entries(mods).map(([cls, boolean]) => {
     if (boolean) return cls

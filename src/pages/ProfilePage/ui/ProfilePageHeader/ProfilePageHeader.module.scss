@@ -7,3 +7,21 @@
     margin-left: auto;
     
 }
+
+.header_button{
+    margin-left: auto;
+    display: flex;
+    column-gap: 15px;
+}
+
+.applyButton{
+    border: 1px solid green;
+    color: green;
+    background-color: var(--bg-color);
+}
+
+.cancelEditButton{
+    border: 1px solid red;
+    color: red;
+    background-color: var(--bg-color);
+}
