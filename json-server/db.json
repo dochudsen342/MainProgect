@@ -31,10 +31,10 @@
     }
   ],
   "profile": {
-    "firstname": "",
+    "firstname": "Dqizi",
     "lastname": "Kolesnikov",
-    "age": null,
-    "currency": "RUB",
+    "age": 12,
+    "currency": "EUR",
     "country": "Armenia",
     "city": "Volgograd",
     "username": "admin",

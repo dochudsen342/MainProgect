@@ -4,8 +4,9 @@ import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { SideBar } from 'widgets/SideBar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userAction } from 'entities/User';
+import { getMounted } from 'entities/User/model/selectors/getMounted/getMounted';
 
 
 
@@ -13,6 +14,7 @@ function App() {
   
   const { theme } = useTheme()
  const dispatch = useDispatch()
+ const _mounted = useSelector(getMounted)
  useEffect(() =>{
   dispatch(userAction.initAuthData())
  },[])
@@ -22,9 +24,9 @@ function App() {
       <Suspense fallback=''>
         <Navbar />
         <div className='content_page'>
-          <SideBar />
+          <SideBar /> 
           <div className='page-wrapper'>
-            <AppRouter />
+            {_mounted && <AppRouter />}
           </div>
         </div>
       </Suspense>
