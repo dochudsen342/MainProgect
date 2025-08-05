@@ -1,4 +1,6 @@
 import { AboutPage } from "pages/AboutPage"
+import { ArticleDetailsPage } from "pages/ArticleDetailsPage"
+import { ArticlesPage } from "pages/ArticlesPage"
 import { MainPage } from "pages/MainPage"
 import { NotFoundPage } from "pages/NotFoundPage"
 import { ProfilePage } from "pages/ProfilePage"
@@ -13,13 +15,17 @@ export enum AppRoutes {
     MAIN = 'main',
     ABOUT = 'about',
     PROFILE = 'profile',
-    NOT_FOUND = 'not_found'
+    ARTICLES = 'articles',
+    ARTICLE_DETEAILS = 'article_deteails',
+    NOT_FOUND = 'not_found',
 }
 
 export const RoutePath:Record<AppRoutes,string> = {
   [AppRoutes.MAIN]: '/',
   [AppRoutes.ABOUT]: '/about',
   [AppRoutes.PROFILE]:'/profile',
+  [AppRoutes.ARTICLES]:'/articles',
+  [AppRoutes.ARTICLE_DETEAILS]:'/articles/', // + :id
   [AppRoutes.NOT_FOUND]:'*',
 
 
@@ -38,6 +44,16 @@ export const routeConfig:Record<AppRoutes,AppRouteProps> ={
     path:RoutePath.profile,
     element:<ProfilePage/>,
     authOnly:true
+  },
+  [AppRoutes.ARTICLES]:{
+    path:RoutePath.articles,
+    element:<ArticlesPage/>,
+    authOnly:true,
+  },
+  [AppRoutes.ARTICLE_DETEAILS]:{
+    path:`${RoutePath.article_deteails}:id`,
+    element:<ArticleDetailsPage/>,
+    authOnly:true,
   },
   [AppRoutes.NOT_FOUND]:{
     path:RoutePath.not_found,
