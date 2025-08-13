@@ -10,7 +10,6 @@ interface CodeProps {
     text: string,
 }
 
-
 const Code = ({ className, text }: CodeProps) => {
 
     const onCopy = useCallback(() =>{
