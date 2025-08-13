@@ -1,5 +1,10 @@
 .AppLink{
     text-decoration: none;
+    transition: 0.3s;
+    
+    &:hover{
+        opacity:0.7;
+    }
 }
 
 .primary{

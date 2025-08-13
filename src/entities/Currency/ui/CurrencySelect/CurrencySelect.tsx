@@ -16,7 +16,7 @@ interface CurrencySelectProps {
 ]
 
 const CurrencySelect = memo(({className,onChange,value,readonly}:CurrencySelectProps) => {
-    const {t} = useTranslation()
+    const {t} = useTranslation('profile')
 
     const onChangeHandler = useCallback((value:string) =>{
         onChange?.(value as Currency)
@@ -24,7 +24,7 @@ const CurrencySelect = memo(({className,onChange,value,readonly}:CurrencySelectP
 
 
   return ( 
-    <Select readonly = {readonly} onChange={onChangeHandler} label='Ваша валюта:' value={value} options={options}/>
+    <Select readonly = {readonly} onChange={onChangeHandler} label={t('Ваша валюта:')} value={value} options={options}/>
   )
 })
 

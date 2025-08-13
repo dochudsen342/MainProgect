@@ -28,7 +28,7 @@ interface ProfileCardProps {
 }
 
 const ProfileCard = (props: ProfileCardProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('profile')
     const {
         data,
         isLoading,

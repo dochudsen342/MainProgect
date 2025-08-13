@@ -18,7 +18,7 @@ interface CountrySelectProps {
 ]
 
 const CountrySelect = memo(({className,onChange,value,readonly}:CountrySelectProps) => {
-    const {t} = useTranslation()
+    const {t} = useTranslation("profile")
 
     const onChangeHandler = useCallback((value:string) =>{
         onChange?.(value as Country)
@@ -26,7 +26,7 @@ const CountrySelect = memo(({className,onChange,value,readonly}:CountrySelectPro
 
 
   return ( 
-    <Select readonly = {readonly} onChange={onChangeHandler} label='Ваша страна:' value={value} options={options}/>
+    <Select readonly = {readonly} onChange={onChangeHandler} label={t("Ваша страна:")} value={value} options={options}/>
   )
 })
 

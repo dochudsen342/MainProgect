@@ -1,6 +1,6 @@
 import { Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { AppRouteProps, AppRoutes, routeConfig } from 'shared/config/routeConfig/routeConfig'
+import { AppRouteProps, routeConfig } from 'shared/config/routeConfig/routeConfig'
 import PageLoader from 'widgets/PageLoader/ui/PageLoader'
 import RequireAuth from './RequireAuth'
 
@@ -19,7 +19,7 @@ const AppRouter = () => {
     }, [])
     return (
         <Routes>
-            {Object.values(routeConfig).map(renderWidthWrapper)}
+            {Object.values(routeConfig).map(route =>  renderWidthWrapper(route))}
         </Routes>
     )
 }

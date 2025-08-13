@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useMemo } from 'react'
-import { fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileValidateErrors, profileActions, ProfileCard, profileReducer } from 'entities/Profile'
+import { useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { Country } from 'entities/Country/model/types/country'
+import { Currency } from "entities/Currency/model/types/currency"
+import { fetchProfileData, getProfileError, getProfileForm, getProfileIsLoading, getProfileValidateErrors, profileActions, ProfileCard, profileReducer } from 'entities/Profile'
+import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
 import { classNames } from 'shared/lib/classNames/classNames'
 import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { useSelector } from 'react-redux'
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
-import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
-import { Currency } from "entities/Currency/model/types/currency"
-import { Country } from 'entities/Country/model/types/country'
 
 interface ProfilePageProps {
   className?: string,
