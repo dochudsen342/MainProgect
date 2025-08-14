@@ -11,7 +11,7 @@ interface ArticleCodeBlockComonentProps {
 }
 
 const ArticleCodeBlockComonent = ({className,block}:ArticleCodeBlockComonentProps) => {
- 
+    const testRevert = true
   return (
     <div className={classNames(cl.ArticleCodeBlockComonent, {}, [className])}>
         {block?.title && <Text title={block?.title} className={cl.title}/>}
