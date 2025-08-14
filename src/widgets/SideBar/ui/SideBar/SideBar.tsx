@@ -28,7 +28,7 @@ const SideBar = memo(({ className }: SideBarProps) => {
   ,[collapsed])
 
   return (
-    <div className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className])}>
+    <div className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className || ''])}>
       <Button
         square={false}
         theme={ThemeButton.BACKGROUND_INVERTED}
