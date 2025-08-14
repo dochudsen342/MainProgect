@@ -11,7 +11,7 @@ interface CodeProps {
 }
 
 const Code = ({ className, text }: CodeProps) => {
-
+    const testReset = true
     const onCopy = useCallback(() =>{
         navigator.clipboard.writeText(text)
     },[text])
