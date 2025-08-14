@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { fetchProfileData } from "../service/fetchDataProfile/fetchProfileData";
 import { Profile, ProfileSchema } from "../types/profile";
+import { updateProfileData } from "../service/updateProfileData/uptadeProfileData";
 
 const initialState:ProfileSchema = {
     data:undefined,
@@ -13,8 +14,19 @@ export const profileSlice = createSlice({
     name:'profile',
     initialState,
     reducers:{
-        getProfile:() =>{
-
+        setReadonly:(state,actions:PayloadAction<boolean>) =>{
+            state.readonly = actions.payload
+        },
+        updateProfile:(state,action:PayloadAction<Profile>) =>{
+            state.form = {
+                ...state.form,
+                ...action.payload,
+            }
+        },
+        cancelEdit:(state) =>{
+            state.readonly = true
+            state.form = state.data
+            state.validateErrors = undefined
         }
     },
     extraReducers: (builder) =>{
@@ -24,11 +36,33 @@ export const profileSlice = createSlice({
         }).
         addCase(fetchProfileData.fulfilled, (state,actions:PayloadAction<Profile>) =>{
             state.data = actions.payload
+<<<<<<< HEAD
+=======
+            state.form = actions.payload
+>>>>>>> 8416dd9e1dfcf3d14a232353dc9ff609e99f6d75
             state.isLoading = false
         }).
         addCase(fetchProfileData.rejected,(state,actions) =>{
             state.error = actions.payload
             state.isLoading = false
+<<<<<<< HEAD
+=======
+        }).addCase(updateProfileData.pending,(state) =>{
+            state.isLoading = true
+            state.validateErrors = undefined
+        }).
+        addCase(updateProfileData.fulfilled, (state,actions:PayloadAction<Profile>) =>{
+            state.data = actions.payload
+            state.form = actions.payload
+            state.isLoading = false
+            state.readonly = true
+            state.validateErrors = undefined
+        }).
+        addCase(updateProfileData.rejected,(state,actions) =>{
+            state.validateErrors = actions.payload
+            state.readonly = false
+            state.isLoading = false
+>>>>>>> 8416dd9e1dfcf3d14a232353dc9ff609e99f6d75
         })
     }
 })

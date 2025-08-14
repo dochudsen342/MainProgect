@@ -1,24 +1,27 @@
-import { Suspense } from 'react'
+import { Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { routeConfig } from 'shared/config/routeConfig/routeConfig'
+import { AppRouteProps, routeConfig } from 'shared/config/routeConfig/routeConfig'
 import PageLoader from 'widgets/PageLoader/ui/PageLoader'
+import RequireAuth from './RequireAuth'
 
 const AppRouter = () => {
-  return (
-            <Routes>
-                {Object.values(routeConfig).map(({element, path}) => (
-                    <Route
-                        key={path}
-                        path={path}
-                        element={(
-                            <Suspense key={path} fallback={<PageLoader/>}>
-                                {element}
-                            </Suspense>
-                        )}
-                    />
-                ))}
-            </Routes>
-  )
+    const renderWidthWrapper = useCallback((route: AppRouteProps) => {
+        const element = (
+            <Suspense key={route.path} fallback={<PageLoader />}>
+                {route.element}
+            </Suspense>)
+
+        return (<Route
+            key={route.path}
+            path={route.path}
+            element={route.authOnly ? <RequireAuth>{element}</RequireAuth>:element}
+        />)
+    }, [])
+    return (
+        <Routes>
+            {Object.values(routeConfig).map(route =>  renderWidthWrapper(route))}
+        </Routes>
+    )
 }
 
 export default AppRouter

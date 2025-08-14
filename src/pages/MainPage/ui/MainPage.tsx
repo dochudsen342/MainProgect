@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 const MainPage = () => {
      const {t} = useTranslation()
     return (
-        <div>
+        <div className='page-wrapper'>
            {t('Главная страница')}
             <Counter/>
         </div>
