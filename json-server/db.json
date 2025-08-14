@@ -110,13 +110,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "admin"
+      "role": "admin",
+      "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "user"
+      "role": "user",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
     }
   ],
   "profile": {
