@@ -7,7 +7,7 @@ import { USER_LOCALSTORAGE_KEY } from "shared/const/localstorage"
 const initialState:UserSchema = {}
 
 export const userSlice = createSlice({
-  name: 'counter',
+  name: 'user',
   initialState,
   reducers: {
     setAuthData: (state,actions:PayloadAction<User>) =>{
@@ -16,6 +16,7 @@ export const userSlice = createSlice({
     initAuthData: (state) =>{
       const user = localStorage.getItem(USER_LOCALSTORAGE_KEY)
       if(user) state.authData = JSON.parse(user)
+      state._mounted = true
     },
     logout: (state) =>{
       state.authData = undefined
