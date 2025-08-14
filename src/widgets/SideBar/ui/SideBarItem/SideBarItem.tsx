@@ -4,22 +4,14 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { SideBarItemType } from '../../model/itemsType'
 import cl from './SideBarItem.module.scss'
 import { memo } from 'react'
-import { getAuthData } from 'entities/User'
-import { useSelector } from 'react-redux'
 
 interface SideBarItemProps {
     item: SideBarItemType,
-    collapsed: boolean,
+    collapsed: boolean
 }
 
 const SideBarItem = memo(({ item ,collapsed}: SideBarItemProps) => {
     const { t } = useTranslation()
-    const isAuth = useSelector(getAuthData) 
-
-    if(!isAuth && item.authOnly) {
-        return null 
-    }
-
     return (    
             <AppLink
                 theme={AppLinkTheme.PRIMARY}
