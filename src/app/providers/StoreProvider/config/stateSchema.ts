@@ -4,6 +4,7 @@ import { ArticleDetailsSchema } from "entities/Article";
 import { CounterShema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
+import { ArticlCommentListSchema } from "features/ArticleCommentList";
 import { LoginSchema } from "features/AuthByUsername";
 
 export interface StateSchema {
@@ -13,6 +14,7 @@ export interface StateSchema {
     loginForm?:LoginSchema,
     profile?:ProfileSchema,
     articleDetails?:ArticleDetailsSchema,
+    articleDetailsComment?:ArticlCommentListSchema,
 }
 
 export type StateSchemaKey = keyof StateSchema
