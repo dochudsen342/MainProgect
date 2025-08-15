@@ -27,7 +27,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
         <div className={classNames(cl.CommentCard, {}, [className])}>
             <div className={cl.header}>
                 {comment?.user.avatar ? <Avatar src={comment?.user.avatar} size={30} /> : null}
-                <Text className={cl.userName} title={comment?.user.userName} />
+                <Text className={cl.userName} title={comment?.user.username} />
             </div>
             <Text className={cl.text} text={comment?.text} />
         </div>
