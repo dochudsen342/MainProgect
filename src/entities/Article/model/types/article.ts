@@ -1,3 +1,9 @@
+import { User } from "entities/User"
+
+export enum ArticleView{
+    BIG = 'big',
+    SMALL = 'small'
+}
 
 export enum ActicleType {
     IT = 'IT',
@@ -43,6 +49,7 @@ export interface Article{
     title: string,
     subtitle: string,
     img: string,
+    user:User,
     views: number,
     createdDate: string,
     type: ActicleType[],

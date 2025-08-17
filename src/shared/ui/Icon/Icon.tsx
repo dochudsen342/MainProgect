@@ -5,7 +5,7 @@ import { classNames, Mods } from 'shared/lib/classNames/classNames'
 interface iconProps {
   className?: string,
   Svg:React.FunctionComponent<React.SVGAttributes<SVGElement>>,
-  theme?:IconFill
+  theme?:IconFill,
 }
 
 export enum IconFill{

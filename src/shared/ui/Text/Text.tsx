@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import cl from './Text.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -28,7 +28,7 @@ interface TextProps {
     size?:TextSize,
 }
 
-const Text = ({ className, title, text, theme, aligin,size = TextSize.M }: TextProps) => {
+const Text = ({ className, title, text, theme, aligin,size = TextSize.M}: TextProps) => {
 
     const mods:Record<string,boolean> = {
             [cl[theme]]: true,
@@ -36,11 +36,10 @@ const Text = ({ className, title, text, theme, aligin,size = TextSize.M }: TextP
             [cl[size]]:true,
     }
            
-    
     return (
-        <div className={classNames(cl.Text, mods, [className || ''])}>
+        <div className={classNames(cl.Text, mods, [className])}>
             {title && <p className={cl.title}>{title}</p>}
-            {text && <p className={cl.subtitle}>{text}</p>}
+            {text && <p className={cl.text}>{text}</p>}
         </div>
     )
 }

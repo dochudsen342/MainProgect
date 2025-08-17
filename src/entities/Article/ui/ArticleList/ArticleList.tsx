@@ -1,0 +1,35 @@
+import { useCallback } from 'react'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Article, ArticleView } from '../../model/types/article'
+import ArticleItem from '../ArticleItem/ArticleItem'
+import ArticleItemSkeleton from '../ArticleItem/ArticleItemSkeleton'
+import cl from './ArticleList.module.scss'
+
+interface ArticleListProps {
+  className?: string,
+  articles?:Article[],
+  isLoading?:boolean,
+  view?:ArticleView, 
+}
+
+const ArticleList = ({className,articles,isLoading = true,view}:ArticleListProps) => {
+
+
+ const renderArticle = useCallback((article:Article) =>{
+    return <ArticleItem key={article.id} className={cl.card} article={article} view={view} />
+ },[articles])
+ 
+  if(isLoading){
+    return <div className={cl[view]}>
+      {new Array(view === ArticleView.BIG ? 3 : 12).fill(0).map((item,index) => (<ArticleItemSkeleton className={cl.card} view={view} key={index}/>))}
+    </div>
+  }
+  
+  return (
+    <div className={classNames(cl.ArticleList, {}, [className,cl[view]])}>
+        {articles.length > 0 ? articles.map(renderArticle):null}
+    </div>
+  )
+}
+
+export default ArticleList
