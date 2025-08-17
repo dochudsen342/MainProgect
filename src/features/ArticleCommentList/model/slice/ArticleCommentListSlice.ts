@@ -17,7 +17,7 @@ const articleCommentListSlice = createSlice({
   name: 'articleCommentListSlice',
   initialState: commentsAdapter.getInitialState<ArticlCommentListSchema>({
     isLoading:false,
-    ids:['1','2'],
+    ids:[],
     entities:{
         
     },

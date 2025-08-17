@@ -1,6 +1,8 @@
 .Input{
     color: var(--secondary-color);
     font-weight: 700;
+    outline: none;
+    padding-left: 10px;
 }
 
 .Input::placeholder{

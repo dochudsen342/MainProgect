@@ -9,6 +9,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
+import { useParams } from 'react-router-dom'
 
 interface ProfilePageProps {
   className?: string,
@@ -21,14 +22,18 @@ const reducers: ReducerList = {
 const ProfilePage = ({ className }: ProfilePageProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
+  const { id } = useParams<{ id: string }>()
   const profileData = useSelector(getProfileForm)
   const isLoading = useSelector(getProfileIsLoading)
   const error = useSelector(getProfileError)
   const readonly = useSelector(getProfileReadonly)
   const errors = useSelector(getProfileValidateErrors)
+  
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    if(id){
+      dispatch(fetchProfileData(id))
+    }
   }, [dispatch])
 
   const onChangeFirstName = useCallback((value: string) => {

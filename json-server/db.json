@@ -102,7 +102,31 @@
       "id": "3",
       "text": "some comment three",
       "articleId": "1",
-      "userId": "3"
+      "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "привет мир",
+      "id": "Nlxdzmo"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": "qJPZbuI"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "111",
+      "id": "03niVc1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "хехе",
+      "id": "Yvh6Y3Y"
     }
   ],
   "users": [
@@ -119,23 +143,30 @@
       "password": "123",
       "role": "user",
       "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
-    },
-    {
-      "id": "3",
-      "username": "user",
-      "password": "123",
-      "role": "user",
-      "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
     }
   ],
-  "profile": {
-    "firstname": "Dqizi",
-    "lastname": "Kolesnikov",
-    "age": 12,
-    "currency": "RUB",
-    "country": "Armenia",
-    "city": "Volgograd",
-    "username": "admin",
-    "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Dqizi",
+      "lastname": "Kolesnikov",
+      "age": 12,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "Volgograd34",
+      "username": "admin",
+      "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"
+    },
+    {
+      "id": "2",
+      "firstname": "Master228",
+      "lastname": "none322",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Volgograd",
+      "username": "Dimanchik",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
+    }
+  ]
 }
