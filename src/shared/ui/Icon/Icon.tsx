@@ -13,7 +13,7 @@ export enum IconFill{
     SECONDARY = 'secondary'
 }
 
-const Icon = ({className,Svg,theme}:iconProps) => {
+const Icon = ({className,Svg,theme = IconFill.SECONDARY}:iconProps) => {
     
     const mods:Mods = {
         [cl[theme]]:true

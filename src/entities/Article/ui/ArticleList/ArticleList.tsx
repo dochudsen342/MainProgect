@@ -12,12 +12,12 @@ interface ArticleListProps {
   view?:ArticleView, 
 }
 
-const ArticleList = ({className,articles,isLoading = true,view}:ArticleListProps) => {
+const ArticleList = ({className,articles,isLoading,view}:ArticleListProps) => {
 
 
  const renderArticle = useCallback((article:Article) =>{
     return <ArticleItem key={article.id} className={cl.card} article={article} view={view} />
- },[articles])
+ },[articles,view])
  
   if(isLoading){
     return <div className={cl[view]}>

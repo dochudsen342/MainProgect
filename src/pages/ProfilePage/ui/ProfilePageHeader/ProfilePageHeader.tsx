@@ -54,3 +54,7 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 }
 
 export default ProfilePageHeader
+
+
+
+
