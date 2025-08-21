@@ -23,13 +23,16 @@ const SideBar = memo(({ className }: SideBarProps) => {
   const linkList = useMemo(() => sideBarItemsList.map((item) =>
     <SideBarItem
       collapsed={collapsed}
-      item={item} 
+      item={item}
       key={item.path}
-      />)
-  ,[collapsed])
+    />)
+    , [collapsed])
 
   return (
-    <div className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className || ''])}>
+    <div
+      data-testid='sidebar'
+      className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className])}
+    >
       <Button
         square={false}
         theme={ThemeButton.BACKGROUND_INVERTED}
@@ -42,7 +45,7 @@ const SideBar = memo(({ className }: SideBarProps) => {
       </div>
       <div className={classNames(cl.switchers)}>
         <ThemeSwitcher />
-        <LangSwitcher collapsed = {collapsed}/>
+        <LangSwitcher collapsed={collapsed} />
       </div>
     </div>
   )

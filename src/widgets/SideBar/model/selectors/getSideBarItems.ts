@@ -10,6 +10,7 @@ import ArticlesIcon from 'shared/assets/icons/Articles.svg'
 export const getSideBarItems = createSelector(
     getAuthData,
     (userData) => {
+
         const sideBarItemsList: SideBarItemType[] = [
             {
                 path: RoutePath.about,
@@ -23,35 +24,25 @@ export const getSideBarItems = createSelector(
                 Icon: AboutIcon,
                 authOnly: false
             },
-            {
-                path: RoutePath.profile + userData.id,
-                text: 'Профиль',
-                Icon: ProfileIcon,
-                authOnly: true
-            },
-            {
-                path: RoutePath.articles,
-                text: 'Статьи',
-                Icon: ArticlesIcon,
-                authOnly: true
-            },
         ]
-        if (!userData) {
+
+        if (userData) {
             sideBarItemsList.push(
                 {
-                    path: RoutePath.about,
-                    text: 'О нас',
-                    Icon: MainIcon,
-                    authOnly: false
+                    path: RoutePath.profile + userData?.id,
+                    text: 'Профиль',
+                    Icon: ProfileIcon,
+                    authOnly: true
                 },
                 {
-                    path: RoutePath.main,
-                    text: 'Главная',
-                    Icon: AboutIcon,
-                    authOnly: false
+                    path: RoutePath.articles,
+                    text: 'Статьи',
+                    Icon: ArticlesIcon,
+                    authOnly: true
                 },
             )
         }
-        return sideBarItemsList 
+        return sideBarItemsList
+
     }
 )
