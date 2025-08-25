@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { fn } from 'storybook/test';
 import Button, { ThemeButton } from './Button';
-import { StoryAnnotations } from 'storybook/internal/csf';
 import ThemeDecorator from 'shared/lib/decorators/theme.decorator';
 import { Theme } from 'app/providers/ThemeProvider';
 
@@ -40,5 +39,21 @@ export const OutlineDark: Story = {
     theme:ThemeButton.OUTLINE
   },
  decorators:[ThemeDecorator(Theme.DARK)]
+};
+
+export const ClearInvertedDark: Story = {
+  args: {
+    children: 'Text',
+    theme:ThemeButton.CLEAR_INVERTED
+  },
+ decorators:[ThemeDecorator(Theme.DARK)]
+};
+
+export const ClearInvertedLight: Story = {
+  args: {
+    children: 'Text',
+    theme:ThemeButton.CLEAR_INVERTED
+  },
+ decorators:[ThemeDecorator(Theme.LIGHT)]
 };
 
