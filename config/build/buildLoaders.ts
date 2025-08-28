@@ -26,12 +26,7 @@ export function buildLoaders({ isDev }: BuildOptions): webPack.RuleSetRule[] {
             options: {
                 presets: ['@babel/preset-env'],
                 "plugins": [
-                    ["i18next-extract", 
-                        {
-                            locales:["ru","en"],
-                        }
-                    ],
-
+                    ["i18next-extract", ],
                 ]
             }
         }

@@ -1,7 +1,6 @@
 import {EnhancedStore, Reducer, ReducersMapObject } from "@reduxjs/toolkit";
 import { AxiosInstance } from "axios";
 import { ArticleDetailsSchema } from "entities/Article";
-import { CounterShema } from "entities/Counter";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddCommentForm";
@@ -10,7 +9,6 @@ import { LoginSchema } from "features/AuthByUsername";
 import { ArticlePageSchema } from "pages/ArticlesPage/model/types/articleListSchema";
 
 export interface StateSchema {
-    counter: CounterShema,
     user:UserSchema,
     //async reducers
     loginForm?:LoginSchema,
