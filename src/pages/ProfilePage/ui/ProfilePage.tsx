@@ -10,6 +10,7 @@ import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 import { useParams } from 'react-router-dom'
+import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 
 interface ProfilePageProps {
   className?: string,
@@ -70,7 +71,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
 
   return (
     <DynamicReducerLoader removeAfterUnmount={true} reducers={reducers}>
-      <div className={classNames('page-wrapper')}>
+      <PageWrapper>
         <ProfilePageHeader />
         <div className='error__block'>
           {errors?.length && errors.map((error) => {
@@ -92,7 +93,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
           error={error}
           readonly={readonly}
         />
-      </div>
+      </PageWrapper>
     </DynamicReducerLoader>
 
   )

@@ -16,6 +16,7 @@ import Text from 'shared/ui/Text/Text'
 import cl from './ArticleDetailsPage.module.scss'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 
 
  interface ArticleDetailsPageProps {
@@ -45,20 +46,20 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   },[])
 
   if (!id) {
-    return <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+    return <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
       {t('Такой статьи нет!')}
-    </div>
+    </PageWrapper>
   }
 
   return (
     <DynamicReducerLoader removeAfterUnmount= {true} reducers={reducerList}>
-      <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+      <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <Button onClick = {onBackToList} theme={ThemeButton.OUTLINE}>{t('Назад к списку')}</Button>
         <ArticleDetails id={id} />
         <Text title={'Комментарии'} />
         <AddCommentForm onSendComment={onSendComment}/>
         <CommentList isLoading = {isLoading} comments={commentList} />
-      </div>
+      </PageWrapper>
     </DynamicReducerLoader>
 
   )

@@ -7,6 +7,7 @@ import { SideBar } from 'widgets/SideBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { userAction } from 'entities/User';
 import { getMounted } from 'entities/User/model/selectors/getMounted/getMounted';
+import PageWrapper from 'shared/ui/PageWrapper/PageWrapper';
 
 
 
@@ -25,9 +26,9 @@ function App() {
         <Navbar />
         <div className='content_page'>
           <SideBar /> 
-          <div className='page-wrapper'>
+          <PageWrapper>
             {_mounted && <AppRouter />}
-          </div>
+          </PageWrapper>
         </div>
       </Suspense>
     </div>

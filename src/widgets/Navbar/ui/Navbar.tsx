@@ -42,12 +42,12 @@ export const Navbar = () => {
   }
 
   return (
-    <div className={classNames(cl.navbar)}>
+    <header className={classNames(cl.navbar)}>
       <Button square onClick={onOpen} theme={ThemeButton.CLEAR_INVERTED} className={cl.links}>
         {t('Войти')}
       </Button>
       {isModalAuth && <LoginModal isOpen={isModalAuth} onClose={onClose} />}
-    </div>
+    </header>
   )
 }
 

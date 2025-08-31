@@ -26,7 +26,7 @@ const ArticleItemSkeleton = ({ className,view }: ArticleItemSkeletonProps) => {
           </div>
           <Skeleton border='3px' className={cl.title} width={'100%'} height={200}/>
           <div className={cl.footer}>
-            <Skeleton border='3px' className={cl.button} width={100} height={30}/>
+            <Skeleton border='3px' className={cl.button} width={"100%"} height={30}/>
           </div>
         </Card>
       </div>

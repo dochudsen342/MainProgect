@@ -16,10 +16,10 @@ const PageError = ({className}:PageErrorProps) => {
     }
 
   return (
-    <div className={classNames(cl.PageError)}>
+    <section className={classNames(cl.PageError)}>
       <p>{t('Произошла ошибка')}</p>
       <button onClick={onReloadPage}>Обновить страницу</button>
-    </div>
+    </section>
   )
 }
 
