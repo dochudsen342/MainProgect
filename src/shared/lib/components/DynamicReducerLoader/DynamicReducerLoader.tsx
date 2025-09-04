@@ -21,9 +21,14 @@ const DynamicReducerLoader: FC<DynamicReducerLoaderProps> = ({ reducers, childre
     const store = useStore() as ReduxStoreWidhtManager
     const dispatch = useDispatch()
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getReducerMap()
+        
         Object.entries(reducers).forEach(([nameReducer, reducer]: ReducerListEntry) => {
-            store.reducerManager.add(nameReducer, reducer)
-            dispatch({ type: `@INIT ${nameReducer} reducer` })
+            const mounted = mountedReducers[nameReducer as StateSchemaKey]
+            if(!mounted){
+                store.reducerManager.add(nameReducer, reducer)
+                dispatch({ type: `@INIT ${nameReducer} reducer` })
+            }
         })
 
         return () => {

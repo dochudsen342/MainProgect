@@ -26,6 +26,7 @@ export interface ReducerManager {
     reduce:(state:StateSchema, action:any) => any,
     add:(key:StateSchemaKey, reducer:Reducer) => void ,
     remove:(key:StateSchemaKey) => void,
+
 }
 
 

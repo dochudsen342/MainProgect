@@ -38,7 +38,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     }))
   }, [])
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount = {true}>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount = {false}>
       <PageWrapper onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlePage, {}, [className])}>
         <ArticleViewSelector view={view} onViewClick={onChangeView}/>
         <ArticleList isLoading={isLoading} view={view} articles={articles} />
