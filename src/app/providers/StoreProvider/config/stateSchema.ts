@@ -6,10 +6,12 @@ import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { ArticlCommentListSchema } from "features/ArticleCommentList";
 import { LoginSchema } from "features/AuthByUsername";
+import { ScrollRestorationSchema } from "features/ScrollRestoration/types/scrollRestoration";
 import { ArticlePageSchema } from "pages/ArticlesPage/model/types/articleListSchema";
 
 export interface StateSchema {
     user:UserSchema,
+    scrollRestoration:ScrollRestorationSchema
     //async reducers
     loginForm?:LoginSchema,
     profile?:ProfileSchema,
