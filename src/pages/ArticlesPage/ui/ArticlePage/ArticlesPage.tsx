@@ -11,6 +11,7 @@ import { articlePageAction, articlePageReducer, getArticleList } from '../../mod
 import cl from './ArticlePage.module.scss'
 import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 import { fetchNextArticlesPart } from 'pages/ArticlesPage/model/service/fetchNextArticlesParts/fetchNextArticlesPart'
+import ArticlesFillterPage from '../ArticlesFillterPage/ArticlesFillterPage'
 
 interface ArticlePageProps {
   className?: string,
@@ -23,9 +24,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
   const articles = useSelector(getArticleList.selectAll)
   const view = useSelector(getArticleListView)
   const isLoading = useSelector(getArticleListIsLoading)
-  const onChangeView = useCallback((view:ArticleView) =>{
-    dispatch(articlePageAction.setView(view))
-  },[dispatch])
+  
   
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPart())
@@ -37,11 +36,12 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
       page:1,
     }))
   }, [])
+  
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount = {false}>
       <PageWrapper onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlePage, {}, [className])}>
-        <ArticleViewSelector view={view} onViewClick={onChangeView}/>
-        <ArticleList isLoading={isLoading} view={view} articles={articles} />
+        <ArticlesFillterPage/>
+        <ArticleList  className={cl.list} isLoading={isLoading} view={view} articles={articles} />
       </PageWrapper>
     </DynamicReducerLoader>
   )

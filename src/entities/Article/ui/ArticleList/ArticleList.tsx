@@ -1,15 +1,19 @@
 import { useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Article, ArticleView } from '../../model/types/article'
+import { ArcticleSortField, Article, ArticleView } from '../../model/types/article'
 import ArticleItem from '../ArticleItem/ArticleItem'
 import ArticleItemSkeleton from '../ArticleItem/ArticleItemSkeleton'
 import cl from './ArticleList.module.scss'
+import { SortOrder } from 'shared/types'
 
 interface ArticleListProps {
   className?: string,
   articles?:Article[],
   isLoading?:boolean,
   view?:ArticleView, 
+  sort?:ArcticleSortField,
+  order?:SortOrder,
+  search?:string
 }
 
 const ArticleList = ({className,articles,isLoading,view}:ArticleListProps) => {

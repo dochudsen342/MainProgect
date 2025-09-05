@@ -7,7 +7,7 @@ import { AddCommentFormSchema } from "features/AddCommentForm";
 import { ArticlCommentListSchema } from "features/ArticleCommentList";
 import { LoginSchema } from "features/AuthByUsername";
 import { ScrollRestorationSchema } from "features/ScrollRestoration/types/scrollRestoration";
-import { ArticlePageSchema } from "pages/ArticlesPage/model/types/articleListSchema";
+import { ArticlePageSchema } from "pages/ArticlesPage/model/types/articlePageSchema";
 
 export interface StateSchema {
     user:UserSchema,

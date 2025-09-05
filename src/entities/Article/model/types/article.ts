@@ -1,5 +1,13 @@
 import { User } from "entities/User"
 
+
+export enum ArcticleSortField {
+    VIEWS = 'views',
+    TITLE = 'title',
+    CREATED = 'createdDate'
+
+}
+
 export enum ArticleView{
     BIG = 'big',
     SMALL = 'small'
