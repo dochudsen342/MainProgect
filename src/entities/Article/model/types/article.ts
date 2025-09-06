@@ -1,4 +1,5 @@
 import { User } from "entities/User"
+import { SortOrder } from "shared/types"
 
 
 export enum ArcticleSortField {
@@ -13,7 +14,8 @@ export enum ArticleView{
     SMALL = 'small'
 }
 
-export enum ActicleType {
+export enum ArcticleType {
+    ALL = 'ALL',
     IT = 'IT',
     TECH = 'TECH',
     SCIENCE = 'Science',
@@ -26,6 +28,13 @@ export enum ArticleBlockType {
     TEXT = 'TEXT',
 }
 
+
+export interface SearchArticlesParams  {
+    order:SortOrder,
+    search:string,
+    sort:ArcticleSortField,
+    type:ArcticleType,
+}
 export interface ArticleBlockBase{
     id: string,
     type: ArticleBlockType,
@@ -60,6 +69,6 @@ export interface Article{
     user:User,
     views: number,
     createdDate: string,
-    type: ActicleType[],
+    type: ArcticleType[],
     blocks: ArticleBlock[]
 }

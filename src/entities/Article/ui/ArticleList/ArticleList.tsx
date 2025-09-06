@@ -5,6 +5,8 @@ import ArticleItem from '../ArticleItem/ArticleItem'
 import ArticleItemSkeleton from '../ArticleItem/ArticleItemSkeleton'
 import cl from './ArticleList.module.scss'
 import { SortOrder } from 'shared/types'
+import Text, { TextSize } from 'shared/ui/Text/Text'
+import { useTranslation } from 'react-i18next'
 
 interface ArticleListProps {
   className?: string,
@@ -18,6 +20,7 @@ interface ArticleListProps {
 
 const ArticleList = ({className,articles,isLoading,view}:ArticleListProps) => {
 
+  const {t} = useTranslation()
 
  const renderArticle = useCallback((article:Article) =>{
     return <ArticleItem key={article.id} className={cl.card} article={article} view={view} />
@@ -27,7 +30,12 @@ const ArticleList = ({className,articles,isLoading,view}:ArticleListProps) => {
    const skeletonList =  new Array(view === ArticleView.BIG ? 3 : 12).fill(0).map((item,index) => (<ArticleItemSkeleton className={cl.card} view={view} key={index}/>))
    return skeletonList
  },[view])
-  
+
+  if(!isLoading && !articles.length){
+    return <div className={classNames(cl.ArticleList, {}, [className,cl[view]])} >
+        <Text size={TextSize.L} title={t('Статьи не найдены')}/>
+    </div>
+  }
   
   return (
     <div className={classNames(cl.ArticleList, {}, [className,cl[view]])}>

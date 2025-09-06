@@ -4,7 +4,7 @@ import { Article, ArticleView } from 'entities/Article'
 import { fetchArticleList } from '../service/fetchArticleList.ts/fetchArticleList'
 import { ArticlePageSchema } from '../types/articlePageSchema'
 import { VIEW_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
-import { ArcticleSortField } from 'entities/Article/model/types/article'
+import { ArcticleSortField, ArcticleType, SearchArticlesParams } from 'entities/Article/model/types/article'
 import { SortOrder } from 'shared/types'
 
 
@@ -26,9 +26,11 @@ const articlePageSlice = createSlice({
     view:ArticleView.SMALL,
     page:1,
     hasMore:true,
+    _inited:false,
     sort:ArcticleSortField.CREATED,
     order:'asc',
     search:'',
+    typeValue:ArcticleType.ALL,
   }),
   reducers: {
     setView:(state,action:PayloadAction<ArticleView>) =>{
@@ -47,10 +49,18 @@ const articlePageSlice = createSlice({
     setSearch:(state,action:PayloadAction<string>) => {
       state.search = action.payload
     },
-    initState:(state) =>{
+    setTabs:(state,action:PayloadAction<ArcticleType>) =>{
+      state.typeValue = action.payload
+    },
+    initState:(state,action:PayloadAction<SearchArticlesParams>) =>{
       const view =  localStorage.getItem(VIEW_LOCALSTORAGE_KEY) as ArticleView
       state.view = view,
       state.limit = view === ArticleView.BIG ? 3 : 9
+      state._inited = true
+      state.order = action.payload.order
+      state.search = action.payload.search
+      state.sort = action.payload.sort
+      state.typeValue = action.payload.type
     }
   },
   extraReducers:(builder) =>{
