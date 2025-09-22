@@ -4,9 +4,9 @@ import { ArticleDetailsSchema } from "entities/Article";
 import { ProfileSchema } from "entities/Profile";
 import { UserSchema } from "entities/User";
 import { AddCommentFormSchema } from "features/AddCommentForm";
-import { ArticlCommentListSchema } from "features/ArticleCommentList";
 import { LoginSchema } from "features/AuthByUsername";
 import { ScrollRestorationSchema } from "features/ScrollRestoration/types/scrollRestoration";
+import { ArticlesDetailsPageSchema } from "pages/ArticleDetailsPage/types";
 import { ArticlePageSchema } from "pages/ArticlesPage/model/types/articlePageSchema";
 
 export interface StateSchema {
@@ -16,7 +16,7 @@ export interface StateSchema {
     loginForm?:LoginSchema,
     profile?:ProfileSchema,
     articleDetails?:ArticleDetailsSchema,
-    articleDetailsComment?:ArticlCommentListSchema,
+    articleDetailsPage?:ArticlesDetailsPageSchema,
     addCommentForm?:AddCommentFormSchema,
     articlePage?:ArticlePageSchema,
 }

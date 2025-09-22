@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { HTMLAttributeAnchorTarget, useCallback } from 'react'
 import cl from './ArticleItem.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/article'
@@ -11,18 +11,19 @@ import Avatar from 'shared/ui/Avatar/Avatar'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import ArticleTextBlockComonent from '../ArticleTextBlockComponent/ArticleTextBlockComonent'
-import { useNavigate } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
 
 interface ArticleItemProps {
   className?: string,
   article: Article,
   view?: ArticleView,
+  target?:HTMLAttributeAnchorTarget
 }
 
-const ArticleItem = ({ className, article, view }: ArticleItemProps) => {
-  const {t} = useTranslation()
-  const [isHover, bindHover] = useHover()
+const ArticleItem = ({ className, article, view,target }: ArticleItemProps) => {
+  const { t } = useTranslation()
+  const [bindHover] = useHover()
   const types = <Text text={article?.type.join(',')} className={cl.types} />
   const views = (
     <>
@@ -30,10 +31,7 @@ const ArticleItem = ({ className, article, view }: ArticleItemProps) => {
       <Icon className={cl.icon} Svg={EyeIcon} />
     </>
   )
-  const navigate =  useNavigate()
-  const onOpenArticle = useCallback(() =>{
-    navigate(RoutePath.article_deteails + article.id)
-  },[article.id,navigate])
+
 
   if (view === ArticleView.BIG) {
     let textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
@@ -47,10 +45,12 @@ const ArticleItem = ({ className, article, view }: ArticleItemProps) => {
           </div>
           <Text className={cl.title} title={article.title} />
           {types}
-          <img src={article.img} alt={article.title}  className={cl.img}/>
-          {textBlock && (<ArticleTextBlockComonent block={textBlock} className={cl.textBlock}/>)}
+          <img src={article.img} alt={article.title} className={cl.img} />
+          {textBlock && (<ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />)}
           <div className={cl.footer}>
-            <Button onClick={onOpenArticle} theme={ThemeButton.OUTLINE}>{t('Читать далее...')}</Button>
+            <AppLink target={target} to={RoutePath.article_deteails + article.id}>
+              <Button theme={ThemeButton.OUTLINE}>{t('Читать далее...')}</Button>
+            </AppLink>
             {views}
           </div>
         </Card>
@@ -59,8 +59,8 @@ const ArticleItem = ({ className, article, view }: ArticleItemProps) => {
   }
 
   return (
-    <div {...bindHover as object} className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
-      <Card onClick={onOpenArticle}>
+    <AppLink target={target} to={RoutePath.article_deteails + article.id} {...bindHover as object} className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+      <Card >
         <div className={cl.imageWrapper}>
           <img alt={article?.title} className={cl.img} src={article?.img} />
           <Text text={article?.createdDate} className={cl.date} />
@@ -71,7 +71,7 @@ const ArticleItem = ({ className, article, view }: ArticleItemProps) => {
         </div>
         <Text text={article?.title} className={cl.title} />
       </Card>
-    </div>
+    </AppLink>
   )
 }
 

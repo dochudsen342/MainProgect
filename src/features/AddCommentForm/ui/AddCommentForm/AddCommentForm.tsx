@@ -40,6 +40,7 @@ const AddCommentForm = ({ className,onSendComment }: AddCommentFormProps) => {
             <div className={classNames(cl.AddCommentForm, {}, [className])}>
                 <Input className={cl.input} inputTheme={inputTheme.OUTLINE} value={text || ''} placeholder={t('Введите комментарий')} onChange={onCommentTextChange} />
                 <Button onClick={onSendHandler} theme={ThemeButton.OUTLINE}>{t('Отправить')}</Button>
+                
             </div>
         </DynamicReducerLoader>
 

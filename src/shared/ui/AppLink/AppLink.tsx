@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react'
+import React, { FC, HTMLAttributeAnchorTarget, PropsWithChildren } from 'react'
 import cl from './AppLink.module.scss'
 import { Link, LinkProps } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -12,13 +12,13 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
   className?: string,
   theme?:AppLinkTheme
-
+  target?:HTMLAttributeAnchorTarget,
 }
 
-export const AppLink: FC<PropsWithChildren<AppLinkProps>> = ({ to, children,className,theme } ) => {
+export const AppLink: FC<PropsWithChildren<AppLinkProps>> = ({ to, children,className,theme,target } ) => {
 
   return (
-    <Link className={classNames(cl.AppLink,{[cl[theme]]:true},[className])} to={to}>
+    <Link target={target}  className={classNames(cl.AppLink,{[cl[theme]]:true},[className])} to={to}>
       {children}
     </Link>
   )

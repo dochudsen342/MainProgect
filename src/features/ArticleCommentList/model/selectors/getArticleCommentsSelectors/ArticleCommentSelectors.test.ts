@@ -5,8 +5,10 @@ import { getArticleCommentsIsLoading } from './ArticleCommentsSelectors';
 describe('getLoginError.test', () => {
     test('should return true', () => {
         const state: DeepPartial<StateSchema> = {
-            articleDetailsComment: {
-               isLoading: true,
+            articleDetailsPage: {
+               commments:{
+                isLoading:true
+               }
             },
         };
         expect(getArticleCommentsIsLoading(state as StateSchema)).toEqual(true);

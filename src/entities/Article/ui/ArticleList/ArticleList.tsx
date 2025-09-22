@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { HTMLAttributeAnchorTarget, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { ArcticleSortField, Article, ArticleView } from '../../model/types/article'
 import ArticleItem from '../ArticleItem/ArticleItem'
@@ -15,15 +15,16 @@ interface ArticleListProps {
   view?:ArticleView, 
   sort?:ArcticleSortField,
   order?:SortOrder,
-  search?:string
+  search?:string,
+  target?:HTMLAttributeAnchorTarget,
 }
 
-const ArticleList = ({className,articles,isLoading,view}:ArticleListProps) => {
+const ArticleList = ({className,articles,isLoading,view,target}:ArticleListProps) => {
 
   const {t} = useTranslation()
 
  const renderArticle = useCallback((article:Article) =>{
-    return <ArticleItem key={article.id} className={cl.card} article={article} view={view} />
+    return <ArticleItem target={target} key={article.id} className={cl.card} article={article} view={view} />
  },[articles,view])
  
  const renderSkeleton = useCallback(() =>{
