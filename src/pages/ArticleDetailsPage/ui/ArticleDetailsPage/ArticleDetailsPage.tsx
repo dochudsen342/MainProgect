@@ -21,6 +21,7 @@ import { getArticleRecomendation } from '../../model/slices/articleDetailsPageRe
 import { getArticleDetailsPageRecomendationError, getArticleDetailsPageRecomendationIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recomendations'
 import { fetchArticleRecomendations } from '../../model/service/fetchArticleRecomendations/fetchArticleRecomendations'
 import { articleDetailsPageReducers } from 'pages/ArticleDetailsPage/model/slices'
+import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 
  interface ArticleDetailsPageProps {
@@ -45,9 +46,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const onSendComment = useCallback((text:string) =>{
     dispatch(addCommentForArticle(text))
   },[dispatch])
-  const onBackToList = useCallback(() =>{
-    navigate(RoutePath.articles)
-  },[])
+  
   useEffect(() =>{
     dispatch(fetchCommentsByArticleId(id))
     dispatch(fetchArticleRecomendations())
@@ -62,7 +61,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   return (
     <DynamicReducerLoader removeAfterUnmount= {true} reducers={reducerList}>
       <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <Button onClick = {onBackToList} theme={ThemeButton.OUTLINE}>{t('Назад к списку')}</Button>
+        <ArticleDetailsPageHeader/>
         <ArticleDetails id={id} />
         <Text size={TextSize.L} title={('Рекомендуем')}/>
         <ArticleList target='_blank' className={cl.articleRecomendList} view={ArticleView.SMALL} articles={recomendations} isLoading={recomendationsIsLoading}/>

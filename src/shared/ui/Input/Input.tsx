@@ -1,6 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef } from 'react'
 import cl from './Input.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
+import Text from '../Text/Text'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
@@ -14,14 +15,14 @@ interface InputProps extends HTMLInputProps {
     value?: string | number,
     type?: string,
     placeholder?:string,
+    chekboxText?:string,
     onChange?: (value: string) => void,
     autoFocus?:boolean,
     inputTheme?:inputTheme
     disabled?:boolean
 }
 
-const Input = memo(({ className, type = 'text', value, onChange,placeholder,autoFocus,inputTheme,disabled, ...outherProps }: InputProps) => {
-
+const Input = memo(({ className, chekboxText, type = 'text', value, onChange,placeholder,autoFocus,inputTheme,disabled, ...outherProps }: InputProps) => {
   const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) =>{
     onChange?.(e.target.value)
   }
@@ -38,7 +39,8 @@ const Input = memo(({ className, type = 'text', value, onChange,placeholder,auto
   },[autoFocus])
 
   return (
-    <div>
+    <div className={cl.inputWrapper}>
+      {chekboxText && <Text className={cl.checkboxText} text={chekboxText}/>}
       <input
         ref = {inputRef}
         type={type}

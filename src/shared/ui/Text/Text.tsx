@@ -8,6 +8,12 @@ export enum TextSize {
     L = 'size_L',
 }
 
+export enum TextWeight {
+    SMALL = 'small',
+    MEDIUM = 'medium',
+    LARGE = 'large',
+}
+
 export enum ThemeText {
     ERROR = "error",
 }
@@ -23,17 +29,19 @@ interface TextProps {
     className?: string,
     title?: string,
     text?: string,
+    textWeight?:TextWeight,
     theme?: ThemeText,
     aligin?: TextAligin,
     size?:TextSize,
 }
 
-const Text = ({ className, title, text, theme, aligin,size = TextSize.M}: TextProps) => {
+const Text = ({ className,textWeight, title, text, theme, aligin,size = TextSize.M}: TextProps) => {
 
     const mods:Record<string,boolean> = {
             [cl[theme]]: true,
             [cl[aligin]]: true,
             [cl[size]]:true,
+            [cl[textWeight]]:true,
     }
            
     return (

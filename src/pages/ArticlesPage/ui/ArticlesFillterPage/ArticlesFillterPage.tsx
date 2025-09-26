@@ -82,7 +82,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
         dispatch(articlePageAction.setPage(1))
         fetchDebounceData()
     }, [dispatch,fetchData])
-    
+
     const onChangeTabs = useCallback((newTabs:TabItem) =>{
         dispatch(articlePageAction.setTabs(newTabs.value as ArcticleType))
         fetchData()

@@ -18,8 +18,8 @@ export enum ArcticleType {
     ALL = 'ALL',
     IT = 'IT',
     TECH = 'TECH',
-    SCIENCE = 'Science',
-    ECONOMY = 'Economy'
+    SCIENCE = 'SCIENCE',
+    ECONOMY = 'ECONOMY'
 }
 
 export enum ArticleBlockType {
