@@ -32,23 +32,22 @@ const ArticleItem = ({ className, article, view,target }: ArticleItemProps) => {
     </>
   )
 
-
   if (view === ArticleView.BIG) {
-    let textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
+    let textBlock = article?.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
     return (
       <div className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
         <Card>
           <div className={cl.header}>
             <Avatar size={30} src={article?.user?.avatar} />
-            <Text text={article.user.username} className={cl.userName} />
-            <Text text={article.createdDate} className={cl.date} />
+            <Text text={article?.user.username} className={cl.userName} />
+            <Text text={article?.createdDate} className={cl.date} />
           </div>
-          <Text className={cl.title} title={article.title} />
+          <Text className={cl.title} title={article?.title} />
           {types}
-          <img src={article.img} alt={article.title} className={cl.img} />
+          <img src={article?.img} alt={article?.title} className={cl.img} />
           {textBlock && (<ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />)}
           <div className={cl.footer}>
-            <AppLink target={target} to={RoutePath.article_deteails + article.id}>
+            <AppLink target={target} to={RoutePath.article_deteails + article?.id}>
               <Button theme={ThemeButton.OUTLINE}>{t('Читать далее...')}</Button>
             </AppLink>
             {views}
@@ -59,7 +58,9 @@ const ArticleItem = ({ className, article, view,target }: ArticleItemProps) => {
   }
 
   return (
-    <AppLink target={target} to={RoutePath.article_deteails + article.id} {...bindHover as object} className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+    <AppLink target={target} to={RoutePath.article_deteails + article?.id} 
+      {...bindHover as object} 
+      className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
       <Card >
         <div className={cl.imageWrapper}>
           <img alt={article?.title} className={cl.img} src={article?.img} />

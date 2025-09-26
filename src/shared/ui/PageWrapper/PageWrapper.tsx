@@ -41,7 +41,7 @@ const PageWrapper = ({className,children,onScrollEnd}:PageWrapperProps) => {
   return (
     <section onScroll={onScroll}  ref = {wrapperRef} className= {classNames(cl.PageWrapper, {}, [className])}>
         {children}
-        <div ref={triggerRef}></div>
+        <div className={cl.infiniteTrigger} ref={triggerRef}></div>
     </section>
   )
 }

@@ -7,6 +7,8 @@ export interface BuildPath {
     output:string,
     html:string,
     src:string,
+    locales:string,
+    buildLocales:string,
 }
 
 
@@ -14,10 +16,12 @@ export interface BuildOptions{
     mode:BuildMod,
     path:BuildPath,
     isDev:boolean,
-    port:number
+    port:number,
+    apiUrl:string,
 }
 
 export interface BuildEnv {
     mode:BuildMod,
-    port:number
+    port:number,
+    apiUrl:string,
 }
