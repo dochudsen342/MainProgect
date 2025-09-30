@@ -10,7 +10,9 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import Text, { TextSize } from 'shared/ui/Text/Text'
 import cl from './ArticleDetailsPage.module.scss'
@@ -57,7 +59,9 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
   if (!id) {
     return (
-      <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>{t('Такой статьи нет!')}</PageWrapper>
+      <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+        {t('Такой статьи нет!')}
+      </PageWrapper>
     )
   }
 

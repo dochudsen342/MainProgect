@@ -3,7 +3,9 @@ import cl from './CreateArticleForm.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import TypeArticleForm from '../TypeArticleForm/TypeArticleForm'
 import TitleArticleForm from '../TitleArticleForm/TitleArticleForm'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { createArticleFormReducer } from '../../model/slice/createArticleForm'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 

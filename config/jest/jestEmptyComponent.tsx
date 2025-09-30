@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-const jestEmpryComponent = () =>{
-    return <div></div>
+const jestEmpryComponent = () => {
+  return <div></div>
 }
 
 export default jestEmpryComponent

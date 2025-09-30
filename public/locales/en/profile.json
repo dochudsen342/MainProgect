@@ -1,14 +1,14 @@
-
-{   "Профиль":"Profile",
-    "Редактировать":"Edit",
-    "Отменить":"Cancel",
-    "Применить":"Aply",
-    "Ваше имя:":"Your name:",
-    "Ваша фамилия:":"Your lastname",
-    "Ваш возраст:":"Your age:",
-    "Ваш город:":"Your city:",
-    "Ваш Username":"Your Username",
-    "Ссылка на аватар:":"Avatar link:",
-    "Ваша валюта:":"Your сurrency:",
-    "Ваша страна:":"Your country:"
+{
+  "Профиль": "Profile",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Применить": "Aply",
+  "Ваше имя:": "Your name:",
+  "Ваша фамилия:": "Your lastname",
+  "Ваш возраст:": "Your age:",
+  "Ваш город:": "Your city:",
+  "Ваш Username": "Your Username",
+  "Ссылка на аватар:": "Avatar link:",
+  "Ваша валюта:": "Your сurrency:",
+  "Ваша страна:": "Your country:"
 }

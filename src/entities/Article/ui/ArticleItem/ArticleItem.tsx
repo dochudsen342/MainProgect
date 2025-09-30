@@ -33,7 +33,9 @@ const ArticleItem = ({ className, article, view, target }: ArticleItemProps) => 
   )
 
   if (view === ArticleView.BIG) {
-    let textBlock = article?.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock
+    let textBlock = article?.blocks.find(
+      (block) => block.type === ArticleBlockType.TEXT,
+    ) as ArticleTextBlock
     return (
       <div className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
         <Card>

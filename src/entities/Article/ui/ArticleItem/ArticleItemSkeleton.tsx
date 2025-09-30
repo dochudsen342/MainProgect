@@ -31,7 +31,10 @@ const ArticleItemSkeleton = ({ className, view }: ArticleItemSkeletonProps) => {
   }
 
   return (
-    <div {...(bindHover as object)} className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+    <div
+      {...(bindHover as object)}
+      className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
+    >
       <Card>
         <div className={cl.imageWrapper}>
           <Skeleton width={200} height={200} className={cl.img} />

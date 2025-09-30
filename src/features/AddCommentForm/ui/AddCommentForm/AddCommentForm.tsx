@@ -7,8 +7,13 @@ import { addCommentFormAction, addCommentFormReducer } from '../../model/slice/a
 import { useTranslation } from 'react-i18next'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import {
+  getAddCommentFormError,
+  getAddCommentFormText,
+} from '../../model/selectors/addCommentFormSelectors'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 
 export interface AddCommentFormProps {
   className?: string

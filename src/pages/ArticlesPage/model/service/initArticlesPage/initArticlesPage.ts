@@ -14,7 +14,8 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkCon
     const _inited = getArticleListInited(getState())
     if (!_inited) {
       const orderFromUrl = (searchParams.get('order') as SortOrder) || 'asc'
-      const sortFromUrl = (searchParams.get('sort') as ArcticleSortField) || ArcticleSortField.CREATED
+      const sortFromUrl =
+        (searchParams.get('sort') as ArcticleSortField) || ArcticleSortField.CREATED
       const searchFromUrl = searchParams.get('search') || ''
       const typeSort = (searchParams.get('type') as ArcticleType) || ArcticleType.ALL
       dispatch(

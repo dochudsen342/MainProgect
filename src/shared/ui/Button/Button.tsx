@@ -35,7 +35,11 @@ const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
   }
 
   return (
-    <button disabled={disabled} {...otherProps} className={classNames(cl.Button, mods, [className])}>
+    <button
+      disabled={disabled}
+      {...otherProps}
+      className={classNames(cl.Button, mods, [className])}
+    >
       {children}
     </button>
   )

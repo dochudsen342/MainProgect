@@ -14,11 +14,14 @@ import {
   profileReducer,
 } from 'entities/Profile'
 import { getProfileReadonly } from 'entities/Profile/model/selectors/getProfileReadonly/getProfileReadonly'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader'
 import { useParams } from 'react-router-dom'
 import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
+import { VStack } from 'shared/ui/Stack'
 
 interface ProfilePageProps {
   className?: string
@@ -103,32 +106,33 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
   return (
     <DynamicReducerLoader removeAfterUnmount={true} reducers={reducers}>
       <PageWrapper>
-        <ProfilePageHeader />
-        <div className='error__block'>
-          {errors?.length &&
-            errors.map((error) => {
-              return (
-                <span key={error} className='error'>
-                  {error}
-                </span>
-              )
-            })}
-        </div>
-
-        <ProfileCard
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeLastName={onChangeLastName}
-          onChangeFirstName={onChangeFirstName}
-          onChangeAvatar={onChangeAvatar}
-          onChangeUsername={onChangeUsername}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-          data={profileData}
-          isLoading={isLoading}
-          error={error}
-          readonly={readonly}
-        />
+        <VStack gap='16' max>
+          <ProfilePageHeader />
+          <div className='error__block'>
+            {errors?.length &&
+              errors.map((error) => {
+                return (
+                  <span key={error} className='error'>
+                    {error}
+                  </span>
+                )
+              })}
+          </div>
+          <ProfileCard
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeLastName={onChangeLastName}
+            onChangeFirstName={onChangeFirstName}
+            onChangeAvatar={onChangeAvatar}
+            onChangeUsername={onChangeUsername}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+            data={profileData}
+            isLoading={isLoading}
+            error={error}
+            readonly={readonly}
+          />
+        </VStack>
       </PageWrapper>
     </DynamicReducerLoader>
   )

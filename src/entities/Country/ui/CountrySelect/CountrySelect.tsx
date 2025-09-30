@@ -28,7 +28,13 @@ const CountrySelect = memo(({ className, onChange, value, readonly }: CountrySel
   )
 
   return (
-    <Select readonly={readonly} onChange={onChangeHandler} label={t('Ваша страна:')} value={value} options={options} />
+    <Select
+      readonly={readonly}
+      onChange={onChangeHandler}
+      label={t('Ваша страна:')}
+      value={value}
+      options={options}
+    />
   )
 })
 

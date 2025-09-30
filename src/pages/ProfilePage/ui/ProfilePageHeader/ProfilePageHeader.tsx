@@ -3,9 +3,15 @@ import cl from './ProfilePageHeader.module.scss'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
+import {
+  getProfileData,
+  getProfileReadonly,
+  profileActions,
+  updateProfileData,
+} from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { getAuthData } from 'entities/User'
+import { HStack } from 'shared/ui/Stack'
 
 interface ProfilePageHeaderProps {
   className?: string
@@ -32,27 +38,27 @@ const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
   }, [dispatch])
 
   return (
-    <div className={cl.header}>
+    <HStack justify='between' max>
       <span>{t('Профиль')}</span>
       {canEdit && (
-        <div className={cl.btnsWrapper}>
+        <>
           {readonly ? (
-            <Button onClick={onEdit} className={cl.editButton} theme={ThemeButton.OUTLINE}>
+            <Button onClick={onEdit} theme={ThemeButton.OUTLINE}>
               {t('Редактировать')}
             </Button>
           ) : (
-            <div className={cl.header_button}>
+            <HStack gap='8'>
               <Button onClick={onCancelEdit} className={cl.cancelEditButton}>
                 {t('Отменить')}
               </Button>
               <Button onClick={onApplyEdit} className={cl.applyButton}>
                 {t('Применить')}
               </Button>
-            </div>
+            </HStack>
           )}
-        </div>
+        </>
       )}
-    </div>
+    </HStack>
   )
 }
 

@@ -16,7 +16,12 @@ const Code = ({ className, text }: CodeProps) => {
 
   return (
     <pre className={classNames(cl.Code, {}, [className])}>
-      <Button onClick={onCopy} size={ButtonSize.SIZE_M} theme={ThemeButton.CLEAR} className={cl.copyBtn}>
+      <Button
+        onClick={onCopy}
+        size={ButtonSize.SIZE_M}
+        theme={ThemeButton.CLEAR}
+        className={cl.copyBtn}
+      >
         <CopyIcon className={cl.copyIcon} />
       </Button>
       <code>{text}</code>

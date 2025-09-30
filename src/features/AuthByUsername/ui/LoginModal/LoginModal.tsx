@@ -13,7 +13,12 @@ interface LoginModalProps {
 
 const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose} lazy className={classNames(cl.LoginModal, {}, [className])}>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      lazy
+      className={classNames(cl.LoginModal, {}, [className])}
+    >
       <Suspense fallback={<Spiner />}>
         <LoginFormAsync />
       </Suspense>

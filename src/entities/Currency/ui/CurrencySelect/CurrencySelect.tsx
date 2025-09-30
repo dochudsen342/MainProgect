@@ -26,7 +26,13 @@ const CurrencySelect = memo(({ onChange, value, readonly }: CurrencySelectProps)
   )
 
   return (
-    <Select readonly={readonly} onChange={onChangeHandler} label={t('Ваша валюта:')} value={value} options={options} />
+    <Select
+      readonly={readonly}
+      onChange={onChangeHandler}
+      label={t('Ваша валюта:')}
+      value={value}
+      options={options}
+    />
   )
 })
 

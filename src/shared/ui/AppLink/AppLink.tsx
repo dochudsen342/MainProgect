@@ -14,9 +14,19 @@ interface AppLinkProps extends LinkProps {
   target?: HTMLAttributeAnchorTarget
 }
 
-export const AppLink: FC<PropsWithChildren<AppLinkProps>> = ({ to, children, className, theme, target }) => {
+export const AppLink: FC<PropsWithChildren<AppLinkProps>> = ({
+  to,
+  children,
+  className,
+  theme,
+  target,
+}) => {
   return (
-    <Link target={target} className={classNames(cl.AppLink, { [cl[theme]]: true }, [className])} to={to}>
+    <Link
+      target={target}
+      className={classNames(cl.AppLink, { [cl[theme]]: true }, [className])}
+      to={to}
+    >
       {children}
     </Link>
   )

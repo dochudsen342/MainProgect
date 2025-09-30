@@ -14,7 +14,13 @@ interface ArticleSortSelectorProps {
   onChangeSort: (newSort: ArcticleSortField) => void
 }
 
-const ArticleSortSelector = ({ className, onChangeOrder, onChangeSort, order, sort }: ArticleSortSelectorProps) => {
+const ArticleSortSelector = ({
+  className,
+  onChangeOrder,
+  onChangeSort,
+  order,
+  sort,
+}: ArticleSortSelectorProps) => {
   const { t } = useTranslation()
   const orderOptionsList = useMemo<SelectOptions[]>(
     () => [
@@ -50,7 +56,12 @@ const ArticleSortSelector = ({ className, onChangeOrder, onChangeSort, order, so
 
   return (
     <div className={classNames(cl.ArticleSortSelector, {}, [className])}>
-      <Select value={sort} onChange={onChangeSort} options={sortOptionsList} label={t('Сортировать по')} />
+      <Select
+        value={sort}
+        onChange={onChangeSort}
+        options={sortOptionsList}
+        label={t('Сортировать по')}
+      />
       <Select value={order} onChange={onChangeOrder} options={orderOptionsList} label={t('По')} />
     </div>
   )

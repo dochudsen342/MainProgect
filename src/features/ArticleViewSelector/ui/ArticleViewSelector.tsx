@@ -34,7 +34,10 @@ const ArticleViewSelector = ({ className, onViewClick, view }: ArticleViewSelect
       {viewTypes.map((viewType, index) => {
         return (
           <Button key={index} onClick={onClick(viewType.view)} theme={ThemeButton.CLEAR}>
-            <Icon className={classNames(cl.icon, { [cl.Selected]: viewType.view === view })} Svg={viewType.icon} />
+            <Icon
+              className={classNames(cl.icon, { [cl.Selected]: viewType.view === view })}
+              Svg={viewType.icon}
+            />
           </Button>
         )
       })}

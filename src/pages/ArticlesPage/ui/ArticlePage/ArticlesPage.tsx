@@ -5,7 +5,9 @@ import { initArticlesPage } from '../../model/service/initArticlesPage/initArtic
 import { useSelector } from 'react-redux'
 import { useSearchParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 import {
@@ -39,7 +41,10 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
-      <PageWrapper onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlePage, {}, [className])}>
+      <PageWrapper
+        onScrollEnd={onLoadNextPart}
+        className={classNames(cl.ArticlePage, {}, [className])}
+      >
         <ArticlesFillterPage />
         <ArticleList className={cl.list} isLoading={isLoading} view={view} articles={articles} />
       </PageWrapper>

@@ -8,6 +8,7 @@ import Avatar from 'shared/ui/Avatar/Avatar'
 import { Currency, CurrencySelect } from 'entities/Currency'
 import { Country } from 'entities/Country/model/types/country'
 import { CountrySelect } from 'entities/Country'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ProfileCardProps {
   className?: string
@@ -49,94 +50,109 @@ const ProfileCard = (props: ProfileCardProps) => {
 
   if (isLoading) {
     return (
-      <div className={classNames(cl.ProfileCard, { [cl.loading]: true }, [className])}>
+      <HStack
+        max
+        justify='centre'
+        className={classNames(cl.ProfileCard, { [cl.loading]: true }, [className])}
+      >
         <Spiner />
-      </div>
+      </HStack>
     )
   }
 
   if (error) {
     return (
-      <div className={classNames(cl.ProfileCard, { [cl.error]: true }, [className])}>
+      <HStack
+        justify='centre'
+        max
+        className={classNames(cl.ProfileCard, { [cl.error]: true }, [className])}
+      >
         <span>{t('Произошла ошибка при загрузке профиля')}</span>
         <p className={cl.error_advice}>{t('Попробуйте обновить страницу')}</p>
-      </div>
+      </HStack>
     )
   }
 
   return (
-    <div className={classNames(cl.ProfileCard, mods, [className])}>
-      {data?.avatar && <Avatar alt='Фото хакера' size={150} src={data?.avatar} />}
-      <div className={cl.data}>
-        <div className={cl.data_input}>
-          <span>{t('Ваше имя:')}</span>
-          <Input
-            onChange={onChangeFirstName}
-            inputTheme={inputTheme.CLEAR}
-            disabled={readonly}
-            className={cl.input}
-            value={data?.firstname}
-          />
-        </div>
-        <div className={cl.data_input}>
-          <span>{t('Ваша фамилия:')}</span>
-          <Input
-            onChange={onChangeLastName}
-            inputTheme={inputTheme.CLEAR}
-            disabled={readonly}
-            className={cl.input}
-            value={data?.lastname}
-          />
-        </div>
-        <div className={cl.data_input}>
-          <span>{t('Ваш возраст:')}</span>
-          <Input
-            onChange={onChangeAge}
-            inputTheme={inputTheme.CLEAR}
-            disabled={readonly}
-            className={cl.input}
-            value={data?.age}
-          />
-        </div>
-        <div className={cl.data_input}>
-          <span>{t('Ваш город:')}</span>
-          <Input
-            onChange={onChangeCity}
-            inputTheme={inputTheme.CLEAR}
-            disabled={readonly}
-            className={cl.input}
-            value={data?.city}
-          />
-        </div>
-        <div className={cl.data_input}>
-          <span>{t('Ваш Username:')}</span>
-          <Input
-            onChange={onChangeUsername}
-            inputTheme={inputTheme.CLEAR}
-            disabled={readonly}
-            className={cl.input}
-            value={data?.username}
-          />
-        </div>
-        <div className={cl.data_input}>
-          <span>{t('Ссылка на аватар:')}</span>
-          <Input
-            onChange={onChangeAvatar}
-            inputTheme={inputTheme.CLEAR}
-            disabled={readonly}
-            className={cl.input}
-            value={data?.avatar}
-          />
-        </div>
-        <CurrencySelect
-          readonly={readonly}
-          className={cl.data_input}
-          value={data?.currency}
-          onChange={onChangeCurrency}
+    <VStack gap='8' max className={classNames(cl.ProfileCard, mods, [className])}>
+      {data?.avatar && (
+        <HStack max justify='centre'>
+          <Avatar alt='Фото хакера' size={150} src={data?.avatar} />
+        </HStack>
+      )}
+      <div className={cl.data_input}>
+        <span>{t('Ваше имя:')}</span>
+        <Input
+          onChange={onChangeFirstName}
+          inputTheme={inputTheme.CLEAR}
+          disabled={readonly}
+          className={cl.input}
+          value={data?.firstname}
         />
-        <CountrySelect readonly={readonly} className={cl.data_input} value={data?.country} onChange={onChangeCountry} />
       </div>
-    </div>
+      <div className={cl.data_input}>
+        <span>{t('Ваша фамилия:')}</span>
+        <Input
+          onChange={onChangeLastName}
+          inputTheme={inputTheme.CLEAR}
+          disabled={readonly}
+          className={cl.input}
+          value={data?.lastname}
+        />
+      </div>
+      <div className={cl.data_input}>
+        <span>{t('Ваш возраст:')}</span>
+        <Input
+          onChange={onChangeAge}
+          inputTheme={inputTheme.CLEAR}
+          disabled={readonly}
+          className={cl.input}
+          value={data?.age}
+        />
+      </div>
+      <div className={cl.data_input}>
+        <span>{t('Ваш город:')}</span>
+        <Input
+          onChange={onChangeCity}
+          inputTheme={inputTheme.CLEAR}
+          disabled={readonly}
+          className={cl.input}
+          value={data?.city}
+        />
+      </div>
+      <div className={cl.data_input}>
+        <span>{t('Ваш Username:')}</span>
+        <Input
+          onChange={onChangeUsername}
+          inputTheme={inputTheme.CLEAR}
+          disabled={readonly}
+          className={cl.input}
+          value={data?.username}
+        />
+      </div>
+      <div className={cl.data_input}>
+        <span>{t('Ссылка на аватар:')}</span>
+        <Input
+          onChange={onChangeAvatar}
+          inputTheme={inputTheme.CLEAR}
+          disabled={readonly}
+          className={cl.input}
+          value={data?.avatar}
+        />
+      </div>
+      <CurrencySelect
+        readonly={readonly}
+        className={cl.data_input}
+        value={data?.currency}
+        onChange={onChangeCurrency}
+      />
+      <CountrySelect
+        readonly={readonly}
+        className={cl.data_input}
+        value={data?.country}
+        onChange={onChangeCountry}
+      />
+    </VStack>
   )
 }
 

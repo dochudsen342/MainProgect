@@ -109,11 +109,21 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
   return (
     <div className={classNames(cl.ArticlesFillterPage, {}, [className])}>
       <div className={cl.sortWrapper}>
-        <ArticleSortSelector onChangeOrder={onChangeOrder} onChangeSort={onChangeSort} order={order} sort={sort} />
+        <ArticleSortSelector
+          onChangeOrder={onChangeOrder}
+          onChangeSort={onChangeSort}
+          order={order}
+          sort={sort}
+        />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
       <Card className={cl.search}>
-        <Input value={search} onChange={onChangeSearch} className={cl.searchInput} inputTheme={inputTheme.CLEAR} />
+        <Input
+          value={search}
+          onChange={onChangeSearch}
+          className={cl.searchInput}
+          inputTheme={inputTheme.CLEAR}
+        />
       </Card>
       <Tabs tabs={typeTabs} value={typeValue} onTabClick={onChangeTabs} />
     </div>

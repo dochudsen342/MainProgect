@@ -21,7 +21,11 @@ const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
   }
 
   return (
-    <AppLink theme={AppLinkTheme.PRIMARY} to={item.path} className={classNames(cl.item, { [cl.collapsed]: collapsed })}>
+    <AppLink
+      theme={AppLinkTheme.PRIMARY}
+      to={item.path}
+      className={classNames(cl.item, { [cl.collapsed]: collapsed })}
+    >
       <item.Icon className={cl.icon} />
       <span className={classNames(cl.link)}>{t(item.text)}</span>
     </AppLink>

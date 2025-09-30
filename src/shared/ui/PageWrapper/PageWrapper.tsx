@@ -20,7 +20,9 @@ const PageWrapper = ({ className, children, onScrollEnd }: PageWrapperProps) => 
   const triggerRef = useRef<HTMLDivElement>(null)
   const dispatch = useAppDispatch()
   const { pathname } = useLocation()
-  const scrollPosition = useSelector((state: StateSchema) => getScrollRestorationByPath(state, pathname))
+  const scrollPosition = useSelector((state: StateSchema) =>
+    getScrollRestorationByPath(state, pathname),
+  )
 
   useInfiniteScroll({
     wrapperRef,
@@ -41,7 +43,11 @@ const PageWrapper = ({ className, children, onScrollEnd }: PageWrapperProps) => 
     wrapperRef.current.scrollTop = scrollPosition
   }, [scrollPosition])
   return (
-    <section onScroll={onScroll} ref={wrapperRef} className={classNames(cl.PageWrapper, {}, [className])}>
+    <section
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={classNames(cl.PageWrapper, {}, [className])}
+    >
       {children}
       <div className={cl.infiniteTrigger} ref={triggerRef}></div>
     </section>

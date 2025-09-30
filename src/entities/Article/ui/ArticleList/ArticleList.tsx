@@ -24,7 +24,15 @@ const ArticleList = ({ className, articles, isLoading, view, target }: ArticleLi
 
   const renderArticle = useCallback(
     (article: Article) => {
-      return <ArticleItem target={target} key={article.id} className={cl.card} article={article} view={view} />
+      return (
+        <ArticleItem
+          target={target}
+          key={article.id}
+          className={cl.card}
+          article={article}
+          view={view}
+        />
+      )
     },
     [articles, view],
   )

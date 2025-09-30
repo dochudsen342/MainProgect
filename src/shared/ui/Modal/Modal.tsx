@@ -44,7 +44,10 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     <Portal>
       <div className={classNames(cl.Modal, mods, [theme])}>
         <div onClick={onCloseHandler} className={cl.overlay}>
-          <div className={classNames(cl.content, { [cl[theme]]: true })} onClick={(e) => onContentClick(e)}>
+          <div
+            className={classNames(cl.content, { [cl[theme]]: true })}
+            onClick={(e) => onContentClick(e)}
+          >
             {children}
           </div>
         </div>

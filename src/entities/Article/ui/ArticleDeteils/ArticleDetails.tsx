@@ -4,7 +4,9 @@ import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsDa
 import { getArticleDetailsError } from '../../model/selectors/getArticleDetailsError/getArticleDetailsError'
 import { getArticleDetailsIsLoading } from '../../model/selectors/getArticleDetailsIsLoading/getArticleDetailsIsLoading'
 import { useSelector } from 'react-redux'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { ArticleDetailsReducers } from '../../model/slice/articleDetailsSlice'
@@ -74,7 +76,12 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         <div className={cl.avatar}>
           <Avatar size={200} alt={'avatar'} src={article?.img} />
         </div>
-        <Text size={TextSize.L} title={article?.title} aligin={TextAligin.LEFT} text={article?.subtitle} />
+        <Text
+          size={TextSize.L}
+          title={article?.title}
+          aligin={TextAligin.LEFT}
+          text={article?.subtitle}
+        />
         <div className={cl.articleInfo}>
           <Icon theme={IconFill.SECONDARY} Svg={EyeIcon} />
           <Text size={TextSize.M} title={String(article?.views)} />

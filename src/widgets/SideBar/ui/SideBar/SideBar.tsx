@@ -7,6 +7,7 @@ import SideBarItem from '../SideBarItem/SideBarItem'
 import cl from './SideBar.module.scss'
 import { useSelector } from 'react-redux'
 import { getSideBarItems } from '../../model/selectors/getSideBarItems'
+import { VStack } from 'shared/ui/Stack'
 
 interface SideBarProps {
   className?: string
@@ -19,16 +20,29 @@ const SideBar = memo(({ className }: SideBarProps) => {
   }
   const sideBarItemsList = useSelector(getSideBarItems)
   const linkList = useMemo(
-    () => sideBarItemsList.map((item) => <SideBarItem collapsed={collapsed} item={item} key={item.path} />),
+    () =>
+      sideBarItemsList.map((item) => (
+        <SideBarItem collapsed={collapsed} item={item} key={item.path} />
+      )),
     [collapsed],
   )
 
   return (
-    <div data-testid='sidebar' className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className])}>
-      <Button square={false} theme={ThemeButton.BACKGROUND_INVERTED} onClick={onToggle} className={cl.SideBarBtn}>
+    <div
+      data-testid='sidebar'
+      className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className])}
+    >
+      <Button
+        square={false}
+        theme={ThemeButton.BACKGROUND_INVERTED}
+        onClick={onToggle}
+        className={cl.SideBarBtn}
+      >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={cl.items}>{linkList}</div>
+      <VStack gap='8' className={cl.items}>
+        {linkList}
+      </VStack>
       <div className={classNames(cl.switchers)}>
         <ThemeSwitcher />
         <LangSwitcher collapsed={collapsed} />

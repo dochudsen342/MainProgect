@@ -28,7 +28,11 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
   }
   return (
     <div className={classNames(cl.CommentCard, {}, [className])}>
-      <AppLink theme={AppLinkTheme.INVERTED} to={`${RoutePath.profile}${comment?.user.id}`} className={cl.header}>
+      <AppLink
+        theme={AppLinkTheme.INVERTED}
+        to={`${RoutePath.profile}${comment?.user.id}`}
+        className={cl.header}
+      >
         {comment?.user.avatar ? <Avatar src={comment?.user.avatar} size={30} /> : null}
         <Text className={cl.userName} title={comment?.user.username} />
       </AppLink>

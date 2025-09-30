@@ -11,7 +11,9 @@ import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLogi
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLodaing'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
-import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import DynamicReducerLoader, {
+  ReducerList,
+} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 
 export interface LoginFormProps {
   className?: string
@@ -61,8 +63,19 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
           className={cl.input}
           type='text'
         />
-        <Input value={password} onChange={onChangePassword} placeholder={t('Пароль')} className={cl.input} type='text' />
-        <Button theme={ThemeButton.OUTLINE} disabled={isLoading} onClick={onLoginClick} className={cl.LoginBtn}>
+        <Input
+          value={password}
+          onChange={onChangePassword}
+          placeholder={t('Пароль')}
+          className={cl.input}
+          type='text'
+        />
+        <Button
+          theme={ThemeButton.OUTLINE}
+          disabled={isLoading}
+          onClick={onLoginClick}
+          className={cl.LoginBtn}
+        >
           {t('Войти')}
         </Button>
       </div>

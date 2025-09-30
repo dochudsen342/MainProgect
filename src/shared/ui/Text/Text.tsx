@@ -33,7 +33,15 @@ interface TextProps {
   size?: TextSize
 }
 
-const Text = ({ className, textWeight, title, text, theme, aligin, size = TextSize.M }: TextProps) => {
+const Text = ({
+  className,
+  textWeight,
+  title,
+  text,
+  theme,
+  aligin,
+  size = TextSize.M,
+}: TextProps) => {
   const mods: Record<string, boolean> = {
     [cl[theme]]: true,
     [cl[aligin]]: true,

@@ -36,7 +36,14 @@ const Select = memo(({ className, label, options, value, readonly, onChange }: S
   return (
     <div className={classNames(cl.Wrapper, {}, [className])}>
       {label && <span className={cl.label}>{label}</span>}
-      <select onChange={onChangeSelect} disabled={readonly} className={cl.select} value={value} name='' id=''>
+      <select
+        onChange={onChangeSelect}
+        disabled={readonly}
+        className={cl.select}
+        value={value}
+        name=''
+        id=''
+      >
         {optionsList}
       </select>
     </div>

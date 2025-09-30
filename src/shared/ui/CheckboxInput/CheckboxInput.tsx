@@ -51,7 +51,9 @@ const CheckboxInput = (props: CheckboxInputProps) => {
 
   return (
     <div className={cl.inputWrapper}>
-      {chekboxText && <Text textWeight={textWeight} className={cl.checkboxText} text={chekboxText} />}
+      {chekboxText && (
+        <Text textWeight={textWeight} className={cl.checkboxText} text={chekboxText} />
+      )}
       <input
         ref={inputRef}
         type={type}

@@ -1,8 +1,7 @@
-import { ArticlCommentListSchema } from "features/ArticleCommentList";
-import { ArticleDetailsPageRecomendationsSchema } from "./articleDetailsPageRecomendationsSchema";
-
+import { ArticlCommentListSchema } from 'features/ArticleCommentList'
+import { ArticleDetailsPageRecomendationsSchema } from './articleDetailsPageRecomendationsSchema'
 
 export interface ArticlesDetailsPageSchema {
-    recomendations: ArticleDetailsPageRecomendationsSchema,
-    commments: ArticlCommentListSchema
+  recomendations: ArticleDetailsPageRecomendationsSchema
+  commments: ArticlCommentListSchema
 }

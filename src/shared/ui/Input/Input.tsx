@@ -22,8 +22,8 @@ interface InputProps extends HTMLInputProps {
   disabled?: boolean
 }
 
-const Input = memo(
-  ({
+const Input = memo((props: InputProps) => {
+  const {
     className,
     chekboxText,
     type = 'text',
@@ -34,38 +34,38 @@ const Input = memo(
     inputTheme,
     disabled,
     ...outherProps
-  }: InputProps) => {
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-      onChange?.(e.target.value)
+  } = props
+
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value)
+  }
+
+  const mods = {
+    [cl[inputTheme]]: true,
+  }
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  useEffect(() => {
+    if (autoFocus) {
+      inputRef.current.focus()
     }
+  }, [autoFocus])
 
-    const mods = {
-      [cl[inputTheme]]: true,
-    }
-    const inputRef = useRef<HTMLInputElement>(null)
-
-    useEffect(() => {
-      if (autoFocus) {
-        inputRef.current.focus()
-      }
-    }, [autoFocus])
-
-    return (
-      <div className={cl.inputWrapper}>
-        {chekboxText && <Text className={cl.checkboxText} text={chekboxText} />}
-        <input
-          ref={inputRef}
-          type={type}
-          onChange={onChangeHandler}
-          value={value}
-          placeholder={placeholder}
-          disabled={disabled}
-          className={classNames(cl.Input, mods, [className])}
-          {...outherProps}
-        />
-      </div>
-    )
-  },
-)
+  return (
+    <div className={cl.inputWrapper}>
+      {chekboxText && <Text className={cl.checkboxText} text={chekboxText} />}
+      <input
+        ref={inputRef}
+        type={type}
+        onChange={onChangeHandler}
+        value={value}
+        placeholder={placeholder}
+        disabled={disabled}
+        className={classNames(cl.Input, mods, [className])}
+        {...outherProps}
+      />
+    </div>
+  )
+})
 
 export default Input

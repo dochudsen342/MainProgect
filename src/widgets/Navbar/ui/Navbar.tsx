@@ -36,7 +36,11 @@ export const Navbar = () => {
   if (userAuthData) {
     return (
       <div className={classNames(cl.navbar)}>
-        <AppLink className={cl.createBtn} theme={AppLinkTheme.PRIMARY} to={RoutePath.article_create}>
+        <AppLink
+          className={cl.createBtn}
+          theme={AppLinkTheme.PRIMARY}
+          to={RoutePath.article_create}
+        >
           {t('Создать статью')}
         </AppLink>
         <Button square onClick={onLogout} theme={ThemeButton.CLEAR_INVERTED} className={cl.links}>
