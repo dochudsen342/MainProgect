@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import { fn } from 'storybook/test';
-import ThemeDecorator from 'shared/lib/decorators/theme.decorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import Input from './Input';
+import { fn } from 'storybook/test'
+import ThemeDecorator from 'shared/lib/decorators/theme.decorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import Input from './Input'
 
 const meta = {
   title: 'shared/Input',
@@ -13,23 +13,20 @@ const meta = {
   },
   tags: ['autodocs'],
   args: { onClick: fn() },
-   
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Input>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const InputDark: Story = {
   args: {
-    placeholder:'some text'
+    placeholder: 'some text',
   },
-  decorators:[ThemeDecorator(Theme.DARK)]
+  decorators: [ThemeDecorator(Theme.DARK)],
 }
 export const InputLight: Story = {
   args: {
-    placeholder:'some text'
+    placeholder: 'some text',
   },
- decorators:[ThemeDecorator(Theme.LIGHT)]
-};
-
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+}

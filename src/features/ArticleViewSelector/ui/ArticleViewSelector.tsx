@@ -8,36 +8,36 @@ import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import Icon from 'shared/ui/Icon/Icon'
 
 interface ArticleViewSelectorProps {
-  className?: string,
-  onViewClick?:(newView:ArticleView) => void,
-  view:ArticleView,
-
+  className?: string
+  onViewClick?: (newView: ArticleView) => void
+  view: ArticleView
 }
 
 const viewTypes = [
-    {
-        view:ArticleView.BIG,
-        icon:ListIcon
-    },
-    {
-        view:ArticleView.SMALL,
-        icon:TiledIcon
-    }
+  {
+    view: ArticleView.BIG,
+    icon: ListIcon,
+  },
+  {
+    view: ArticleView.SMALL,
+    icon: TiledIcon,
+  },
 ]
 
-const ArticleViewSelector = ({className,onViewClick,view}:ArticleViewSelectorProps) => {
-    
-    const onClick = (newView:ArticleView) => () => {
-        console.log(newView)
-            onViewClick?.(newView)
-    }
+const ArticleViewSelector = ({ className, onViewClick, view }: ArticleViewSelectorProps) => {
+  const onClick = (newView: ArticleView) => () => {
+    console.log(newView)
+    onViewClick?.(newView)
+  }
   return (
     <div className={classNames(cl.ArticleViewSelector, {}, [className])}>
-        {viewTypes.map((viewType,index) => {
-            return <Button key={index} onClick={onClick(viewType.view)} theme={ThemeButton.CLEAR}>
-                <Icon className={classNames(cl.icon,{[cl.Selected]:viewType.view === view})} Svg={viewType.icon}/>
-            </Button>
-        })}
+      {viewTypes.map((viewType, index) => {
+        return (
+          <Button key={index} onClick={onClick(viewType.view)} theme={ThemeButton.CLEAR}>
+            <Icon className={classNames(cl.icon, { [cl.Selected]: viewType.view === view })} Svg={viewType.icon} />
+          </Button>
+        )
+      })}
     </div>
   )
 }

@@ -4,7 +4,7 @@ import { CommentList } from 'entities/Comment'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { fetchCommentsByArticleId } from 'features/ArticleCommentList'
 import { getArticleCommentsIsLoading } from 'features/ArticleCommentList/model/selectors/getArticleCommentsSelectors/ArticleCommentsSelectors'
-import { articleCommentListReducer, getArticleComments } from 'features/ArticleCommentList/model/slice/ArticleCommentListSlice'
+import { getArticleComments } from 'features/ArticleCommentList/model/slice/ArticleCommentListSlice'
 import { addCommentForArticle } from '../../model/service/addCommentForArticle/addCommentForArticle'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
@@ -14,22 +14,22 @@ import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/Dynamic
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import Text, { TextSize } from 'shared/ui/Text/Text'
 import cl from './ArticleDetailsPage.module.scss'
-import Button, { ThemeButton } from 'shared/ui/Button/Button'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 import { getArticleRecomendation } from '../../model/slices/articleDetailsPageRecomentionsSlice'
-import { getArticleDetailsPageRecomendationError, getArticleDetailsPageRecomendationIsLoading } from 'pages/ArticleDetailsPage/model/selectors/recomendations'
+import {
+  getArticleDetailsPageRecomendationError,
+  getArticleDetailsPageRecomendationIsLoading,
+} from '../../model/selectors/recomendations'
 import { fetchArticleRecomendations } from '../../model/service/fetchArticleRecomendations/fetchArticleRecomendations'
-import { articleDetailsPageReducers } from 'pages/ArticleDetailsPage/model/slices'
+import { articleDetailsPageReducers } from '../../model/slices'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
-
- interface ArticleDetailsPageProps {
-  className?: string,
+interface ArticleDetailsPageProps {
+  className?: string
 }
 
-const reducerList:ReducerList = {
-  articleDetailsPage:articleDetailsPageReducers,
+const reducerList: ReducerList = {
+  articleDetailsPage: articleDetailsPageReducers,
 }
 
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
@@ -43,34 +43,42 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
-  const onSendComment = useCallback((text:string) =>{
-    dispatch(addCommentForArticle(text))
-  },[dispatch])
-  
-  useEffect(() =>{
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text))
+    },
+    [dispatch],
+  )
+
+  useEffect(() => {
     dispatch(fetchCommentsByArticleId(id))
     dispatch(fetchArticleRecomendations())
-  },[])
+  }, [])
 
   if (!id) {
-    return <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-      {t('Такой статьи нет!')}
-    </PageWrapper>
+    return (
+      <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>{t('Такой статьи нет!')}</PageWrapper>
+    )
   }
 
   return (
-    <DynamicReducerLoader removeAfterUnmount= {true} reducers={reducerList}>
+    <DynamicReducerLoader removeAfterUnmount={true} reducers={reducerList}>
       <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader/>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        <Text size={TextSize.L} title={('Рекомендуем')}/>
-        <ArticleList target='_blank' className={cl.articleRecomendList} view={ArticleView.SMALL} articles={recomendations} isLoading={recomendationsIsLoading}/>
+        <Text size={TextSize.L} title={'Рекомендуем'} />
+        <ArticleList
+          target='_blank'
+          className={cl.articleRecomendList}
+          view={ArticleView.SMALL}
+          articles={recomendations}
+          isLoading={recomendationsIsLoading}
+        />
         <Text title={'Комментарии'} />
-        <AddCommentForm onSendComment={onSendComment}/>
-        <CommentList isLoading = {isLoading} comments={commentList} />
+        <AddCommentForm onSendComment={onSendComment} />
+        <CommentList isLoading={isLoading} comments={commentList} />
       </PageWrapper>
     </DynamicReducerLoader>
-
   )
 }
 

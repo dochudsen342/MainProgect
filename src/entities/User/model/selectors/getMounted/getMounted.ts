@@ -1,3 +1,3 @@
-import { StateSchema } from "app/providers/StoreProvider";
+import { StateSchema } from 'app/providers/StoreProvider'
 
-export const getMounted = (state:StateSchema) => state?.user?._mounted
+export const getMounted = (state: StateSchema) => state?.user?._mounted

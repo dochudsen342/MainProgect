@@ -8,16 +8,19 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import DynamicReducerLoader, { ReducerList } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
-import { getArticleListIsLoading, getArticleListView } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
+import {
+  getArticleListIsLoading,
+  getArticleListView,
+} from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
 import { articlePageReducer, getArticleList } from '../../model/slice/articlePageSlice'
 import ArticlesFillterPage from '../ArticlesFillterPage/ArticlesFillterPage'
 import cl from './ArticlePage.module.scss'
 
 interface ArticlePageProps {
-  className?: string,
+  className?: string
 }
-const reducers:ReducerList = {
-  articlePage:articlePageReducer
+const reducers: ReducerList = {
+  articlePage: articlePageReducer,
 }
 const ArticlePage = ({ className }: ArticlePageProps) => {
   const dispatch = useAppDispatch()
@@ -25,19 +28,19 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
   const view = useSelector(getArticleListView)
   const isLoading = useSelector(getArticleListIsLoading)
   let [searchParams] = useSearchParams()
-  
+
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPart())
-  },[dispatch])
+  }, [dispatch])
 
   useEffect(() => {
     dispatch(initArticlesPage(searchParams))
   }, [])
- 
+
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount = {false}>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <PageWrapper onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlePage, {}, [className])}>
-        <ArticlesFillterPage/>
+        <ArticlesFillterPage />
         <ArticleList className={cl.list} isLoading={isLoading} view={view} articles={articles} />
       </PageWrapper>
     </DynamicReducerLoader>
@@ -45,6 +48,3 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
 }
 
 export default memo(ArticlePage)
-
-
-

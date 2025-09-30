@@ -4,14 +4,13 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { CreateArticleForm } from 'features/CreateArticleForm'
 
 interface ArticleCreatePageProps {
-  className?: string,
+  className?: string
 }
 
-const ArticleCreatePage = ({className}:ArticleCreatePageProps) => {
- 
+const ArticleCreatePage = ({ className }: ArticleCreatePageProps) => {
   return (
     <div className={classNames(cl.ArticleCreatePage, {}, [className])}>
-      <CreateArticleForm/>
+      <CreateArticleForm />
     </div>
   )
 }

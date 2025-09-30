@@ -1,5 +1,3 @@
-import ArticleSortSelector from "./ui/ArticleSortSelector";
+import ArticleSortSelector from './ui/ArticleSortSelector'
 
-export {
-    ArticleSortSelector
-}
+export { ArticleSortSelector }

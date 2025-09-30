@@ -3,7 +3,7 @@ import cl from './Button.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 export enum ThemeButton {
-  CLEAR = "clear",
+  CLEAR = 'clear',
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
   CLEAR_INVERTED = 'clear_inverted',
@@ -17,25 +17,25 @@ export enum ButtonSize {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string,
-  theme?: ThemeButton,
-  square?:boolean,
-  size?:ButtonSize,
-  disabled?:boolean,
+  className?: string
+  theme?: ThemeButton
+  square?: boolean
+  size?: ButtonSize
+  disabled?: boolean
 }
 
 const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
-  const { theme, children, className,square,size,disabled, ...otherProps } = props
+  const { theme, children, className, square, size, disabled, ...otherProps } = props
 
-  const mods:Record<string,boolean> = {
+  const mods: Record<string, boolean> = {
     [cl[theme]]: true,
-    [cl.square]:square,
-    [cl[size]]:true,
-    [cl.disabled]:disabled,
+    [cl.square]: square,
+    [cl[size]]: true,
+    [cl.disabled]: disabled,
   }
-  
+
   return (
-    <button disabled = {disabled} {...otherProps} className={classNames(cl.Button, mods, [className])}>
+    <button disabled={disabled} {...otherProps} className={classNames(cl.Button, mods, [className])}>
       {children}
     </button>
   )

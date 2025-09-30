@@ -1,4 +1,4 @@
-.Modal{
+.Modal {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -12,21 +12,16 @@
     color: var(--secondary-color);
 }
 
-
-
-.overlay{
+.overlay {
     width: 100%;
     height: 100%;
     background-color: var(--overlay-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
-
-
-.content{
+.content {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,12 +35,11 @@
     max-width: 50%;
 }
 
-.opened{
+.opened {
     pointer-events: auto;
     opacity: 1;
-    z-index: 10 ;
-    .content{
+    z-index: 10;
+    .content {
         transform: scale(1);
-
     }
 }

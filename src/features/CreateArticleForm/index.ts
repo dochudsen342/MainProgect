@@ -1,5 +1,3 @@
-import CreateArticleForm from "./ui/CreateArticleForm/CreateArticleForm";
+import CreateArticleForm from './ui/CreateArticleForm/CreateArticleForm'
 
-export {
-    CreateArticleForm,
-}
+export { CreateArticleForm }

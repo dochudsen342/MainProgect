@@ -5,7 +5,7 @@ import Spiner from 'shared/ui/Spiner/Spiner'
 const PageLoader = () => {
   return (
     <div className={cl.PageLoader}>
-      <Spiner/>
+      <Spiner />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-.SideBar{
+.SideBar {
     position: relative;
     height: calc(100vh - var(--navbar-height));
     width: var(--sideBar-width);
@@ -8,8 +8,7 @@
     padding-top: 10px;
 }
 
-
-.switchers{
+.switchers {
     position: absolute;
     bottom: 20px;
     display: flex;
@@ -19,7 +18,7 @@
     width: 100%;
 }
 
-.SideBarBtn{
+.SideBarBtn {
     position: absolute;
     top: 2px;
     right: 30px;
@@ -30,8 +29,7 @@
     height: 40px;
 }
 
-
-.items{
+.items {
     margin-top: 15px;
     margin-left: 15px;
     display: flex;
@@ -39,10 +37,6 @@
     row-gap: 17px;
 }
 
-
-.collapsed{
+.collapsed {
     width: var(--sideBar-width-collapsed);
 }
-
-
-

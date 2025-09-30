@@ -1,22 +1,19 @@
-.CreateArticleForm{
+.CreateArticleForm {
     display: flex;
     column-gap: 50px;
-    height:100vh;
+    height: 100vh;
     border: 3px solid var(--secondary-color);
     padding: 10px;
 }
 
-.CreateArticleFormTitle{
+.CreateArticleFormTitle {
     margin-bottom: 10px;
 }
 
-
-.mainTextInfo{
-
+.mainTextInfo {
 }
 
-
-.articleMainFields{
+.articleMainFields {
     display: flex;
     flex-direction: column;
     row-gap: 10px;

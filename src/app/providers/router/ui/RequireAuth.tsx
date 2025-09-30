@@ -1,23 +1,21 @@
-import { getAuthData } from "entities/User";
-import { ReactNode } from "react";
-import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { getAuthData } from 'entities/User'
+import { ReactNode } from 'react'
+import { useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface RequireAuthProps {
-    children:ReactNode
+  children: ReactNode
 }
 
-
-export const RequireAuth = ({ children }:RequireAuthProps) => {
-  const auth = useSelector(getAuthData);
+export const RequireAuth = ({ children }: RequireAuthProps) => {
+  const auth = useSelector(getAuthData)
 
   if (!auth) {
-    return <Navigate to={RoutePath.main}/>;
+    return <Navigate to={RoutePath.main} />
   }
- 
 
-  return children;
-};
+  return children
+}
 
-export default RequireAuth;
+export default RequireAuth

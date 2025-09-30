@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import { fn } from 'storybook/test';
-import ThemeDecorator from 'shared/lib/decorators/theme.decorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import Spiner from './Spiner';
+import { fn } from 'storybook/test'
+import ThemeDecorator from 'shared/lib/decorators/theme.decorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import Spiner from './Spiner'
 
 const meta = {
   title: 'shared/Spiner',
@@ -13,17 +13,14 @@ const meta = {
   },
   tags: ['autodocs'],
   args: { onClick: fn() },
-   
-} satisfies Meta<typeof Spiner>;
+} satisfies Meta<typeof Spiner>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const SpinerDark: Story = {
-  decorators:[ThemeDecorator(Theme.DARK)]
+  decorators: [ThemeDecorator(Theme.DARK)],
 }
 export const SpinerLight: Story = {
- decorators:[ThemeDecorator(Theme.LIGHT)]
-};
-
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+}

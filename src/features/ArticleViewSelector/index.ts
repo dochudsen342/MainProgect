@@ -1,5 +1,3 @@
-import ArticleViewSelector from "./ui/ArticleViewSelector";
+import ArticleViewSelector from './ui/ArticleViewSelector'
 
-export {
-    ArticleViewSelector,
-}
+export { ArticleViewSelector }

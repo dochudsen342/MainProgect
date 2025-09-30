@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import { fn } from 'storybook/test';
-import ThemeDecorator from 'shared/lib/decorators/theme.decorator';
-import { Theme } from 'app/providers/ThemeProvider';
-import Tabs from './Tabs';
+import { fn } from 'storybook/test'
+import ThemeDecorator from 'shared/lib/decorators/theme.decorator'
+import { Theme } from 'app/providers/ThemeProvider'
+import Tabs from './Tabs'
 
 const meta = {
   title: 'shared/Tabs',
@@ -12,34 +12,30 @@ const meta = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-   
-} satisfies Meta<typeof Tabs>;
+} satisfies Meta<typeof Tabs>
 
-export default meta;
-type Story = StoryObj<typeof meta>;
-
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const TabsDark: Story = {
   args: {
-    tabs:[
-        {value:'tab 1', content:'tab 1'},
-        {value:'tab 2', content:'tab 2'},
-        {value:'tab 3', content:'tab 3'},
+    tabs: [
+      { value: 'tab 1', content: 'tab 1' },
+      { value: 'tab 2', content: 'tab 2' },
+      { value: 'tab 3', content: 'tab 3' },
     ],
-    value:'tab 2',
+    value: 'tab 2',
   },
-  decorators:[ThemeDecorator(Theme.DARK)]
+  decorators: [ThemeDecorator(Theme.DARK)],
 }
 export const TabsLight: Story = {
- args: {
-    tabs:[
-        {value:'tab 1', content:'tab 1'},
-        {value:'tab 2', content:'tab 2'},
-        {value:'tab 3', content:'tab 3'},
+  args: {
+    tabs: [
+      { value: 'tab 1', content: 'tab 1' },
+      { value: 'tab 2', content: 'tab 2' },
+      { value: 'tab 3', content: 'tab 3' },
     ],
-    value:'tab 2',
+    value: 'tab 2',
   },
- decorators:[ThemeDecorator(Theme.LIGHT)]
-};
-
-
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+}

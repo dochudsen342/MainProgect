@@ -1,9 +1,9 @@
-.LoginForm{
+.LoginForm {
     display: flex;
     flex-direction: column;
 }
 
-.input{
+.input {
     margin-top: 10px;
     border: none;
     outline: none;
@@ -12,21 +12,19 @@
     padding-left: 10px;
 }
 
-.LoginBtn{
+.LoginBtn {
     margin-top: 15px;
     width: 50%;
     align-self: center;
     transition: 0.3s;
 }
 
-.LoginForm_title{
+.LoginForm_title {
     font-size: var(--font-size-l);
     margin-bottom: 10px;
 }
 
-.LoginForm_error{
+.LoginForm_error {
     font-size: var(--font-size-m);
     color: var(--color-error);
 }
-
-

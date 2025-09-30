@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
     width: 100%;
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
@@ -8,17 +8,13 @@
     margin-bottom: 10px;
 }
 
-.link_navbar{
+.link_navbar {
     text-decoration: none;
     color: var(--primary-color);
 }
 
-.links{
+.links {
     margin-left: auto;
     display: flex;
     column-gap: 15px;
-}
-
-.createBtn{
-    
 }

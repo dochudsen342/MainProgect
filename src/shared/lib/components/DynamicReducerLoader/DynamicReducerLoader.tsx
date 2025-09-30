@@ -5,47 +5,42 @@ import { StateSchema, StateSchemaKey } from 'app/providers/StoreProvider/config/
 import { useDispatch, useStore } from 'react-redux'
 
 export type ReducerList = {
-    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 }
 
 type ReducerListEntry = [StateSchemaKey, Reducer]
 
-
 interface DynamicReducerLoaderProps {
-    reducers: ReducerList,
-    children: ReactNode,
-    removeAfterUnmount?: boolean
+  reducers: ReducerList
+  children: ReactNode
+  removeAfterUnmount?: boolean
 }
 
 const DynamicReducerLoader: FC<DynamicReducerLoaderProps> = ({ reducers, children, removeAfterUnmount }) => {
-    const store = useStore() as ReduxStoreWidhtManager
-    const dispatch = useDispatch()
-    useEffect(() => {
-        const mountedReducers = store.reducerManager.getReducerMap()
-        
-        Object.entries(reducers).forEach(([nameReducer, reducer]: ReducerListEntry) => {
-            const mounted = mountedReducers[nameReducer as StateSchemaKey]
-            if(!mounted){
-                store.reducerManager.add(nameReducer, reducer)
-                dispatch({ type: `@INIT ${nameReducer} reducer` })
-            }
+  const store = useStore() as ReduxStoreWidhtManager
+  const dispatch = useDispatch()
+  useEffect(() => {
+    const mountedReducers = store.reducerManager.getReducerMap()
+
+    Object.entries(reducers).forEach(([nameReducer, reducer]: ReducerListEntry) => {
+      const mounted = mountedReducers[nameReducer as StateSchemaKey]
+      if (!mounted) {
+        store.reducerManager.add(nameReducer, reducer)
+        dispatch({ type: `@INIT ${nameReducer} reducer` })
+      }
+    })
+
+    return () => {
+      if (removeAfterUnmount) {
+        Object.entries(reducers).forEach(([nameReducer]: ReducerListEntry) => {
+          store.reducerManager.remove(nameReducer)
+          dispatch({ type: `@DESTROY ${nameReducer} reducer` })
         })
+      }
+    }
+  }, [])
 
-        return () => {
-            if (removeAfterUnmount) {
-                Object.entries(reducers).forEach(([nameReducer]: ReducerListEntry) => {
-                    store.reducerManager.remove(nameReducer)
-                    dispatch({ type: `@DESTROY ${nameReducer} reducer` })
-                })
-            }
-        }
-    }, [])
-
-    return (
-        <>
-            {children}
-        </>
-    )
+  return <>{children}</>
 }
 
 export default DynamicReducerLoader

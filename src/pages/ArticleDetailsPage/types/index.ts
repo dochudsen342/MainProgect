@@ -3,6 +3,6 @@ import { ArticleDetailsPageRecomendationsSchema } from "./articleDetailsPageReco
 
 
 export interface ArticlesDetailsPageSchema {
-    recomendations:ArticleDetailsPageRecomendationsSchema,
-    commments:ArticlCommentListSchema
+    recomendations: ArticleDetailsPageRecomendationsSchema,
+    commments: ArticlCommentListSchema
 }

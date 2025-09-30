@@ -6,27 +6,19 @@ import cl from './LoginForm.module.scss'
 import Spiner from 'shared/ui/Spiner/Spiner'
 
 interface LoginModalProps {
-    className?: string,
-    isOpen: boolean,
-    onClose: () => void,
+  className?: string
+  isOpen: boolean
+  onClose: () => void
 }
 
-
-
 const LoginModal = ({ className, isOpen, onClose }: LoginModalProps) => {
-
-    return (
-        <Modal
-            isOpen={isOpen}
-            onClose={onClose}
-            lazy
-            className={classNames(cl.LoginModal, {}, [className])}
-        >
-            <Suspense fallback={<Spiner />}>
-                    <LoginFormAsync />
-            </Suspense>
-        </Modal>
-    )
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} lazy className={classNames(cl.LoginModal, {}, [className])}>
+      <Suspense fallback={<Spiner />}>
+        <LoginFormAsync />
+      </Suspense>
+    </Modal>
+  )
 }
 
 export default LoginModal

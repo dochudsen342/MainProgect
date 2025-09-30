@@ -3,23 +3,19 @@ import cl from './Skeleton.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 interface SkeletonProps {
-  className?: string,
-  height?:string | number,
-  width?:string | number,
-  border?:string,
+  className?: string
+  height?: string | number
+  width?: string | number
+  border?: string
 }
 
-const Skeleton = ({className,border,height,width}:SkeletonProps) => {
-  const styles:CSSProperties = {
+const Skeleton = ({ className, border, height, width }: SkeletonProps) => {
+  const styles: CSSProperties = {
     width,
     height,
-    borderRadius:border
+    borderRadius: border,
   }
-  return (
-    <div style={styles} className={classNames(cl.Skeleton, {}, [className])}>
-
-    </div>
-  )
+  return <div style={styles} className={classNames(cl.Skeleton, {}, [className])}></div>
 }
 
 export default Skeleton

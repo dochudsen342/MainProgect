@@ -1,12 +1,12 @@
-.Wraper{
+.Wraper {
     display: flex;
 }
 
-.label{
+.label {
     margin-right: 5px;
 }
 
-.select{
+.select {
     background-color: var(--bg-color);
     outline: none;
     color: var(--secondary-color);
@@ -14,8 +14,7 @@
     border: 1px solid var(--secondary-color);
 }
 
-.option{
+.option {
     color: var(--inverted-primary-color);
     background-color: var(--bg-color);
-
 }

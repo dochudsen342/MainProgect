@@ -6,15 +6,15 @@ import { useParams } from 'react-router-dom'
 import ArticleCreatePage from 'pages/ArticleCreatePage/ui/ArticleCreatePage'
 
 interface ArticleEditPageProps {
-  className?: string,
+  className?: string
 }
 
-const ArticleEditPage = ({className}:ArticleEditPageProps) => {
- const {id} = useParams<{id:string}>()
- const isEdit = Boolean(id) 
+const ArticleEditPage = ({ className }: ArticleEditPageProps) => {
+  const { id } = useParams<{ id: string }>()
+  const isEdit = Boolean(id)
   return (
     <PageWrapper className={classNames(cl.ArticleEditPage, {}, [className])}>
-        {isEdit ? "ArticleEdit": <ArticleCreatePage/>}
+      {isEdit ? 'ArticleEdit' : <ArticleCreatePage />}
     </PageWrapper>
   )
 }

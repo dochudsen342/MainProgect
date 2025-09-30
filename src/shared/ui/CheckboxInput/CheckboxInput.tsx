@@ -11,55 +11,53 @@ export enum inputTheme {
 }
 
 interface CheckboxInputProps extends HTMLInputProps {
-    className?: string,
-    value?: string | number,
-    type?: string,
-    chekboxText?:string,
-    textWeight?:TextWeight,
-    onChange?: (value: string) => void,
-    onDeleteValue?:(value:string) => void,
-    inputTheme?:inputTheme
-    disabled?:boolean
+  className?: string
+  value?: string | number
+  type?: string
+  chekboxText?: string
+  textWeight?: TextWeight
+  onChange?: (value: string) => void
+  onDeleteValue?: (value: string) => void
+  inputTheme?: inputTheme
+  disabled?: boolean
 }
 
-const CheckboxInput = (props:CheckboxInputProps) => {
-    const [isChecked,setIsChecked] = useState<boolean>(false)
-  const { 
-      className, 
-      chekboxText, 
-      type = 'checkbox', 
-      value, 
-      onChange,
-      onDeleteValue,
-      inputTheme,
-      disabled,
-      textWeight = TextWeight.MEDIUM, 
-      ...outherProps 
-    } = props
+const CheckboxInput = (props: CheckboxInputProps) => {
+  const [isChecked, setIsChecked] = useState<boolean>(false)
+  const {
+    className,
+    chekboxText,
+    type = 'checkbox',
+    value,
+    onChange,
+    onDeleteValue,
+    inputTheme,
+    disabled,
+    textWeight = TextWeight.MEDIUM,
+    ...outherProps
+  } = props
 
-  const onChangeHandler = (e:ChangeEvent<HTMLInputElement>) =>{
-    if(e.target.checked){
+  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.checked) {
       onChange?.(e.target.value)
-    }else{
+    } else {
       onDeleteValue?.(e.target.value)
     }
   }
   const inputRef = useRef<HTMLInputElement>(null)
   const mods = {
-    [cl[inputTheme]]:true
+    [cl[inputTheme]]: true,
   }
-
- 
 
   return (
     <div className={cl.inputWrapper}>
-      {chekboxText && <Text textWeight={textWeight} className={cl.checkboxText} text={chekboxText}/>}
+      {chekboxText && <Text textWeight={textWeight} className={cl.checkboxText} text={chekboxText} />}
       <input
-        ref = {inputRef}
+        ref={inputRef}
         type={type}
         onChange={onChangeHandler}
         value={value}
-        className={classNames(cl.InputCheckbox,mods,[className])}
+        className={classNames(cl.InputCheckbox, mods, [className])}
         {...outherProps}
       />
     </div>

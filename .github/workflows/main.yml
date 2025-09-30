@@ -9,13 +9,12 @@ jobs:
         uses: actions/checkout@v4
       - name: install dep
         run: npm i
-        
+
       - name: run unit tests
         run: npm run unit
 
       - name: run build dev
         run: npm run build:dev
-      
+
       - name: run build prod
         run: npm run build:prod
-      

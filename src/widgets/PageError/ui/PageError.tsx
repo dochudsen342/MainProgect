@@ -3,17 +3,16 @@ import cl from './PageError.module.scss'
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 
-interface PageErrorProps{
-    className?:string
+interface PageErrorProps {
+  className?: string
 }
 
-const PageError = ({className}:PageErrorProps) => {
+const PageError = ({ className }: PageErrorProps) => {
+  const { t } = useTranslation()
 
-    const {t} = useTranslation()
-
-    const onReloadPage = () =>{
-        location.reload()
-    }
+  const onReloadPage = () => {
+    location.reload()
+  }
 
   return (
     <section className={classNames(cl.PageError)}>

@@ -1,31 +1,30 @@
-.header{
+.header {
     display: flex;
     margin-bottom: 20px;
 }
 
-.editButton{
+.editButton {
     margin-left: auto;
-    
 }
 
-.header_button{
+.header_button {
     margin-left: auto;
     display: flex;
     column-gap: 15px;
 }
 
-.applyButton{
+.applyButton {
     border: 1px solid green;
     color: green;
     background-color: var(--bg-color);
 }
 
-.cancelEditButton{
+.cancelEditButton {
     border: 1px solid red;
     color: red;
     background-color: var(--bg-color);
 }
 
-.btnsWrapper{
+.btnsWrapper {
     margin-left: auto;
 }

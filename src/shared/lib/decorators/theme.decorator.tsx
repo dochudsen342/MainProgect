@@ -1,21 +1,20 @@
-import { Theme } from "app/providers/ThemeProvider";
+import { Theme } from 'app/providers/ThemeProvider'
 
-const ThemeDecorator = (theme:Theme) => (Story:any) => {
-  
+const ThemeDecorator = (theme: Theme) => (Story: any) => {
   return (
-    <div 
+    <div
       className={`app ${theme}`}
       style={{
-        width:'100vh',
+        width: '100vh',
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }}
     >
-     <Story/>
+      <Story />
     </div>
-  );
-};
+  )
+}
 
 export default ThemeDecorator
