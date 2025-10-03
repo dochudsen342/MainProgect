@@ -5,6 +5,7 @@
   "scripts": {
     "unit": "jest --config ./config/jest/jest.config.ts",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
+    "prettier": "npx prettier . --write",
     "build": "webpack",
     "start": "webpack serve --env port=3000",
     "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\" \"json-server ./json-server/db.json --port 5000\"",

@@ -1,0 +1,22 @@
+.item {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.icon {
+  margin-right: 10px;
+  fill: var(--primary-color);
+}
+
+.link {
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    transition: 0.3s opacity;
+    width: 0;
+  }
+}

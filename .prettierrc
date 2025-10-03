@@ -3,7 +3,8 @@
   "singleQuote": true,
   "jsxSingleQuote": true,
   "bracketSpacing": true,
-  "printWidth": 121,
+  "bracketSameLine": false,
+  "printWidth": 100,
   "tabWidth": 2,
-  "arrowParents": "void"
+  "trailingComma": "es5"
 }

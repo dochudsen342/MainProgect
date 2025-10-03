@@ -1,0 +1,47 @@
+.size_M {
+  .title {
+    font: var(--font-l);
+  }
+
+  .text {
+    font: var(--font-m);
+  }
+}
+
+.size_L {
+  .title {
+    font: var(--font-xl);
+  }
+
+  .text {
+    font: var(--font-l);
+  }
+}
+
+.error {
+  color: var(--color-error);
+}
+
+.centre {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.small .text {
+  font-weight: 400;
+}
+
+.medium .text {
+  font-weight: 600;
+}
+
+.large .text {
+  font-weight: 700;
+}

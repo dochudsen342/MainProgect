@@ -1,0 +1,46 @@
+@import 'reset';
+@import './variabes/global.scss';
+@import './theme/dark.scss';
+@import './theme/normal.scss';
+
+.body {
+  font: var(--font-m);
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+.app {
+  color: var(--text-color);
+  background: var(--bg-color);
+  min-height: 100vh;
+}
+
+.content_page {
+  display: flex;
+}
+
+.error {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.error__block {
+  display: flex;
+  flex-direction: column;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 8px; /* ширина scrollbar */
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--card-bg); /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--inverted-primary-color); /* цвет плашки */
+  border-radius: 20px; /* закругления плашки */
+  border: 3px solid var(--primary-color); /* padding вокруг плашки */
+}
