@@ -33,6 +33,13 @@ interface TextProps {
   size?: TextSize
 }
 
+type HeaderTag = 'h1' | 'h2' | 'h3'
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
+  [TextSize.L]: 'h1',
+  [TextSize.M]: 'h2',
+}
+
 const Text = ({
   className,
   textWeight,
@@ -49,9 +56,11 @@ const Text = ({
     [cl[textWeight]]: true,
   }
 
+  const HeaderTag = mapSizeToHeaderTag[size]
+
   return (
     <div className={classNames(cl.Text, mods, [className])}>
-      {title && <p className={cl.title}>{title}</p>}
+      {title && <HeaderTag className={cl.title}>{title}</HeaderTag>}
       {text && <p className={cl.text}>{text}</p>}
     </div>
   )

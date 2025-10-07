@@ -1,4 +1,4 @@
-import React, { HTMLAttributeAnchorTarget, useCallback } from 'react'
+import React, { HTMLAttributeAnchorTarget } from 'react'
 import cl from './ArticleItem.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/article'
@@ -6,7 +6,7 @@ import Text from 'shared/ui/Text/Text'
 import Icon from 'shared/ui/Icon/Icon'
 import EyeIcon from 'shared/assets/icons/EyeView.svg'
 import Card from 'shared/ui/Card/Card'
-import { useHover, UseHoverResult } from 'shared/lib/hooks/useHover'
+import { useHover } from 'shared/lib/hooks/useHover'
 import Avatar from 'shared/ui/Avatar/Avatar'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { useTranslation } from 'react-i18next'
@@ -34,7 +34,7 @@ const ArticleItem = ({ className, article, view, target }: ArticleItemProps) => 
 
   if (view === ArticleView.BIG) {
     let textBlock = article?.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT,
+      (block) => block.type === ArticleBlockType.TEXT
     ) as ArticleTextBlock
     return (
       <div className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
