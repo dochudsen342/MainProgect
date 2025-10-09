@@ -1,17 +1,17 @@
-import { Fragment, ReactNode, useState } from 'react'
-import { Listbox as HListBox, Label } from '@headlessui/react'
+import { Fragment, ReactNode } from 'react'
+import { Listbox as HListBox } from '@headlessui/react'
 import cl from './ListBox.module.scss'
-import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/classNames/classNames'
 import Button, { ThemeButton } from '../Button/Button'
 import { HStack } from '../Stack'
 
 export interface ListBoxItem {
   value: string
   content: ReactNode
-  unavailable: boolean
+  unavailable?: boolean
 }
 
-type DropDownDirection = 'top' | 'bottom'
+export type ListBoxDirection = 'top' | 'bottom'
 
 interface ListBoxProps {
   items?: ListBoxItem[]
@@ -19,7 +19,7 @@ interface ListBoxProps {
   value?: string
   defaultValue?: string
   readonly?: boolean
-  direction?: DropDownDirection
+  direction?: ListBoxDirection
   label?: string
   onChange: (value: string) => void
 }

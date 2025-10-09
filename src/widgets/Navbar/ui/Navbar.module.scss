@@ -13,7 +13,8 @@
   color: var(--primary-color);
 }
 
-.links {
+.links,
+.dropdown {
   margin-left: auto;
   display: flex;
   column-gap: 15px;
