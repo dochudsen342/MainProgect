@@ -3,6 +3,7 @@ import { Currency } from 'entities/Currency/model/types/currency'
 import { useTranslation } from 'react-i18next'
 import Select from 'shared/ui/Select/Select'
 import { Country } from '../../model/types/country'
+import Listbox, { ListBoxItem } from 'shared/ui/ListBox/ListBox'
 
 interface CountrySelectProps {
   className?: string
@@ -10,11 +11,11 @@ interface CountrySelectProps {
   readonly?: boolean
   onChange?: (value: Country) => void
 }
-const options = [
-  { value: Country.ARMENIA, content: Country.ARMENIA },
-  { value: Country.GERMANY, content: Country.GERMANY },
-  { value: Country.RUSSIA, content: Country.RUSSIA },
-  { value: Country.USA, content: Country.USA },
+const options: ListBoxItem[] = [
+  { value: Country.ARMENIA, content: Country.ARMENIA, unavailable: false },
+  { value: Country.GERMANY, content: Country.GERMANY, unavailable: false },
+  { value: Country.RUSSIA, content: Country.RUSSIA, unavailable: false },
+  { value: Country.USA, content: Country.USA, unavailable: false },
 ]
 
 const CountrySelect = memo(({ className, onChange, value, readonly }: CountrySelectProps) => {
@@ -24,16 +25,17 @@ const CountrySelect = memo(({ className, onChange, value, readonly }: CountrySel
     (value: string) => {
       onChange?.(value as Country)
     },
-    [onChange],
+    [onChange]
   )
 
   return (
-    <Select
-      readonly={readonly}
+    <Listbox
       onChange={onChangeHandler}
-      label={t('Ваша страна:')}
+      readonly={readonly}
       value={value}
-      options={options}
+      defaultValue={t('Укажите страну')}
+      items={options}
+      label='Выберите страну:'
     />
   )
 })
