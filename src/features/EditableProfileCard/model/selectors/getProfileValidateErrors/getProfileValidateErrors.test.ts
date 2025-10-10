@@ -1,7 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider'
 import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
-import { ProfileValidateError } from '../../types/profile'
 import { getProfileValidateErrors } from './getProfileValidateErrors'
+import { ProfileValidateError } from '../../types/editableProfileCardSchema'
 
 describe('getLoginError.test', () => {
   const validateErrors: ProfileValidateError[] = [

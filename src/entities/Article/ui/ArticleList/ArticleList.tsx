@@ -21,7 +21,6 @@ interface ArticleListProps {
 
 const ArticleList = ({ className, articles, isLoading, view, target }: ArticleListProps) => {
   const { t } = useTranslation()
-
   const renderArticle = useCallback(
     (article: Article) => {
       return (
@@ -34,16 +33,8 @@ const ArticleList = ({ className, articles, isLoading, view, target }: ArticleLi
         />
       )
     },
-    [articles, view],
+    [articles, view]
   )
-
-  // const rowRender = ({ index,ariaAttributes }: RowComponentProps) => {
-  //   return (
-  //     <>
-  //       <ArticleItem view={view} article={articles[index] } />
-  //     </>
-  //   )
-  // }
 
   const renderSkeleton = useCallback(() => {
     const skeletonList = new Array(view === ArticleView.BIG ? 3 : 12)

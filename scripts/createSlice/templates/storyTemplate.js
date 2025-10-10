@@ -1,19 +1,34 @@
-module.exports = (layer, componentName) => `import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+module.exports = (
+  layer,
+  componentName
+) => `import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import { ${componentName} } from './${componentName}';
+import { fn } from 'storybook/test'
+import ${componentName} from './${componentName}'
+import ThemeDecorator from 'shared/lib/decorators/theme.decorator'
+import { Theme } from 'app/providers/ThemeProvider'
 
-export default {
-    title: '${layer}/${componentName}',
-    component: ${componentName},
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ${componentName}>;
+const meta = {
+  title: '${layer}/${componentName}',
+  component: ${componentName},
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
+  args: { onClick: fn() },
+} satisfies Meta<typeof ${componentName}>
 
-const Template: ComponentStory<typeof ${componentName}> = (args) => <${componentName} {...args} />;
+export default meta
+type Story = StoryObj<typeof meta>
 
-export const Normal = Template.bind({});
-Normal.args = {
-   
-};`
+export const ${componentName}Light: Story = {
+  args: {
+  },
+  decorators: [ThemeDecorator(Theme.DARK)],
+}
+export const ${componentName}Dark: Story = {
+  args: {
+    
+  },
+  decorators: [ThemeDecorator(Theme.LIGHT)],
+}`

@@ -1,24 +1,26 @@
 import { StateSchema } from 'app/providers/StoreProvider'
 import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
-import { getProfileData } from './getProfileData'
-import { Profile } from '../../types/profile'
+import { getProfileForm } from './getProfileForm'
+import { Profile } from 'entities/Profile'
 
 describe('getLoginError.test', () => {
-  const profileData: Profile = {
+  const profileFormData: Profile = {
     id: '1',
     age: 23,
     city: 'Volgograd',
     firstname: 'Dima',
     username: 'Dqizi',
   }
-  test('should return profileData', () => {
+  test('should return formData', () => {
     const state: DeepPartial<StateSchema> = {
-      profile: { data: profileData, isLoading: true },
+      profile: {
+        form: profileFormData,
+      },
     }
-    expect(getProfileData(state as StateSchema)).toEqual(profileData)
+    expect(getProfileForm(state as StateSchema)).toEqual(profileFormData)
   })
   test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {}
-    expect(getProfileData(state as StateSchema)).toEqual(undefined)
+    expect(getProfileForm(state as StateSchema)).toEqual(undefined)
   })
 })

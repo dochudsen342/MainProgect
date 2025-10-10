@@ -17,6 +17,7 @@ import {
 import { articlePageReducer, getArticleList } from '../../model/slice/articlePageSlice'
 import ArticlesFillterPage from '../ArticlesFillterPage/ArticlesFillterPage'
 import cl from './ArticlePage.module.scss'
+import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
 
 interface ArticlePageProps {
   className?: string
@@ -26,9 +27,6 @@ const reducers: ReducerList = {
 }
 const ArticlePage = ({ className }: ArticlePageProps) => {
   const dispatch = useAppDispatch()
-  const articles = useSelector(getArticleList.selectAll)
-  const view = useSelector(getArticleListView)
-  const isLoading = useSelector(getArticleListIsLoading)
   let [searchParams] = useSearchParams()
 
   const onLoadNextPart = useCallback(() => {
@@ -46,7 +44,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
         className={classNames(cl.ArticlePage, {}, [className])}
       >
         <ArticlesFillterPage />
-        <ArticleList className={cl.list} isLoading={isLoading} view={view} articles={articles} />
+        <ArticleInfiniteList className={cl.list} />
       </PageWrapper>
     </DynamicReducerLoader>
   )

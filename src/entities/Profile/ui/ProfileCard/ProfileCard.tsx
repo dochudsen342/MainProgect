@@ -2,13 +2,13 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import Input, { inputTheme } from 'shared/ui/Input/Input'
 import Spiner from 'shared/ui/Spiner/Spiner'
-import { Profile } from '../../model/types/profile'
 import cl from './ProfileCard.module.scss'
 import Avatar from 'shared/ui/Avatar/Avatar'
 import { Currency, CurrencySelect } from 'entities/Currency'
 import { Country } from 'entities/Country/model/types/country'
 import { CountrySelect } from 'entities/Country'
 import { HStack, VStack } from 'shared/ui/Stack'
+import { Profile } from '../../model/types/profile'
 
 interface ProfileCardProps {
   className?: string

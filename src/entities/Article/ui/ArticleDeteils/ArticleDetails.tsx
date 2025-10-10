@@ -49,7 +49,7 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
           return null
       }
     },
-    [article],
+    [article]
   )
 
   let content

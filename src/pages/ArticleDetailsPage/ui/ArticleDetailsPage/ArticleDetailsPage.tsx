@@ -1,30 +1,18 @@
-import { memo, useCallback, useEffect } from 'react'
-import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article'
-import { CommentList } from 'entities/Comment'
-import { AddCommentForm } from 'features/AddCommentForm'
-import { fetchCommentsByArticleId } from 'features/ArticleCommentList'
-import { getArticleCommentsIsLoading } from 'features/ArticleCommentList/model/selectors/getArticleCommentsSelectors/ArticleCommentsSelectors'
-import { getArticleComments } from 'features/ArticleCommentList/model/slice/ArticleCommentListSlice'
-import { addCommentForArticle } from '../../model/service/addCommentForArticle/addCommentForArticle'
+import { memo } from 'react'
+import { ArticleDetails } from 'entities/Article'
+// prettier-ignore
+import { ArticleRecomendationsList } from 'features/articleRecomendationsList'
 import { useTranslation } from 'react-i18next'
-import { useSelector } from 'react-redux'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import DynamicReducerLoader, {
   ReducerList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import Text, { TextSize } from 'shared/ui/Text/Text'
-import cl from './ArticleDetailsPage.module.scss'
 import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
-import { getArticleRecomendation } from '../../model/slices/articleDetailsPageRecomentionsSlice'
-import {
-  getArticleDetailsPageRecomendationError,
-  getArticleDetailsPageRecomendationIsLoading,
-} from '../../model/selectors/recomendations'
-import { fetchArticleRecomendations } from '../../model/service/fetchArticleRecomendations/fetchArticleRecomendations'
 import { articleDetailsPageReducers } from '../../model/slices'
+import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+import cl from './ArticleDetailsPage.module.scss'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -37,25 +25,6 @@ const reducerList: ReducerList = {
 const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
   const { t } = useTranslation()
   const { id } = useParams<{ id: string }>()
-  const commentList = useSelector(getArticleComments.selectAll)
-  const recomendations = useSelector(getArticleRecomendation.selectAll)
-  const recomendationsIsLoading = useSelector(getArticleDetailsPageRecomendationIsLoading)
-  const recomendationsError = useSelector(getArticleDetailsPageRecomendationError)
-  const isLoading = useSelector(getArticleCommentsIsLoading)
-  const dispatch = useAppDispatch()
-  const navigate = useNavigate()
-
-  const onSendComment = useCallback(
-    (text: string) => {
-      dispatch(addCommentForArticle(text))
-    },
-    [dispatch],
-  )
-
-  useEffect(() => {
-    dispatch(fetchCommentsByArticleId(id))
-    dispatch(fetchArticleRecomendations())
-  }, [])
 
   if (!id) {
     return (
@@ -70,17 +39,8 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
       <PageWrapper className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        <Text size={TextSize.L} title={'Рекомендуем'} />
-        <ArticleList
-          target='_blank'
-          className={cl.articleRecomendList}
-          view={ArticleView.SMALL}
-          articles={recomendations}
-          isLoading={recomendationsIsLoading}
-        />
-        <Text title={'Комментарии'} />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList isLoading={isLoading} comments={commentList} />
+        <ArticleRecomendationsList />
+        <ArticleDetailsComments articleId={id} />
       </PageWrapper>
     </DynamicReducerLoader>
   )

@@ -48,7 +48,7 @@ export default defineConfig([
       'react/jsx-curly-brace-presence': ['warn', { props: 'never', children: 'never' }],
       'react/function-component-definition': ['warn', { namedComponents: 'arrow-function' }],
       'react/self-closing-comp': ['warn', { component: true, html: true }],
-      'max-len': ['error', { ignoreComments: true, code: 121 }],
+      'max-len': ['error', { ignoreComments: true, code: 125 }],
       'max-params': ['error', 3],
       'prettier/prettier': ['off'],
       '@typescript-eslint/no-require-imports': 'warn',

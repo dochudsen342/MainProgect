@@ -21,8 +21,8 @@ export const fetchNextArticlesPart = createAsyncThunk<void, void, ThunkConfig<st
       dispatch(
         fetchArticleList({
           page: page + 1,
-        }),
+        })
       )
     }
-  },
+  }
 )

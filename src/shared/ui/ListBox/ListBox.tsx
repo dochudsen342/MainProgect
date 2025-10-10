@@ -46,11 +46,9 @@ const Listbox = ({
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button className={cl.trigger}>
-          <Button disabled={readonly} theme={ThemeButton.OUTLINE}>
-            {value ?? defaultValue}
-          </Button>
-        </HListBox.Button>
+        <Button disabled={readonly} theme={ThemeButton.OUTLINE}>
+          {value ?? defaultValue}
+        </Button>
         <HListBox.Options className={classNames(cl.options, {}, optionsClasses)}>
           {items?.map((item) => (
             <HListBox.Option
