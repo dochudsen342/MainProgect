@@ -12,7 +12,6 @@ export default (env: BuildEnv) => {
     locales: path.resolve(__dirname, 'public', 'locales'),
     buildLocales: path.resolve(__dirname, 'build', 'locales'),
   }
-
   const mode = env.mode || 'development'
   const PORT = env.port || 3000
   const isDev = mode === 'development'

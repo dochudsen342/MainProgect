@@ -38,7 +38,7 @@ const Dropdown = ({ className, trigger, items, direction = 'bottom right' }: Dro
         {items.map((item) => {
           if (item.href) {
             return (
-              <Menu.Item disabled={item.unavailable} as={Fragment}>
+              <Menu.Item key={item.href} disabled={item.unavailable} as={Fragment}>
                 {({ active }: { active: boolean }) => (
                   <Link to={item.href} className={classNames(cl.item, { [cl.active]: active })}>
                     {item.content}
@@ -49,7 +49,7 @@ const Dropdown = ({ className, trigger, items, direction = 'bottom right' }: Dro
           }
 
           return (
-            <Menu.Item disabled={item.unavailable} as={Fragment}>
+            <Menu.Item key={item.href} disabled={item.unavailable} as={Fragment}>
               {({ active }: { active: boolean }) => (
                 <button
                   type='button'

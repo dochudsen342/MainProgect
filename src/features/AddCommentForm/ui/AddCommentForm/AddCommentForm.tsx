@@ -14,6 +14,7 @@ import {
 import DynamicReducerLoader, {
   ReducerList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { HStack } from 'shared/ui/Stack'
 
 export interface AddCommentFormProps {
   className?: string
@@ -34,7 +35,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
     (value: string) => {
       dispatch(addCommentFormAction.setText(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onSendHandler = useCallback(() => {
@@ -44,7 +45,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
 
   return (
     <DynamicReducerLoader removeAfterUnmount={true} reducers={reducers}>
-      <div className={classNames(cl.AddCommentForm, {}, [className])}>
+      <HStack justify='between' max className={classNames(cl.AddCommentForm, {}, [className])}>
         <Input
           className={cl.input}
           inputTheme={inputTheme.OUTLINE}
@@ -55,7 +56,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
         <Button onClick={onSendHandler} theme={ThemeButton.OUTLINE}>
           {t('Отправить')}
         </Button>
-      </div>
+      </HStack>
     </DynamicReducerLoader>
   )
 }

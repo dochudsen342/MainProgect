@@ -1,6 +1,4 @@
 import React, { useCallback, useEffect } from 'react'
-import cl from './ArticleDetailsComments.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
 import Text from 'shared/ui/Text/Text'
 import { AddCommentForm } from 'features/AddCommentForm'
 import { CommentList } from 'entities/Comment'
@@ -9,6 +7,7 @@ import { addCommentForArticle } from '../../model/service/addCommentForArticle/a
 import { useSelector } from 'react-redux'
 import { getArticleComments } from 'features/ArticleCommentList/model/slice/ArticleCommentListSlice'
 import { fetchCommentsByArticleId, getArticleCommentsIsLoading } from 'features/ArticleCommentList'
+import { useTranslation } from 'react-i18next'
 
 interface ArticleDetailsCommentsProps {
   className?: string
@@ -16,6 +15,7 @@ interface ArticleDetailsCommentsProps {
 }
 
 const ArticleDetailsComments = ({ className, articleId }: ArticleDetailsCommentsProps) => {
+  const { t } = useTranslation()
   const commentList = useSelector(getArticleComments.selectAll)
   const isLoading = useSelector(getArticleCommentsIsLoading)
   const dispatch = useAppDispatch()
@@ -32,7 +32,7 @@ const ArticleDetailsComments = ({ className, articleId }: ArticleDetailsComments
   )
   return (
     <>
-      <Text title={'Комментарии'} />
+      <Text marginTop='16' title={t('Комментарии')} />
       <AddCommentForm onSendComment={onSendComment} />
       <CommentList isLoading={isLoading} comments={commentList} />
     </>

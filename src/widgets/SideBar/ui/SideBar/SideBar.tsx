@@ -40,7 +40,7 @@ const SideBar = memo(({ className }: SideBarProps) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <VStack role='navigation' gap='8' className={cl.items}>
+      <VStack max role='navigation' gap='8' className={cl.items}>
         {linkList}
       </VStack>
       <div className={classNames(cl.switchers)}>

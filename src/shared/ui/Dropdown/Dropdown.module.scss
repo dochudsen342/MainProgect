@@ -17,6 +17,7 @@
     position: absolute;
     z-index: 100000;
     border-radius: 8px;
+    padding: 6px 6px;
     display: flex;
     flex-direction: column;
 }
@@ -24,9 +25,11 @@
 .item {
     padding: 10px 25px;
     width: 100%;
-    border: none;
-    background-color: none;
+    border: 1px solid var(--inverted-secondary-color);
+    border-radius: 8px;
+    background: none;
     outline: none;
+    margin-bottom: 8px;
     color: var(--text-color);
     cursor: pointer;
 }

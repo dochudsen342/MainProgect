@@ -33,7 +33,7 @@ const CurrencySelect = memo(({ onChange, value, readonly }: CurrencySelectProps)
       value={value}
       items={options}
       direction='top'
-      label='Выберите валюту:'
+      label={t('Выберите валюту:')}
     />
   )
 })

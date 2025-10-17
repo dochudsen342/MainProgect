@@ -5,12 +5,13 @@ import { useTranslation } from 'react-i18next'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { LoginModal } from 'features/AuthByUsername'
 import { useSelector } from 'react-redux'
-import { getAuthData, userAction } from 'entities/User'
+import { getAuthData, isUserAdmin, isUserManager, userAction } from 'entities/User'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import Dropdown from 'shared/ui/Dropdown/Dropdown'
 import Avatar from 'shared/ui/Avatar/Avatar'
+import { getUserRoles } from 'entities/User/model/selectors/roleSelector/roleSelector'
 
 interface NavbarProps {
   classNames: string
@@ -21,6 +22,9 @@ export const Navbar = () => {
   const { t } = useTranslation()
   const userAuthData = useSelector(getAuthData)
   const dispatch = useAppDispatch()
+  const isAdmin = useSelector(isUserAdmin)
+  const isManager = useSelector(isUserManager)
+  const isAdminPanelAvalible = isAdmin || isManager
 
   const onOpen = useCallback(() => {
     setIsModalAuth(true)
@@ -54,6 +58,9 @@ export const Navbar = () => {
               href: RoutePath.profile + userAuthData.id,
             },
             { content: t('Выйти'), onClick: onLogout },
+            ...(isAdminPanelAvalible
+              ? [{ content: t('Админка'), href: RoutePath.admin_panel }]
+              : []),
           ]}
           trigger={<Avatar size={30} src={userAuthData?.avatar} />}
         />

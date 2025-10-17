@@ -22,6 +22,8 @@ export enum TextAligin {
   LEFT = 'left',
   RIGHT = 'right',
 }
+type HeaderTag = 'h1' | 'h2' | 'h3'
+type TextMarginTop = '0' | '8' | '12' | '16'
 
 interface TextProps {
   className?: string
@@ -31,10 +33,15 @@ interface TextProps {
   theme?: ThemeText
   aligin?: TextAligin
   size?: TextSize
+  marginTop?: TextMarginTop
 }
 
-type HeaderTag = 'h1' | 'h2' | 'h3'
-
+const TextMarginTopClasses: Record<TextMarginTop, string> = {
+  '0': '',
+  '8': cl.margin8,
+  '12': cl.margin12,
+  '16': cl.margin16,
+}
 const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
   [TextSize.L]: 'h1',
   [TextSize.M]: 'h2',
@@ -48,6 +55,7 @@ const Text = ({
   theme,
   aligin,
   size = TextSize.M,
+  marginTop = '0',
 }: TextProps) => {
   const mods: Record<string, boolean> = {
     [cl[theme]]: true,
@@ -56,10 +64,11 @@ const Text = ({
     [cl[textWeight]]: true,
   }
 
+  const textMarginClass = TextMarginTopClasses[marginTop]
   const HeaderTag = mapSizeToHeaderTag[size]
 
   return (
-    <div className={classNames(cl.Text, mods, [className])}>
+    <div className={classNames(cl.Text, mods, [className, textMarginClass])}>
       {title && <HeaderTag className={cl.title}>{title}</HeaderTag>}
       {text && <p className={cl.text}>{text}</p>}
     </div>

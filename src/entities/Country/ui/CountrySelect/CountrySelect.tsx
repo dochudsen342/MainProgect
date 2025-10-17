@@ -35,7 +35,7 @@ const CountrySelect = memo(({ className, onChange, value, readonly }: CountrySel
       value={value}
       defaultValue={t('Укажите страну')}
       items={options}
-      label='Выберите страну:'
+      label={t('Выберите страну:')}
     />
   )
 })

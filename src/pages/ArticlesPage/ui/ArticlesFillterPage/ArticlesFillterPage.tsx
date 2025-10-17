@@ -22,6 +22,7 @@ import { fetchArticleList } from '../../model/service/fetchArticleList.ts/fetchA
 import { useDebounce } from 'shared/lib/hooks/useDebounce'
 import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs'
 import { ArcticleType } from 'entities/Article/model/types/article'
+import { HStack } from 'shared/ui/Stack'
 
 interface ArticlesFillterPageProps {
   className?: string
@@ -71,7 +72,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
       dispatch(articlePageAction.setView(view))
       dispatch(articlePageAction.setPage(1))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onChangeSort = useCallback(
@@ -80,7 +81,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
       dispatch(articlePageAction.setPage(1))
       fetchData()
     },
-    [dispatch, fetchData],
+    [dispatch, fetchData]
   )
 
   const onChangeOrder = useCallback(
@@ -89,7 +90,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
       dispatch(articlePageAction.setPage(1))
       fetchData()
     },
-    [dispatch, fetchData],
+    [dispatch, fetchData]
   )
 
   const onChangeSearch = useCallback(
@@ -98,7 +99,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
       dispatch(articlePageAction.setPage(1))
       fetchDebounceData()
     },
-    [dispatch, fetchData],
+    [dispatch, fetchData]
   )
 
   const onChangeTabs = useCallback((newTabs: TabItem) => {
@@ -108,7 +109,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
 
   return (
     <div className={classNames(cl.ArticlesFillterPage, {}, [className])}>
-      <div className={cl.sortWrapper}>
+      <HStack justify='between' max>
         <ArticleSortSelector
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
@@ -116,7 +117,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
           sort={sort}
         />
         <ArticleViewSelector view={view} onViewClick={onChangeView} />
-      </div>
+      </HStack>
       <Card className={cl.search}>
         <Input
           value={search}

@@ -1,18 +1,32 @@
-import { getAuthData } from 'entities/User'
-import { ReactNode } from 'react'
+import { getAuthData, UserRole } from 'entities/User'
+import { getUserRoles } from 'entities/User/model/selectors/roleSelector/roleSelector'
+import { ForbiddenPage } from 'pages/ForbiddenPage'
+import { ReactNode, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface RequireAuthProps {
   children: ReactNode
+  roles?: UserRole[]
 }
 
-export const RequireAuth = ({ children }: RequireAuthProps) => {
+export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
   const auth = useSelector(getAuthData)
+  const userRoles = useSelector(getUserRoles)
+  const hasRequiredRoles = useMemo(() => {
+    if (!roles) {
+      return true
+    }
+    return roles.some((requiredRole) => {
+      return userRoles?.includes(requiredRole)
+    })
+  }, [roles, userRoles])
 
   if (!auth) {
     return <Navigate to={RoutePath.main} />
+  } else if (!hasRequiredRoles) {
+    return <Navigate to={RoutePath.forbidden} />
   }
 
   return children
