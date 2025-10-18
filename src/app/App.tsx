@@ -23,7 +23,7 @@ const App = () => {
         <Navbar />
         <div className='content_page'>
           <SideBar />
-          <PageWrapper>{_mounted && <AppRouter />}</PageWrapper>
+          <div className='routerWrapper'>{_mounted && <AppRouter />}</div>
         </div>
       </Suspense>
     </div>

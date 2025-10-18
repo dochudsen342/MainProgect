@@ -59,11 +59,11 @@ export type ArticleBlock = ArticleCodeBlock | ArticleImageBlock | ArticleTextBlo
 
 export interface Article {
   id: string
-  title?: string
-  subtitle?: string
-  img?: string
+  title: string
+  subtitle: string
+  img: string
   user: User
-  views?: number
+  views: number
   createdDate: string
   type: ArcticleType[]
   blocks: ArticleBlock[]

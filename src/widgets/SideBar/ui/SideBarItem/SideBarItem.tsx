@@ -16,7 +16,7 @@ const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
   const { t } = useTranslation()
   const isAuth = useSelector(getAuthData)
 
-  if (!isAuth && item.authOnly) {
+  if (!isAuth && item?.authOnly) {
     return null
   }
 

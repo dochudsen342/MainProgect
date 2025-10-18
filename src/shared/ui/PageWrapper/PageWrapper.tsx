@@ -1,7 +1,5 @@
-import { ReactNode, RefObject, UIEvent, useEffect, useRef } from 'react'
-import { StateSchema } from 'app/providers/StoreProvider'
-import { getScrollRestorationByPath, scrollRestorationAction } from 'features/ScrollRestoration'
-import { useSelector } from 'react-redux'
+import { ReactNode, UIEvent, useRef } from 'react'
+import { scrollRestorationAction } from 'features/ScrollRestoration'
 import { useLocation } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
@@ -20,9 +18,6 @@ const PageWrapper = ({ className, children, onScrollEnd }: PageWrapperProps) => 
   const triggerRef = useRef<HTMLDivElement>(null)
   const dispatch = useAppDispatch()
   const { pathname } = useLocation()
-  const scrollPosition = useSelector((state: StateSchema) =>
-    getScrollRestorationByPath(state, pathname)
-  )
 
   useInfiniteScroll({
     wrapperRef,
@@ -39,11 +34,6 @@ const PageWrapper = ({ className, children, onScrollEnd }: PageWrapperProps) => 
     )
   }, 1000)
 
-  // useEffect(() => {
-  //   if (wrapperRef.current) {
-  //     wrapperRef.current.scrollTop = scrollPosition
-  //   }
-  // }, [scrollPosition])
   return (
     <main
       onScroll={onScroll}

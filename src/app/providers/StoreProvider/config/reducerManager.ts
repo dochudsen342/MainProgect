@@ -1,7 +1,7 @@
-import { combineReducers, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
+import { combineReducers, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit'
 import { StateSchema } from '..'
 import { ReducerManager, StateSchemaKey } from './stateSchema'
-import { AnyActionArg } from 'react'
+import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>
@@ -13,7 +13,7 @@ export function createReducerManager(
   return {
     getReducerMap: () => reducers,
 
-    reduce: (state: StateSchema, action: any) => {
+    reduce: (state: DeepPartial<StateSchema>, action: UnknownAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state }
         for (let key of keysToRemove) {

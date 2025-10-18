@@ -1,10 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 
 const MainPage = () => {
   const { t } = useTranslation()
-  return <PageWrapper>{t('Главная страница')}</PageWrapper>
+  return <div>{t('Главная страница')}</div>
 }
 
 export default MainPage

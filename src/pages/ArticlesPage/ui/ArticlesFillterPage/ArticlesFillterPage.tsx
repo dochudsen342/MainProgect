@@ -99,13 +99,16 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
       dispatch(articlePageAction.setPage(1))
       fetchDebounceData()
     },
-    [dispatch, fetchData]
+    [dispatch, fetchDebounceData]
   )
 
-  const onChangeTabs = useCallback((newTabs: TabItem) => {
-    dispatch(articlePageAction.setTabs(newTabs.value as ArcticleType))
-    fetchData()
-  }, [])
+  const onChangeTabs = useCallback(
+    (newTabs: TabItem) => {
+      dispatch(articlePageAction.setTabs(newTabs.value as ArcticleType))
+      fetchData()
+    },
+    [dispatch, fetchData]
+  )
 
   return (
     <div className={classNames(cl.ArticlesFillterPage, {}, [className])}>

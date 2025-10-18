@@ -1,11 +1,11 @@
 import { StateSchema } from 'app/providers/StoreProvider'
-import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
 import { getArticleDetailsData } from './getArticleDetailsData'
 import { ArcticleType, Article } from '../../types/article'
+import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
 
 describe('getLoginError.test', () => {
   test('should return ArticleDetaildata', () => {
-    const articleDetailsData: Article = {
+    const articleDetailsData: DeepPartial<Article> = {
       id: '1',
       title: 'some title',
       createdDate: '',
@@ -14,7 +14,7 @@ describe('getLoginError.test', () => {
       user: { id: '1', username: 'Dqizi' },
     }
     const state: DeepPartial<StateSchema> = {
-      articleDetails: { data: articleDetailsData, isLoading: false },
+      articleDetails: { data: articleDetailsData },
     }
     expect(getArticleDetailsData(state as StateSchema)).toEqual(articleDetailsData)
   })

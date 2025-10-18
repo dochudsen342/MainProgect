@@ -1,6 +1,5 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 import { VStack } from 'shared/ui/Stack'
 import EditableProfileCard from 'features/EditableProfileCard/ui/EditableProfileCard/EditableProfileCard'
 import { useParams } from 'react-router-dom'
@@ -18,12 +17,10 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return <Text text={t('Профиль не найден')}></Text>
   }
   return (
-    <PageWrapper>
-      <VStack gap='16' max>
-        <EditableProfileCardHeader />
-        <EditableProfileCard id={id} />
-      </VStack>
-    </PageWrapper>
+    <VStack gap='16' max>
+      <EditableProfileCardHeader />
+      <EditableProfileCard id={id} />
+    </VStack>
   )
 }
 

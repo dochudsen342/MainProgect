@@ -27,7 +27,9 @@ const CreateArticleForm = ({ className }: CreateArticleFormProps) => {
         <TitleArticleForm className={cl.articleMainFields} />
         <TypeArticleForm />
       </div>
-      <Button theme={ThemeButton.OUTLINE}>{t('Создать статью')}</Button>
+      <Button className={cl.createBtn} theme={ThemeButton.OUTLINE}>
+        {t('Создать статью')}
+      </Button>
     </DynamicReducerLoader>
   )
 }
