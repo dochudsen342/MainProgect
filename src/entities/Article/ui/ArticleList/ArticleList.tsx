@@ -7,6 +7,7 @@ import cl from './ArticleList.module.scss'
 import { SortOrder } from 'shared/types'
 import Text, { TextSize } from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
+import { Virtuoso } from 'react-virtuoso'
 
 interface ArticleListProps {
   className?: string
@@ -42,6 +43,9 @@ const ArticleList = ({
     [articles, view]
   )
 
+  const getVirtuosoHeight = useCallback(() => {
+    return view === ArticleView.BIG ? 700 : 500
+  }, [view])
   const renderSkeleton = useCallback(() => {
     const skeletonList = new Array(view === ArticleView.BIG ? 3 : 12)
       .fill(0)
@@ -56,7 +60,6 @@ const ArticleList = ({
       </div>
     )
   }
-
   return (
     <div className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}

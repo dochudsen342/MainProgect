@@ -4,7 +4,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
 import { BuildOptions } from './types/config'
 import CopyPlugin from 'copy-webpack-plugin'
-
+import CircularDependecyPlugin from 'circular-dependency-plugin'
+import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin'
 export function buildPlugins({ path }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -18,6 +19,11 @@ export function buildPlugins({ path }: BuildOptions): webpack.WebpackPluginInsta
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
     }),
+    new CircularDependecyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
+    new ForkTsCheckerPlugin(),
     new ReactRefreshWebpackPlugin(),
     new CopyPlugin({
       patterns: [{ from: path.locales, to: path.buildLocales }],

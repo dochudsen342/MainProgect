@@ -36,7 +36,6 @@ const ArticleItem = ({
       <Icon className={cl.icon} Svg={EyeIcon} />
     </>
   )
-
   if (view === ArticleView.BIG) {
     let textBlock = article?.blocks.find(
       (block) => block.type === ArticleBlockType.TEXT
