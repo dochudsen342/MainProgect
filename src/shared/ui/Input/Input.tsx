@@ -5,7 +5,7 @@ import Text from '../Text/Text'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
-export enum inputTheme {
+export enum InputTheme {
   OUTLINE = 'outline',
   CLEAR = 'clear',
 }
@@ -18,7 +18,7 @@ interface InputProps extends HTMLInputProps {
   chekboxText?: string
   onChange?: (value: string) => void
   autoFocus?: boolean
-  inputTheme?: inputTheme
+  inputTheme?: InputTheme
   disabled?: boolean
 }
 
@@ -31,7 +31,7 @@ const Input = memo((props: InputProps) => {
     onChange,
     placeholder,
     autoFocus,
-    inputTheme,
+    inputTheme = InputTheme.CLEAR,
     disabled,
     ...outherProps
   } = props
@@ -47,7 +47,7 @@ const Input = memo((props: InputProps) => {
 
   useEffect(() => {
     if (autoFocus) {
-      inputRef.current.focus()
+      inputRef?.current?.focus()
     }
   }, [autoFocus])
 

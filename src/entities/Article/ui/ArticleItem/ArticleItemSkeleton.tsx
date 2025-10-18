@@ -10,7 +10,7 @@ interface ArticleItemSkeletonProps {
   view?: ArticleView
 }
 
-const ArticleItemSkeleton = ({ className, view }: ArticleItemSkeletonProps) => {
+const ArticleItemSkeleton = ({ className, view = ArticleView.SMALL }: ArticleItemSkeletonProps) => {
   const [isHover, bindHover] = useHover()
 
   if (view === ArticleView.BIG) {

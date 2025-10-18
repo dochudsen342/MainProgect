@@ -10,7 +10,7 @@ import { getAuthData } from 'entities/User'
 import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/service/updateProfileData/uptadeProfileData'
 import { HStack } from 'shared/ui/Stack'
-import Button, { ThemeButton } from 'shared/ui/Button/Button'
+import Button, { ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
 
 interface EditableProfileCardHeaderProps {
   className?: string
@@ -42,7 +42,7 @@ const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps
       {canEdit && (
         <>
           {readonly ? (
-            <Button onClick={onEdit} theme={ThemeButton.OUTLINE}>
+            <Button onClick={onEdit} className={cl.editBtn} theme={ThemeButton.OUTLINE}>
               {t('Редактировать')}
             </Button>
           ) : (

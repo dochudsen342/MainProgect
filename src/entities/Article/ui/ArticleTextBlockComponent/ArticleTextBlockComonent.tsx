@@ -12,8 +12,8 @@ interface ArticleTextBlockComonentProps {
 const ArticleTextBlockComonent = ({ className, block }: ArticleTextBlockComonentProps) => {
   return (
     <div className={classNames(cl.ArticleTextBlockComonent, {}, [className])}>
-      {block.title && <Text size={TextSize.L} title={block.title} className={cl.title} />}
-      {block.paragraphs.map((paragraph) => (
+      {block?.title && <Text size={TextSize.L} title={block.title} className={cl.title} />}
+      {block?.paragraphs.map((paragraph) => (
         <Text key={paragraph} text={paragraph} className={cl.paragraph} />
       ))}
     </div>

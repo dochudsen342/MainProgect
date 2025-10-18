@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import cl from './TitleArticleForm.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
-import Input, { inputTheme } from 'shared/ui/Input/Input'
+import Input, { InputTheme } from 'shared/ui/Input/Input'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
 import { createArticleFormAction } from '../../model/slice/createArticleForm'
@@ -18,21 +18,21 @@ const TitleArticleForm = ({ className }: TitleArticleFormProps) => {
     (value: string) => {
       dispatch(createArticleFormAction.setTitleArticle(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onChangeArticleSubtitle = useCallback(
     (value: string) => {
       dispatch(createArticleFormAction.setSubtitleArticle(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onChangeArticleImgLink = useCallback(
     (value: string) => {
       dispatch(createArticleFormAction.setArticleImgLink(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   return (
@@ -40,19 +40,19 @@ const TitleArticleForm = ({ className }: TitleArticleFormProps) => {
       <Input
         onChange={onChangeArticleTitle}
         className={cl.inputMainInfo}
-        inputTheme={inputTheme.OUTLINE}
+        inputTheme={InputTheme.OUTLINE}
         placeholder={t('Заголовок статьи')}
       />
       <Input
         onChange={onChangeArticleSubtitle}
         className={cl.inputMainInfo}
-        inputTheme={inputTheme.OUTLINE}
+        inputTheme={InputTheme.OUTLINE}
         placeholder={t('Подзаголовок статьи')}
       />
       <Input
         onChange={onChangeArticleImgLink}
         className={cl.inputMainInfo}
-        inputTheme={inputTheme.OUTLINE}
+        inputTheme={InputTheme.OUTLINE}
         placeholder={t('Ссылка на фото статьи')}
       />
     </div>

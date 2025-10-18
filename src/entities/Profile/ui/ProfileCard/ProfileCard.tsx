@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
-import Input, { inputTheme } from 'shared/ui/Input/Input'
+import Input, { InputTheme } from 'shared/ui/Input/Input'
 import Spiner from 'shared/ui/Spiner/Spiner'
 import cl from './ProfileCard.module.scss'
 import Avatar from 'shared/ui/Avatar/Avatar'
@@ -16,14 +16,14 @@ interface ProfileCardProps {
   isLoading?: boolean
   error?: string
   readonly?: boolean
-  onChangeFirstName?: (value?: string) => void
-  onChangeLastName?: (value?: string) => void
-  onChangeAge?: (value?: string) => void
-  onChangeCity?: (value?: string) => void
-  onChangeUsername?: (value?: string) => void
-  onChangeAvatar?: (value?: string) => void
-  onChangeCurrency?: (currency?: Currency) => void
-  onChangeCountry?: (counry?: Country) => void
+  onChangeFirstName?: (value: string) => void
+  onChangeLastName?: (value: string) => void
+  onChangeAge?: (value: string) => void
+  onChangeCity?: (value: string) => void
+  onChangeUsername?: (value: string) => void
+  onChangeAvatar?: (value: string) => void
+  onChangeCurrency?: (currency: Currency) => void
+  onChangeCountry?: (counry: Country) => void
 }
 
 const ProfileCard = (props: ProfileCardProps) => {
@@ -84,7 +84,7 @@ const ProfileCard = (props: ProfileCardProps) => {
         <span>{t('Ваше имя:')}</span>
         <Input
           onChange={onChangeFirstName}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
           disabled={readonly}
           className={cl.input}
           value={data?.firstname}
@@ -94,7 +94,7 @@ const ProfileCard = (props: ProfileCardProps) => {
         <span>{t('Ваша фамилия:')}</span>
         <Input
           onChange={onChangeLastName}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
           disabled={readonly}
           className={cl.input}
           value={data?.lastname}
@@ -104,7 +104,7 @@ const ProfileCard = (props: ProfileCardProps) => {
         <span>{t('Ваш возраст:')}</span>
         <Input
           onChange={onChangeAge}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
           disabled={readonly}
           className={cl.input}
           value={data?.age}
@@ -114,7 +114,7 @@ const ProfileCard = (props: ProfileCardProps) => {
         <span>{t('Ваш город:')}</span>
         <Input
           onChange={onChangeCity}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
           disabled={readonly}
           className={cl.input}
           value={data?.city}
@@ -124,7 +124,7 @@ const ProfileCard = (props: ProfileCardProps) => {
         <span>{t('Ваш Username:')}</span>
         <Input
           onChange={onChangeUsername}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
           disabled={readonly}
           className={cl.input}
           value={data?.username}
@@ -134,7 +134,7 @@ const ProfileCard = (props: ProfileCardProps) => {
         <span>{t('Ссылка на аватар:')}</span>
         <Input
           onChange={onChangeAvatar}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
           disabled={readonly}
           className={cl.input}
           value={data?.avatar}

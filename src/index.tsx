@@ -7,7 +7,11 @@ import 'app/styles/index.scss'
 import { StoreProvider } from 'app/providers/StoreProvider'
 import './shared/config/i18n/i18n'
 
-const root = ReactDOM.createRoot(document.querySelector('#root'))
+const container = document.querySelector('#root')
+if (!container) {
+  throw Error('Не удалось ')
+}
+const root = ReactDOM.createRoot(container)
 
 root.render(
   <StoreProvider>

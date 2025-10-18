@@ -15,7 +15,7 @@ import {
 } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
 import { useTranslation } from 'react-i18next'
 import Card from 'shared/ui/Card/Card'
-import Input, { inputTheme } from 'shared/ui/Input/Input'
+import Input, { InputTheme } from 'shared/ui/Input/Input'
 import { ArticleSortSelector } from 'features/ArticleSortSelector'
 import { SortOrder } from 'shared/types'
 import { fetchArticleList } from '../../model/service/fetchArticleList.ts/fetchArticleList'
@@ -76,8 +76,8 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
   )
 
   const onChangeSort = useCallback(
-    (newSort: ArcticleSortField) => {
-      dispatch(articlePageAction.setSort(newSort))
+    (newSort: ArcticleSortField | string) => {
+      dispatch(articlePageAction.setSort(newSort as ArcticleSortField))
       dispatch(articlePageAction.setPage(1))
       fetchData()
     },
@@ -85,8 +85,8 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
   )
 
   const onChangeOrder = useCallback(
-    (newOrder: SortOrder) => {
-      dispatch(articlePageAction.setOrder(newOrder))
+    (newOrder: SortOrder | string) => {
+      dispatch(articlePageAction.setOrder(newOrder as SortOrder))
       dispatch(articlePageAction.setPage(1))
       fetchData()
     },
@@ -123,7 +123,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
           value={search}
           onChange={onChangeSearch}
           className={cl.searchInput}
-          inputTheme={inputTheme.CLEAR}
+          inputTheme={InputTheme.CLEAR}
         />
       </Card>
       <Tabs tabs={typeTabs} value={typeValue} onTabClick={onChangeTabs} />

@@ -21,14 +21,24 @@ type Story = StoryObj<typeof meta>
 export const DropdownDark: Story = {
   args: {
     trigger: <Button />,
-    items: [{ content: 'first' }, { content: 'second' }, { content: 'third' }, { content: 'four' }],
+    items: [
+      { content: 'first', href: '/' },
+      { content: 'second', href: '/' },
+      { content: 'third', href: '/' },
+      { content: 'four', href: '/' },
+    ],
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
 export const DropdownLight: Story = {
   args: {
     trigger: <Button />,
-    items: [{ content: 'first' }, { content: 'second' }, { content: 'third' }, { content: 'four' }],
+    items: [
+      { content: 'first', href: '/' },
+      { content: 'second', href: '/' },
+      { content: 'third', href: '/' },
+      { content: 'four', href: '/' },
+    ],
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }

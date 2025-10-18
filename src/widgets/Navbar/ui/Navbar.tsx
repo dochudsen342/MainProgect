@@ -57,7 +57,7 @@ export const Navbar = () => {
               content: t('Профиль'),
               href: RoutePath.profile + userAuthData.id,
             },
-            { content: t('Выйти'), onClick: onLogout },
+            { content: t('Выйти'), onClick: onLogout, href: '' },
             ...(isAdminPanelAvalible
               ? [{ content: t('Админка'), href: RoutePath.admin_panel }]
               : []),

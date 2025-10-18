@@ -8,6 +8,7 @@ export interface ProfileSchema {
   readonly: boolean
   validateErrors?: ProfileValidateError[]
 }
+
 export enum ProfileValidateError {
   INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
   INCORRECT_AGE = 'INCORRECT_AGE',

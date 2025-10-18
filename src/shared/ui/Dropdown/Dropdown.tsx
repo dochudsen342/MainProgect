@@ -4,15 +4,13 @@ import cl from './Dropdown.module.scss'
 import { Fragment } from 'react/jsx-runtime'
 import { ReactNode } from 'react'
 import { DropDownDirection } from 'shared/types/ui'
-import { AppLink } from '../AppLink/AppLink'
-import { href } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Link, To } from 'react-router-dom'
 
 export interface DropdownItem {
   unavailable?: boolean
   content: ReactNode
   onClick?: () => void
-  href?: string
+  href: To
 }
 
 const mapDirectionClass: Record<DropDownDirection, string> = {
@@ -38,7 +36,7 @@ const Dropdown = ({ className, trigger, items, direction = 'bottom right' }: Dro
         {items.map((item) => {
           if (item.href) {
             return (
-              <Menu.Item key={item.href} disabled={item.unavailable} as={Fragment}>
+              <Menu.Item key={item.href as string} disabled={item.unavailable} as={Fragment}>
                 {({ active }: { active: boolean }) => (
                   <Link to={item.href} className={classNames(cl.item, { [cl.active]: active })}>
                     {item.content}

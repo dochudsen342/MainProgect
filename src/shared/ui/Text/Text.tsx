@@ -1,6 +1,6 @@
 import React from 'react'
 import cl from './Text.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
 export enum TextSize {
   M = 'size_M',
@@ -14,6 +14,7 @@ export enum TextWeight {
 }
 
 export enum ThemeText {
+  PRIMARY = 'primary',
   ERROR = 'error',
 }
 
@@ -49,18 +50,18 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
 
 const Text = ({
   className,
-  textWeight,
+  textWeight = TextWeight.MEDIUM,
   title,
   text,
-  theme,
-  aligin,
+  theme = ThemeText.PRIMARY,
+  aligin = TextAligin.LEFT,
   size = TextSize.M,
   marginTop = '0',
 }: TextProps) => {
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cl[theme]]: true,
     [cl[aligin]]: true,
-    [cl[size]]: true,
+    [cl[size as keyof typeof cl]]: true,
     [cl[textWeight]]: true,
   }
 

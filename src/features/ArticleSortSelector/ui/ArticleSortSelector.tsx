@@ -10,8 +10,8 @@ interface ArticleSortSelectorProps {
   className?: string
   sort: ArcticleSortField
   order: SortOrder
-  onChangeOrder: (newOrder: SortOrder) => void
-  onChangeSort: (newSort: ArcticleSortField) => void
+  onChangeOrder: (newOrder: SortOrder | string) => void
+  onChangeSort: (newSort: ArcticleSortField | string) => void
 }
 
 const ArticleSortSelector = ({
@@ -33,7 +33,7 @@ const ArticleSortSelector = ({
         content: t('убыванию'),
       },
     ],
-    [t],
+    [t]
   )
 
   const sortOptionsList = useMemo<SelectOptions[]>(
@@ -51,7 +51,7 @@ const ArticleSortSelector = ({
         content: t('количеству просмотров'),
       },
     ],
-    [t],
+    [t]
   )
 
   return (

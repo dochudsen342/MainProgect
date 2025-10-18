@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import cl from './AddCommentForm.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
-import Input, { inputTheme } from 'shared/ui/Input/Input'
+import Input, { InputTheme } from 'shared/ui/Input/Input'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { addCommentFormAction, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
 import { useTranslation } from 'react-i18next'
@@ -48,12 +48,12 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
       <HStack justify='between' max className={classNames(cl.AddCommentForm, {}, [className])}>
         <Input
           className={cl.input}
-          inputTheme={inputTheme.OUTLINE}
+          inputTheme={InputTheme.OUTLINE}
           value={text || ''}
           placeholder={t('Введите комментарий')}
           onChange={onCommentTextChange}
         />
-        <Button onClick={onSendHandler} theme={ThemeButton.OUTLINE}>
+        <Button className={cl.sendBtn} onClick={onSendHandler} theme={ThemeButton.OUTLINE}>
           {t('Отправить')}
         </Button>
       </HStack>

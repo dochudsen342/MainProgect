@@ -8,6 +8,7 @@ describe('getLoginError.test', () => {
       profile: {
         error: 'error',
         isLoading: true,
+        readonly: false,
       },
     }
     expect(getProfileError(state as StateSchema)).toEqual('error')

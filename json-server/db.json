@@ -20,7 +20,9 @@
       "views": 6022,
       "userId": "1",
       "createdDate": "26.02.2022",
-      "type": ["ECONOMY"],
+      "type": [
+        "ECONOMY"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -42,7 +44,9 @@
       "views": 932,
       "userId": "1",
       "createdDate": "21.06.2025",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -64,7 +68,9 @@
       "views": 99192,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -86,7 +92,9 @@
       "views": 102,
       "userId": "2",
       "createdDate": "13.07.2021",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -108,7 +116,9 @@
       "views": 15110,
       "userId": "2",
       "createdDate": "13.07.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -130,7 +140,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -152,7 +164,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -174,7 +188,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -196,7 +212,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -218,7 +236,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -240,7 +260,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -262,7 +284,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -284,7 +308,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -306,7 +332,10 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT", "TECH"],
+      "type": [
+        "IT",
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -328,7 +357,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -350,7 +381,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -450,14 +483,18 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["admin"],
+      "roles": [
+        "admin"
+      ],
       "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["user"],
+      "roles": [
+        "user"
+      ],
       "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
     }
   ],
@@ -467,8 +504,8 @@
       "firstname": "Dqizi",
       "lastname": "Kolesnikov",
       "age": 25,
-      "currency": "USD",
-      "country": "Armenia",
+      "currency": "RUB",
+      "country": "Germany",
       "city": "Volgograd34",
       "username": "admin",
       "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"

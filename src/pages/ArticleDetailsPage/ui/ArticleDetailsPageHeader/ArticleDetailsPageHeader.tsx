@@ -30,7 +30,7 @@ const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeaderProps) 
 
   return (
     <div className={classNames(cl.ArticleDetailsPageHeader, {}, [className])}>
-      <Button onClick={onBackToList} theme={ThemeButton.OUTLINE}>
+      <Button className={cl.backBtn} onClick={onBackToList} theme={ThemeButton.OUTLINE}>
         {t('Назад к списку')}
       </Button>
       {isEditing && (

@@ -1,4 +1,4 @@
-import { ReactNode, UIEvent, useEffect, useRef } from 'react'
+import { ReactNode, RefObject, UIEvent, useEffect, useRef } from 'react'
 import { StateSchema } from 'app/providers/StoreProvider'
 import { getScrollRestorationByPath, scrollRestorationAction } from 'features/ScrollRestoration'
 import { useSelector } from 'react-redux'
@@ -39,9 +39,11 @@ const PageWrapper = ({ className, children, onScrollEnd }: PageWrapperProps) => 
     )
   }, 1000)
 
-  useEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition
-  }, [scrollPosition])
+  // useEffect(() => {
+  //   if (wrapperRef.current) {
+  //     wrapperRef.current.scrollTop = scrollPosition
+  //   }
+  // }, [scrollPosition])
   return (
     <main
       onScroll={onScroll}

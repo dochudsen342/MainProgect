@@ -14,7 +14,7 @@ const ArticleCodeBlockComonent = ({ className, block }: ArticleCodeBlockComonent
   return (
     <div className={classNames(cl.ArticleCodeBlockComonent, {}, [className])}>
       {block?.title && <Text title={block?.title} className={cl.title} />}
-      <Code text={block.code} className={cl.code} />
+      {block?.code && <Code text={block.code} className={cl.code} />}
     </div>
   )
 }

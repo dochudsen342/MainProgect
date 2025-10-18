@@ -18,7 +18,9 @@ interface TabsProps {
 const Tabs = ({ className, tabs, value, onTabClick }: TabsProps) => {
   const clickHandle = useCallback((tab: TabItem) => {
     return () => {
-      onTabClick(tab)
+      if (onTabClick) {
+        onTabClick?.(tab)
+      }
     }
   }, [])
   return (

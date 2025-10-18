@@ -12,8 +12,8 @@ interface ArticleImageBlockComonentProps {
 const ArticleImageBlockComonent = ({ className, block }: ArticleImageBlockComonentProps) => {
   return (
     <div className={classNames(cl.ArticleImageBlockComonent, {}, [className])}>
-      <img src={block.src} alt='' />
-      {block.title && <Text text={block.title} />}
+      <img src={block?.src} alt='' />
+      {block?.title && <Text text={block.title} />}
     </div>
   )
 }

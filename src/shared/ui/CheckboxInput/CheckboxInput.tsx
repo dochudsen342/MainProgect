@@ -2,10 +2,11 @@ import React, { ChangeEvent, InputHTMLAttributes, useEffect, useRef, useState } 
 import cl from './CheckboxInput.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import Text, { TextWeight } from '../Text/Text'
+import { ArcticleType } from 'entities/Article/model/types/article'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 
-export enum inputTheme {
+export enum InputTheme {
   OUTLINE = 'outline',
   CLEAR = 'clear',
 }
@@ -16,9 +17,9 @@ interface CheckboxInputProps extends HTMLInputProps {
   type?: string
   chekboxText?: string
   textWeight?: TextWeight
-  onChange?: (value: string) => void
-  onDeleteValue?: (value: string) => void
-  inputTheme?: inputTheme
+  onChange: (value: ArcticleType) => void
+  onDeleteValue: (value: ArcticleType) => void
+  inputTheme?: InputTheme
   disabled?: boolean
 }
 
@@ -31,7 +32,7 @@ const CheckboxInput = (props: CheckboxInputProps) => {
     value,
     onChange,
     onDeleteValue,
-    inputTheme,
+    inputTheme = InputTheme.OUTLINE,
     disabled,
     textWeight = TextWeight.MEDIUM,
     ...outherProps
@@ -39,9 +40,9 @@ const CheckboxInput = (props: CheckboxInputProps) => {
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      onChange?.(e.target.value)
+      onChange(e.target.value as ArcticleType)
     } else {
-      onDeleteValue?.(e.target.value)
+      onDeleteValue(e.target.value as ArcticleType)
     }
   }
   const inputRef = useRef<HTMLInputElement>(null)

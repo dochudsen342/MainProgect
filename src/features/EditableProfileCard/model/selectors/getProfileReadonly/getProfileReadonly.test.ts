@@ -7,6 +7,7 @@ describe('getLoginError.test', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         readonly: true,
+        isLoading: false,
       },
     }
     expect(getProfileReadonly(state as StateSchema)).toEqual(true)

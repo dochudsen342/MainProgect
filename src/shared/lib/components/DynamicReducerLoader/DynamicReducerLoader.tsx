@@ -26,18 +26,18 @@ const DynamicReducerLoader: FC<DynamicReducerLoaderProps> = ({
   useEffect(() => {
     const mountedReducers = store.reducerManager.getReducerMap()
 
-    Object.entries(reducers).forEach(([nameReducer, reducer]: ReducerListEntry) => {
+    Object.entries(reducers).forEach(([nameReducer, reducer]) => {
       const mounted = mountedReducers[nameReducer as StateSchemaKey]
       if (!mounted) {
-        store.reducerManager.add(nameReducer, reducer)
+        store.reducerManager.add(nameReducer as StateSchemaKey, reducer)
         dispatch({ type: `@INIT ${nameReducer} reducer` })
       }
     })
 
     return () => {
       if (removeAfterUnmount) {
-        Object.entries(reducers).forEach(([nameReducer]: ReducerListEntry) => {
-          store.reducerManager.remove(nameReducer)
+        Object.entries(reducers).forEach(([nameReducer]) => {
+          store.reducerManager.remove(nameReducer as StateSchemaKey)
           dispatch({ type: `@DESTROY ${nameReducer} reducer` })
         })
       }

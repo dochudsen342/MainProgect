@@ -1,9 +1,9 @@
-import { RefObject, useEffect, useRef } from 'react'
+import { RefObject, useEffect } from 'react'
 
 export interface UseInfiniteScrollOptions {
   callback?: () => void
-  triggerRef: RefObject<HTMLDivElement>
-  wrapperRef: RefObject<HTMLElement>
+  triggerRef: RefObject<HTMLDivElement | null>
+  wrapperRef: RefObject<HTMLElement | null>
 }
 
 export const useInfiniteScroll = ({
@@ -27,9 +27,11 @@ export const useInfiniteScroll = ({
           callback()
         }
       }, options)
-      observer.observe(triggerElement)
+      if (triggerElement) {
+        observer.observe(triggerElement)
+      }
       return () => {
-        if (observer) {
+        if (observer && triggerElement) {
           observer.unobserve(triggerElement)
         }
       }

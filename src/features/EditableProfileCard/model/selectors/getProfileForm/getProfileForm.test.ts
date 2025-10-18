@@ -15,6 +15,8 @@ describe('getLoginError.test', () => {
     const state: DeepPartial<StateSchema> = {
       profile: {
         form: profileFormData,
+        readonly: false,
+        isLoading: true,
       },
     }
     expect(getProfileForm(state as StateSchema)).toEqual(profileFormData)

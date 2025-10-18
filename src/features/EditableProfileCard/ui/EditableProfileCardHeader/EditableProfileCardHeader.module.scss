@@ -2,10 +2,16 @@
     border: 1px solid green;
     color: green;
     background-color: var(--bg-color);
+    width: fit-content;
 }
 
 .cancelEditButton {
     border: 1px solid red;
     color: red;
     background-color: var(--bg-color);
+    width: fit-content;
+}
+
+.editBtn {
+    width: fit-content;
 }

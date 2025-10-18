@@ -13,7 +13,7 @@ describe('getLoginError.test', () => {
   }
   test('should return profileData', () => {
     const state: DeepPartial<StateSchema> = {
-      profile: { data: profileData, isLoading: true },
+      profile: { data: profileData, isLoading: true, readonly: false },
     }
     expect(getProfileData(state as StateSchema)).toEqual(profileData)
   })

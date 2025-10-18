@@ -9,8 +9,11 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
+    width: fit-content;
 }
-
+.Btn {
+    width: fit-content;
+}
 .options {
     position: absolute;
     z-index: 100000;

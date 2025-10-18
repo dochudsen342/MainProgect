@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import React from 'react'
 import { ArticleList } from 'entities/Article'
 import { useSelector } from 'react-redux'
 import { getArticleList } from '../../model/slice/articlePageSlice'
@@ -7,9 +6,7 @@ import {
   getArticleListIsLoading,
   getArticleListView,
 } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
-import { useSearchParams } from 'react-router-dom'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage'
 
 interface ArticleInfiniteListProps {
   className?: string

@@ -21,7 +21,12 @@ interface ArticleItemProps {
   target?: HTMLAttributeAnchorTarget
 }
 
-const ArticleItem = ({ className, article, view, target }: ArticleItemProps) => {
+const ArticleItem = ({
+  className,
+  article,
+  view = ArticleView.SMALL,
+  target,
+}: ArticleItemProps) => {
   const { t } = useTranslation()
   const [bindHover] = useHover()
   const types = <Text text={article?.type.join(',')} className={cl.types} />
@@ -50,7 +55,9 @@ const ArticleItem = ({ className, article, view, target }: ArticleItemProps) => 
           {textBlock && <ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />}
           <div className={cl.footer}>
             <AppLink target={target} to={RoutePath.article_deteails + article?.id}>
-              <Button theme={ThemeButton.OUTLINE}>{t('Читать далее...')}</Button>
+              <Button className={cl.readForBtn} theme={ThemeButton.OUTLINE}>
+                {t('Читать далее...')}
+              </Button>
             </AppLink>
             {views}
           </div>

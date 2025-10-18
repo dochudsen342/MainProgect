@@ -1,6 +1,6 @@
 import React, { ReactNode, useEffect, useState } from 'react'
 import cl from './Modal.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import Portal from '../Portal/Portal'
 import { useTheme } from 'app/providers/ThemeProvider'
 
@@ -16,8 +16,8 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
   const { theme } = useTheme()
   const [isMounted, setIsMounted] = useState(false)
 
-  const mods: Record<string, boolean> = {
-    [cl.opened]: isOpen,
+  const mods: Mods = {
+    [cl.opened as keyof typeof cl]: isOpen,
   }
 
   useEffect(() => {

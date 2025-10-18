@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next'
 
 interface ArticleListProps {
   className?: string
-  articles?: Article[]
+  articles: Article[]
   isLoading?: boolean
   view?: ArticleView
   sort?: ArcticleSortField
@@ -19,7 +19,13 @@ interface ArticleListProps {
   target?: HTMLAttributeAnchorTarget
 }
 
-const ArticleList = ({ className, articles, isLoading, view, target }: ArticleListProps) => {
+const ArticleList = ({
+  className,
+  articles = [],
+  isLoading,
+  view = ArticleView.SMALL,
+  target,
+}: ArticleListProps) => {
   const { t } = useTranslation()
   const renderArticle = useCallback(
     (article: Article) => {
@@ -43,7 +49,7 @@ const ArticleList = ({ className, articles, isLoading, view, target }: ArticleLi
     return skeletonList
   }, [view])
 
-  if (!isLoading && !articles.length) {
+  if (!isLoading && !articles?.length) {
     return (
       <div className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
         <Text size={TextSize.L} title={t('Статьи не найдены')} />

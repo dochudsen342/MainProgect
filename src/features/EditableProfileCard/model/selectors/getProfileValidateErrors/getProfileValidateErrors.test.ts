@@ -14,6 +14,8 @@ describe('getLoginError.test', () => {
       profile: {
         validateErrors: validateErrors,
         error: 'error',
+        isLoading: false,
+        readonly: false,
       },
     }
     expect(getProfileValidateErrors(state as StateSchema)).toEqual(validateErrors)
