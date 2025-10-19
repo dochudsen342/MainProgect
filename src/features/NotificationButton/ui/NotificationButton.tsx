@@ -13,7 +13,7 @@ interface NotificationButtonProps {
 
 const NotificationButton = ({ className }: NotificationButtonProps) => {
   const { data: Notifications, isLoading } = useGetNotificationsList(null, {
-    pollingInterval: 5000,
+    pollingInterval: 10000,
   })
   return (
     <Popover
