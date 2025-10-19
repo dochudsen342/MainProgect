@@ -9,8 +9,13 @@ import { getAuthData, isUserAdmin, isUserManager, userAction } from 'entities/Us
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import Dropdown from 'shared/ui/Dropdown/Dropdown'
 import Avatar from 'shared/ui/Avatar/Avatar'
+import { HStack } from 'shared/ui/Stack'
+import Icon, { IconFill } from 'shared/ui/Icon/Icon'
+import { Dropdown, Popover } from 'shared/ui/Popus'
+import { NotificationList } from 'entities/Notification'
+import { NotificationButton } from 'features/NotificationButton'
+import { AvatarDropdown } from 'features/AvatarDropdown'
 
 interface NavbarProps {
   classNames: string
@@ -20,10 +25,6 @@ export const Navbar = () => {
   const [isModalAuth, setIsModalAuth] = useState(false)
   const { t } = useTranslation()
   const userAuthData = useSelector(getAuthData)
-  const dispatch = useAppDispatch()
-  const isAdmin = useSelector(isUserAdmin)
-  const isManager = useSelector(isUserManager)
-  const isAdminPanelAvalible = isAdmin || isManager
 
   const onOpen = useCallback(() => {
     setIsModalAuth(true)
@@ -32,11 +33,6 @@ export const Navbar = () => {
   const onClose = useCallback(() => {
     setIsModalAuth(false)
   }, [isModalAuth])
-
-  const onLogout = useCallback(() => {
-    dispatch(userAction.logout())
-    setIsModalAuth(false)
-  }, [dispatch])
 
   if (userAuthData) {
     return (
@@ -48,21 +44,10 @@ export const Navbar = () => {
         >
           {t('Создать статью')}
         </AppLink>
-        <Dropdown
-          className={cl.dropdown}
-          direction='bottom left'
-          items={[
-            {
-              content: t('Профиль'),
-              href: RoutePath.profile + userAuthData.id,
-            },
-            { content: t('Выйти'), onClick: onLogout, href: '' },
-            ...(isAdminPanelAvalible
-              ? [{ content: t('Админка'), href: RoutePath.admin_panel }]
-              : []),
-          ]}
-          trigger={<Avatar size={30} src={userAuthData?.avatar} />}
-        />
+        <HStack gap={'16'} className={cl.actions}>
+          <NotificationButton />
+          <AvatarDropdown setIsModalAuth={setIsModalAuth} />
+        </HStack>
       </div>
     )
   }

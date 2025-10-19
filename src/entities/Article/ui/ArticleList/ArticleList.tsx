@@ -8,10 +8,11 @@ import { SortOrder } from 'shared/types'
 import Text, { TextSize } from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { Virtuoso } from 'react-virtuoso'
+import { List, RowComponentProps } from 'react-window'
 
 interface ArticleListProps {
   className?: string
-  articles: Article[]
+  articles?: Article[]
   isLoading?: boolean
   view?: ArticleView
   sort?: ArcticleSortField
@@ -43,9 +44,6 @@ const ArticleList = ({
     [articles, view]
   )
 
-  const getVirtuosoHeight = useCallback(() => {
-    return view === ArticleView.BIG ? 700 : 500
-  }, [view])
   const renderSkeleton = useCallback(() => {
     const skeletonList = new Array(view === ArticleView.BIG ? 3 : 12)
       .fill(0)

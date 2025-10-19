@@ -5,6 +5,7 @@ import EditableProfileCard from 'features/EditableProfileCard/ui/EditableProfile
 import { useParams } from 'react-router-dom'
 import Text from 'shared/ui/Text/Text'
 import EditableProfileCardHeader from 'features/EditableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader'
+import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
 
 interface ProfilePageProps {
   className?: string
@@ -17,10 +18,12 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return <Text text={t('Профиль не найден')}></Text>
   }
   return (
-    <VStack gap='16' max>
-      <EditableProfileCardHeader />
-      <EditableProfileCard id={id} />
-    </VStack>
+    <PageWrapper>
+      <VStack gap='16' max>
+        <EditableProfileCardHeader />
+        <EditableProfileCard id={id} />
+      </VStack>
+    </PageWrapper>
   )
 }
 

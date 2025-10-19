@@ -23,20 +23,15 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
   const dispatch = useAppDispatch()
   let [searchParams] = useSearchParams()
 
-  const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlesPart())
-  }, [dispatch])
-
   useEffect(() => {
     dispatch(initArticlesPage(searchParams))
   }, [])
-
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPart())
+  }, [dispatch])
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
-      <PageWrapper
-        onScrollEnd={onLoadNextPart}
-        className={classNames(cl.ArticlePage, {}, [className])}
-      >
+      <PageWrapper onScrollEnd={onLoadNextPart} className={cl.pageWrapper}>
         <ArticlesFillterPage />
         <ArticleInfiniteList className={cl.list} />
       </PageWrapper>

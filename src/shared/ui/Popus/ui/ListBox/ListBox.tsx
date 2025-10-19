@@ -1,9 +1,10 @@
 import { Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import cl from './ListBox.module.scss'
+import popupCl from '../styles/popup.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
-import Button, { ThemeButton } from '../Button/Button'
-import { HStack } from '../Stack'
+import Button, { ThemeButton } from '../../../Button/Button'
+import { HStack } from '../../../Stack'
 
 export interface ListBoxItem {
   value: string
@@ -42,11 +43,11 @@ const Listbox = ({
       <HListBox
         as={'div'}
         disabled={readonly}
-        className={classNames(cl.ListBox, {}, [className])}
+        className={classNames(cl.ListBox, {}, [className, popupCl.popup])}
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button disabled={readonly} className={cl.trigger}>
+        <HListBox.Button disabled={readonly} className={popupCl.trigger}>
           <Button className={cl.Btn} disabled={readonly}>
             {value ?? defaultValue}
           </Button>
@@ -64,7 +65,7 @@ const Listbox = ({
                 <li
                   className={classNames(
                     cl.item,
-                    { [cl.active]: active, [cl.disabled]: item.unavailable },
+                    { [popupCl.active]: active, [popupCl.disabled]: item.unavailable },
                     []
                   )}
                 >
