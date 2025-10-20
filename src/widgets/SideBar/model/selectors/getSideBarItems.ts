@@ -36,7 +36,7 @@ export const getSideBarItems = createSelector(getAuthData, (userData) => {
         text: 'Статьи',
         Icon: ArticlesIcon,
         authOnly: true,
-      },
+      }
     )
   }
   return sideBarItemsList

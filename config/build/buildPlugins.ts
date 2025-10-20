@@ -6,7 +6,7 @@ import { BuildOptions } from './types/config'
 import CopyPlugin from 'copy-webpack-plugin'
 import CircularDependecyPlugin from 'circular-dependency-plugin'
 import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin'
-export function buildPlugins({ path }: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ path, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
       template: path.html,
@@ -18,6 +18,7 @@ export function buildPlugins({ path }: BuildOptions): webpack.WebpackPluginInsta
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
+      __API__: JSON.stringify(apiUrl),
     }),
     new CircularDependecyPlugin({
       exclude: /node_modules/,
