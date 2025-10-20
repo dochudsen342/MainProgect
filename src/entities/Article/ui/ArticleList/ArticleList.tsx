@@ -7,8 +7,6 @@ import cl from './ArticleList.module.scss'
 import { SortOrder } from 'shared/types'
 import Text, { TextSize } from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
-import { Virtuoso } from 'react-virtuoso'
-import { List, RowComponentProps } from 'react-window'
 
 interface ArticleListProps {
   className?: string

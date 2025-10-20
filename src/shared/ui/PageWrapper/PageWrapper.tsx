@@ -1,4 +1,4 @@
-import { ReactNode, UIEvent, useRef } from 'react'
+import { ReactNode, RefObject, UIEvent, useRef } from 'react'
 import { scrollRestorationAction } from 'features/ScrollRestoration'
 import { useLocation } from 'react-router-dom'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -27,11 +27,12 @@ const PageWrapper = ({
   onScrollEnd,
   overflowY = 'auto',
 }: PageWrapperProps) => {
-  const wrapperRef = useRef<HTMLElement>(null)
-  const triggerRef = useRef<HTMLDivElement>(null)
+  const wrapperRef = useRef<HTMLElement | null>(null)
+  const triggerRef = useRef<HTMLDivElement | null>(null)
   const dispatch = useAppDispatch()
   const { pathname } = useLocation()
   const pageWrapperAditionalClasses = [className, pageWrapperOwerflowYClasses[overflowY]]
+
   useInfiniteScroll({
     wrapperRef,
     triggerRef,

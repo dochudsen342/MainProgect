@@ -24,13 +24,9 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkCon
           sort: sortFromUrl,
           search: searchFromUrl,
           type: typeSort,
-        }),
+        })
       )
-      dispatch(
-        fetchArticleList({
-          page: 1,
-        }),
-      )
+      dispatch(fetchArticleList({}))
     }
-  },
+  }
 )

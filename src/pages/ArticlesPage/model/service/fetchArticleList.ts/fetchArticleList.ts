@@ -4,6 +4,7 @@ import { Article } from 'entities/Article'
 import {
   getArticleListLimit,
   getArticleListOrder,
+  getArticleListPage,
   getArticleListSearch,
   getArticleListSort,
   getArticleListTypeValue,
@@ -12,7 +13,6 @@ import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
 import { ArcticleType } from 'entities/Article/model/types/article'
 
 interface FetchArticleListProps {
-  page?: number
   replace?: boolean
 }
 
@@ -22,8 +22,8 @@ export const fetchArticleList = createAsyncThunk<
   ThunkConfig<string>
 >('articlePage/fetchArticleList', async (props, thunkAPI) => {
   const { extra, rejectWithValue, getState } = thunkAPI
-  const { page = 1 } = props
   const limit = getArticleListLimit(getState())
+  const page = getArticleListPage(getState())
   const sort = getArticleListSort(getState())
   const order = getArticleListOrder(getState())
   const search = getArticleListSearch(getState())

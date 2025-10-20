@@ -86,8 +86,8 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
 
   const onChangeOrder = useCallback(
     (newOrder: SortOrder | string) => {
-      dispatch(articlePageAction.setOrder(newOrder as SortOrder))
       dispatch(articlePageAction.setPage(1))
+      dispatch(articlePageAction.setOrder(newOrder as SortOrder))
       fetchData()
     },
     [dispatch, fetchData]
@@ -105,6 +105,7 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
   const onChangeTabs = useCallback(
     (newTabs: TabItem) => {
       dispatch(articlePageAction.setTabs(newTabs.value as ArcticleType))
+      dispatch(articlePageAction.setPage(1))
       fetchData()
     },
     [dispatch, fetchData]
