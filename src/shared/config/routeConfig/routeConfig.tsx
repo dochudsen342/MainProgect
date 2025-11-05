@@ -1,6 +1,7 @@
 import { UserRole } from 'entities/User'
 import { AboutPage } from 'pages/AboutPage'
 import { AdminPanelPage } from 'pages/AdminPanelPage'
+import ArticleCreatePage from 'pages/ArticleCreatePage/ui/ArticleCreatePage'
 import { ArticleDetailsPage } from 'pages/ArticleDetailsPage'
 import { ArticleEditPage } from 'pages/ArticleEditPage'
 import { ArticlesPage } from 'pages/ArticlesPage'
@@ -69,7 +70,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.ARTICLE_CREATE]: {
     path: `${RoutePath.article_create}`,
     authOnly: true,
-    element: <ArticleEditPage />,
+    element: <ArticleCreatePage />,
   },
   [AppRoutes.ARTICLE_EDIT]: {
     path: `${RoutePath.article_edit}`,

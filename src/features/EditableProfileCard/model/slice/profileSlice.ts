@@ -24,7 +24,8 @@ export const profileSlice = createSlice({
         ...action.payload,
       }
     },
-    cancelEdit: (state) => {
+    cancelEdit: (state, action: PayloadAction<Profile>) => {
+      state.data = action.payload
       state.readonly = true
       state.form = state.data
       state.validateErrors = undefined

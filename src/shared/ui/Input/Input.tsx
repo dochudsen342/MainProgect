@@ -15,7 +15,6 @@ interface InputProps extends HTMLInputProps {
   value?: string | number
   type?: string
   placeholder?: string
-  chekboxText?: string
   onChange?: (value: string) => void
   autoFocus?: boolean
   inputTheme?: InputTheme
@@ -25,7 +24,6 @@ interface InputProps extends HTMLInputProps {
 const Input = memo((props: InputProps) => {
   const {
     className,
-    chekboxText,
     type = 'text',
     value,
     onChange,
@@ -53,7 +51,6 @@ const Input = memo((props: InputProps) => {
 
   return (
     <div className={cl.inputWrapper}>
-      {chekboxText && <Text className={cl.checkboxText} text={chekboxText} />}
       <input
         ref={inputRef}
         type={type}

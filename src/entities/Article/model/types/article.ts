@@ -38,7 +38,7 @@ export interface ArticleBlockBase {
 }
 
 export interface ArticleCodeBlock extends ArticleBlockBase {
-  title: string
+  title?: string
   type: ArticleBlockType.CODE
   code: string
 }

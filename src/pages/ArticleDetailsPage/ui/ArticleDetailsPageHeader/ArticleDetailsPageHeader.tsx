@@ -24,9 +24,6 @@ const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeaderProps) 
   const onEditArticle = useCallback(() => {
     navigate(`${RoutePath.article_deteails}${articleData?.id}/edit`)
   }, [articleData?.id, navigate])
-  const onCreateArticle = useCallback(() => {
-    navigate(RoutePath.articles)
-  }, [])
 
   return (
     <div className={classNames(cl.ArticleDetailsPageHeader, {}, [className])}>

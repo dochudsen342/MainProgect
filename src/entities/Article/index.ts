@@ -1,13 +1,15 @@
-import ArticleDetails from './ui/ArticleDeteils/ArticleDetails'
+import ArticleDetails from './ui/ArticleDetails/ArticleDetails'
 import type { Article } from './model/types/article'
 import type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 import { ArticleView } from './model/types/article'
 import ArticleList from './ui/ArticleList/ArticleList'
 import { ArcticleSortField } from './model/types/article'
 import { getArticleDetailsData } from './model/selectors/getArticleDetailsData/getArticleDetailsData'
+import { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById'
 
 export {
   ArticleDetails,
+  fetchArticleById,
   ArticleList,
   getArticleDetailsData,
   Article,

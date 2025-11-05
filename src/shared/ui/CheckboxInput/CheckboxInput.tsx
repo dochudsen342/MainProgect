@@ -17,14 +17,14 @@ interface CheckboxInputProps extends HTMLInputProps {
   type?: string
   chekboxText?: string
   textWeight?: TextWeight
-  onChange: (value: ArcticleType) => void
-  onDeleteValue: (value: ArcticleType) => void
+  isChecked?: boolean
+  onChange?: (value: ArcticleType) => void
+  onDeleteValue?: (value: ArcticleType) => void
   inputTheme?: InputTheme
   disabled?: boolean
 }
 
 const CheckboxInput = (props: CheckboxInputProps) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false)
   const {
     className,
     chekboxText,
@@ -32,6 +32,7 @@ const CheckboxInput = (props: CheckboxInputProps) => {
     value,
     onChange,
     onDeleteValue,
+    isChecked,
     inputTheme = InputTheme.OUTLINE,
     disabled,
     textWeight = TextWeight.MEDIUM,
@@ -40,9 +41,9 @@ const CheckboxInput = (props: CheckboxInputProps) => {
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      onChange(e.target.value as ArcticleType)
+      onChange?.(e.target.value as ArcticleType)
     } else {
-      onDeleteValue(e.target.value as ArcticleType)
+      onDeleteValue?.(e.target.value as ArcticleType)
     }
   }
   const inputRef = useRef<HTMLInputElement>(null)
@@ -60,6 +61,7 @@ const CheckboxInput = (props: CheckboxInputProps) => {
         type={type}
         onChange={onChangeHandler}
         value={value}
+        checked={isChecked}
         className={classNames(cl.InputCheckbox, mods, [className])}
         {...outherProps}
       />

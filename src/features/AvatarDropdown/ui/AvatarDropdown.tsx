@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
 import cl from './AvatarDropdown.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
 import { Dropdown } from 'shared/ui/Popus'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'

@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import CheckboxInput from 'shared/ui/CheckboxInput/CheckboxInput'
 import { ArcticleType } from 'entities/Article/model/types/article'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { createArticleFormAction } from '../../model/slice/createArticleForm'
+import { createArticleFormAction } from '../../model/slice/createArticleFormSlice'
 
 interface TypeArticleFormProps {
   className?: string
@@ -17,14 +17,14 @@ const TypeArticleForm = ({ className }: TypeArticleFormProps) => {
     (value: ArcticleType) => {
       dispatch(createArticleFormAction.setArticleType(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onDeleteArticleType = useCallback(
     (value: ArcticleType) => {
       dispatch(createArticleFormAction.deleteArticleType(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   return (
