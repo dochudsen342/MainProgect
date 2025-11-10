@@ -3,12 +3,11 @@ import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from 'entities/Article'
 import { UserSchema } from 'entities/User'
 import { AddCommentFormSchema } from 'features/AddCommentForm'
+import { ArticleCrudShema } from 'features/ArticleCrudForm/model/types/articleCrudSchema'
 import { LoginSchema } from 'features/AuthByUsername'
-import { CreacteArticleFormSchema } from 'features/CreateArticleForm/model/types/createArticleFormSchema'
 import { ProfileSchema } from 'features/EditableProfileCard'
-import { EditableArticleSchema } from 'features/EditArticleForm/model/types/editArticle'
 import { ScrollRestorationSchema } from 'features/ScrollRestoration/types/scrollRestoration'
-import { ArticlesDetailsPageSchema } from 'pages/ArticleDetailsPage/types'
+import { ArticlesDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types'
 import { ArticlePageSchema } from 'pages/ArticlesPage/model/types/articlePageSchema'
 import { rtkApi } from 'shared/api/rtkApi'
 
@@ -23,8 +22,7 @@ export interface StateSchema {
   articleDetailsPage?: ArticlesDetailsPageSchema
   addCommentForm?: AddCommentFormSchema
   articlePage?: ArticlePageSchema
-  articleCreatePage?: CreacteArticleFormSchema
-  articleEditPage?: EditableArticleSchema
+  articleCrudForm?: ArticleCrudShema
 }
 
 export type StateSchemaKey = keyof StateSchema

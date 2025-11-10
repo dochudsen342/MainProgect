@@ -14,6 +14,7 @@ export enum ButtonSize {
   SIZE_M = 'sizeM',
   SIZE_X = 'sizeX',
   SIZE_XL = 'sizeXL',
+  SIZE_FIT_CONTENT = 'size_fit_content',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -30,7 +31,7 @@ const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
     children,
     className,
     square = false,
-    size = ButtonSize.SIZE_M,
+    size = '',
     disabled,
     ...otherProps
   } = props

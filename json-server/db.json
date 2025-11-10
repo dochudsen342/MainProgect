@@ -54,14 +54,16 @@
       "views": 6022,
       "userId": "1",
       "createdDate": "26.02.2022",
-      "type": ["SCIENCE"],
+      "type": [
+        "ECONOMY"
+      ],
       "blocks": [
         {
           "id": "1",
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragraphs": [
-            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.\nJavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.\nСуществуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:тестоый запрос!!!"
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.\nJavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.\nСуществуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц. Как правило, код оформляют в виде отдельных файлов с расширением .js, которые подключают к веб-страницам, но программный код можно включать и непосредственно в код страницы. Всё это делается с помощью тега <script>. Когда браузер обнаруживает такой код, он выполняет его. Подробности о теге script можно посмотреть на сайте w3school.com. В частности, рассмотрим пример, демонстрирующий работу с веб-страницей средствами JavaScript, приведённый на этом ресурсе. Этот пример можно запустить и средствами данного ресурса (ищите кнопку Try it Yourself), но мы поступим немного иначе. А именно, создадим в каком-нибудь текстовом редакторе (например — в VS Code или в Notepad++) новый файл, который назовём hello.html, и добавим в него следующий код:test edit!!!!!!"
           ]
         },
         {
@@ -69,13 +71,23 @@
           "type": "CODE",
           "title": "код",
           "code": "function calculate(operation, num1, num2) {\n    switch(operation) {\n        case 'add':\n            return num1 + num2;\n        case 'subtract':\n            return num1 - num2;\n        case 'multiply':\n            return num1 * num2;\n        case 'divide':\n            return num1 / num2;\n        default:\n            return 'Invalid operation';\n    }\n}"
+        },
+        {
+          "id": "block-1762758041448",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "тестовый новый блок"
+          ]
         }
       ],
       "user": {
         "id": "1",
         "username": "admin",
         "password": "123",
-        "roles": ["admin"],
+        "roles": [
+          "admin"
+        ],
         "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"
       }
     },
@@ -87,7 +99,9 @@
       "views": 932,
       "userId": "1",
       "createdDate": "21.06.2025",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -109,7 +123,9 @@
       "views": 99192,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -131,7 +147,9 @@
       "views": 102,
       "userId": "2",
       "createdDate": "13.07.2021",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -153,7 +171,9 @@
       "views": 15110,
       "userId": "2",
       "createdDate": "13.07.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -175,7 +195,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -197,7 +219,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -219,7 +243,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -241,7 +267,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -263,7 +291,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -285,7 +315,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -307,7 +339,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -329,7 +363,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -351,7 +387,10 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT", "TECH"],
+      "type": [
+        "IT",
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -373,7 +412,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -395,7 +436,9 @@
       "views": 1512,
       "userId": "2",
       "createdDate": "13.07.2023",
-      "type": ["TECH"],
+      "type": [
+        "TECH"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -408,6 +451,147 @@
           ]
         }
       ]
+    },
+    {
+      "title": "фывлдфровдофыв",
+      "subtitle": "фывшфыовдофдыв",
+      "img": "фывлдфывжлфджыв",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [
+        "IT"
+      ],
+      "views": 0,
+      "blocks": [
+        {
+          "id": "block-1762694646946",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "фывжд  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n  const isLoading = useSelector(getCrudArticleIsLoading)\n"
+          ]
+        }
+      ],
+      "id": "uXBG-M-"
+    },
+    {
+      "title": "asdasdasda",
+      "subtitle": "sdasdasda",
+      "img": "",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [
+        "IT"
+      ],
+      "views": 0,
+      "blocks": [
+        {
+          "id": "block-1762700445649",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "content = (\n      <>\n        <div className={cl.createArticleFom__mainInfo}>\n          <ArticleHeaderFields className={cl.articleMainFields} />\n          <ArticleTypeSelector />\n        </div>\n        <div>{articleData?.blocks.map(renderBlocks)}</div>\n        <div className={cl.blocksWrapper}>\n          {blocks.map((block, index) => (\n            <div key={index}>{block}</div>\n          ))}\n        </div>\n        <AddBlockPanel setBlocks={setBlocks} />\n      </>\n    )content = (\n      <>\n        <div className={cl.createArticleFom__mainInfo}>\n          <ArticleHeaderFields className={cl.articleMainFields} />\n          <ArticleTypeSelector />\n        </div>\n        <div>{articleData?.blocks.map(renderBlocks)}</div>\n        <div className={cl.blocksWrapper}>\n          {blocks.map((block, index) => (\n            <div key={index}>{block}</div>\n          ))}\n        </div>\n        <AddBlockPanel setBlocks={setBlocks} />\n      </>\n    )"
+          ]
+        }
+      ],
+      "id": "W0awl77"
+    },
+    {
+      "title": "фывфыв",
+      "subtitle": "фывфыв",
+      "img": "фывфвфв",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [
+        "IT"
+      ],
+      "views": 0,
+      "blocks": [
+        {
+          "id": "block-1762712090203",
+          "type": "CODE",
+          "title": "",
+          "code": "фывфывфыв              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n              className={cl.textAreaBlock}\n"
+        }
+      ],
+      "id": "z0c0cIs"
+    },
+    {
+      "title": "asdasdasda",
+      "subtitle": "asd",
+      "img": "",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [
+        "SCIENCE"
+      ],
+      "views": 0,
+      "blocks": [
+        {
+          "id": "block-1762712184021",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "dasd<PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader /><PageLoader />"
+          ]
+        }
+      ],
+      "id": "SG8YTYW"
+    },
+    {
+      "title": "asdasd",
+      "subtitle": "asdad",
+      "img": "dasd",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [
+        "IT"
+      ],
+      "views": 0,
+      "blocks": [
+        {
+          "id": "block-1762712297616",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "asdasdas"
+          ]
+        }
+      ],
+      "id": "u272v6F"
+    },
+    {
+      "title": "klmlkjmlkjml",
+      "subtitle": "kljkljlkjl",
+      "img": "pjpkp;kp",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [
+        "IT"
+      ],
+      "views": 0,
+      "blocks": [
+        {
+          "id": "block-1762756626229",
+          "type": "TEXT",
+          "title": "",
+          "paragraphs": [
+            "ljkll;klkll;l;"
+          ]
+        }
+      ],
+      "id": "87wORvc"
+    },
+    {
+      "title": "",
+      "subtitle": "",
+      "img": "",
+      "userId": "1",
+      "createdDate": "2025",
+      "type": [],
+      "views": 0,
+      "blocks": [],
+      "id": "8xB4QpQ"
     }
   ],
   "comments": [
@@ -506,6 +690,12 @@
       "userId": "1",
       "text": "bbsdf",
       "id": "G6jyncM"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "bffghgh",
+      "id": "Uja-XTW"
     }
   ],
   "users": [
@@ -513,14 +703,18 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["admin"],
+      "roles": [
+        "admin"
+      ],
       "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["user"],
+      "roles": [
+        "user"
+      ],
       "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
     }
   ],

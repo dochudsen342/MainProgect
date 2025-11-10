@@ -16,7 +16,12 @@ const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
     <div className={classNames(cl.CommentList, {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
-          <CommentCard isLoading={isLoading} className={cl.comment} comment={comment} />
+          <CommentCard
+            key={comment.id}
+            isLoading={isLoading}
+            className={cl.comment}
+            comment={comment}
+          />
         ))
       ) : (
         <Text text={'Комментарии отсутствуют'} />

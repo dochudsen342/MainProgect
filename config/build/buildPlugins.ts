@@ -20,10 +20,10 @@ export function buildPlugins({ path, apiUrl }: BuildOptions): webpack.WebpackPlu
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify(apiUrl),
     }),
-    new CircularDependecyPlugin({
-      exclude: /node_modules/,
-      failOnError: true,
-    }),
+    // new CircularDependecyPlugin({
+    //   exclude: /node_modules/,
+    //   failOnError: true,
+    // }),
     new ForkTsCheckerPlugin(),
     new ReactRefreshWebpackPlugin(),
     new CopyPlugin({

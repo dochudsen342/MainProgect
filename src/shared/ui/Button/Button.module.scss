@@ -21,9 +21,11 @@
   background: none;
   outline: none;
 }
+
 .fullWidth {
   width: fit-content;
 }
+
 .clear_inverted {
   background: none;
   border: none;
@@ -73,4 +75,8 @@
 .sizeXL {
   width: 130px;
   height: 130px;
+}
+
+.size_fit_content {
+  width: fit-content;
 }
