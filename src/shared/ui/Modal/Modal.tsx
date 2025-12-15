@@ -3,6 +3,7 @@ import cl from './Modal.module.scss'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import Portal from '../Portal/Portal'
 import { useTheme } from 'app/providers/ThemeProvider'
+import Overlay from '../Overlay/Overlay'
 
 interface ModalProps {
   className?: string
@@ -32,10 +33,6 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     }
   }
 
-  const onContentClick = (e: React.MouseEvent) => {
-    e.stopPropagation()
-  }
-
   if (lazy && !isMounted) {
     return null
   }
@@ -43,14 +40,8 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
   return (
     <Portal>
       <div className={classNames(cl.Modal, mods, [theme])}>
-        <div onClick={onCloseHandler} className={cl.overlay}>
-          <div
-            className={classNames(cl.content, { [cl[theme]]: true })}
-            onClick={(e) => onContentClick(e)}
-          >
-            {children}
-          </div>
-        </div>
+        <Overlay onClick={onCloseHandler} />
+        <div className={classNames(cl.content, { [cl[theme]]: true })}>{children}</div>
       </div>
     </Portal>
   )

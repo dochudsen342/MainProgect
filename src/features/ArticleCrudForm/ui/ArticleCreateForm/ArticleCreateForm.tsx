@@ -26,7 +26,7 @@ const ArticleCreateForm = ({ className }: ArticleCreateFormProps) => {
   const dispatch = useAppDispatch()
   const articleData = useSelector(getCrudArticleData)
   const isLoading = useSelector(getCrudArticleIsLoading)
-  console.log(isLoading)
+
   const onCreateArticle = useCallback(() => {
     dispatch(fetchCreateArticle())
   }, [dispatch])

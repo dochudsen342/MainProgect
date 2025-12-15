@@ -2,7 +2,6 @@ import { memo, useCallback, useEffect } from 'react'
 import { fetchNextArticlesPart } from '../../model/service/fetchNextArticlesParts/fetchNextArticlesPart'
 import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage'
 import { useSearchParams } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames/classNames'
 import DynamicReducerLoader, {
   ReducerList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
@@ -16,11 +15,19 @@ import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
 interface ArticlePageProps {
   className?: string
 }
+
 const reducers: ReducerList = {
   articlePage: articlePageReducer,
 }
+
+const obj1 = {
+  className: '1',
+  b: 1,
+}
+
 const ArticlePage = ({ className }: ArticlePageProps) => {
   const dispatch = useAppDispatch()
+
   let [searchParams] = useSearchParams()
 
   useEffect(() => {

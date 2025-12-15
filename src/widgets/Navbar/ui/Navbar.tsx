@@ -11,6 +11,9 @@ import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { HStack } from 'shared/ui/Stack'
 import { NotificationButton } from 'features/NotificationButton'
 import { AvatarDropdown } from 'features/AvatarDropdown'
+import Drawer from 'shared/ui/Drawer/Drawer'
+import { NotificationList } from 'entities/Notification'
+import { useGetNotificationsList } from 'entities/Notification/api/notificationApi'
 
 interface NavbarProps {
   classNames: string
@@ -20,11 +23,9 @@ export const Navbar = () => {
   const [isModalAuth, setIsModalAuth] = useState(false)
   const { t } = useTranslation()
   const userAuthData = useSelector(getAuthData)
-
   const onOpen = useCallback(() => {
     setIsModalAuth(true)
   }, [isModalAuth])
-
   const onClose = useCallback(() => {
     setIsModalAuth(false)
   }, [isModalAuth])

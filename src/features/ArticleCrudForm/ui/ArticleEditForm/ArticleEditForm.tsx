@@ -83,7 +83,6 @@ const ArticleEditForm = ({ className, articleId }: ArticleEditFormProps) => {
     },
     [t]
   )
-  let content
 
   if (!isDataReady) {
     return (
@@ -118,16 +117,3 @@ const ArticleEditForm = ({ className, articleId }: ArticleEditFormProps) => {
 }
 
 export default ArticleEditForm
-
-{
-  /* <>
-        <div className={cl.createArticleFom__mainInfo}>
-          <Skeleton width={500} height={200} />
-          <Skeleton width={150} height={150} />
-        </div>
-        <div>
-          <Skeleton className={cl.textAreaSkeleton} height={300} width={'80%'} />
-          <Skeleton className={cl.textAreaSkeleton} height={300} width={'80%'} />
-        </div>
-      </> */
-}
