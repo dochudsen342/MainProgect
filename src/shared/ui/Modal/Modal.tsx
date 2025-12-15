@@ -1,9 +1,10 @@
-import React, { ReactNode, useEffect, useState } from 'react'
+import React, { ReactNode } from 'react'
 import cl from './Modal.module.scss'
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 import Portal from '../Portal/Portal'
 import { useTheme } from 'app/providers/ThemeProvider'
 import Overlay from '../Overlay/Overlay'
+import { useModal } from 'shared/lib/hooks/useModal'
 
 interface ModalProps {
   className?: string
@@ -15,28 +16,14 @@ interface ModalProps {
 
 const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
   const { theme } = useTheme()
-  const [isMounted, setIsMounted] = useState(false)
-
-  const mods: Mods = {
-    [cl.opened as keyof typeof cl]: isOpen,
-  }
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true)
-    }
-  }, [isOpen])
-
-  const onCloseHandler = () => {
-    if (onClose) {
-      onClose()
-    }
-  }
+  const { isMounted, onCloseHandler } = useModal({ isOpen, onClose })
 
   if (lazy && !isMounted) {
     return null
   }
-
+  const mods: Mods = {
+    [cl.opened as keyof typeof cl]: isOpen,
+  }
   return (
     <Portal>
       <div className={classNames(cl.Modal, mods, [theme])}>

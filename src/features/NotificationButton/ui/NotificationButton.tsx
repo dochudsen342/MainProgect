@@ -49,7 +49,7 @@ const NotificationButton = ({ className }: NotificationButtonProps) => {
       </BrowserView>
       <MobileView>
         {triger}
-        <Drawer onClose={onCloseDrawer} isOpen={isOpen}>
+        <Drawer lazy={true} onClose={onCloseDrawer} isOpen={isOpen}>
           <NotificationList data={Notifications} isLoading={isLoading} />
         </Drawer>
       </MobileView>
