@@ -9,6 +9,7 @@ import { useGetNotificationsList } from 'entities/Notification/api/notificationA
 import Drawer from 'shared/ui/Drawer/Drawer'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
 import { BrowserView, MobileView } from 'react-device-detect'
+import AnimationProvider from 'shared/lib/components/AnimationProvider/AnimationProvider'
 
 interface NotificationButtonProps {
   className?: string
@@ -49,9 +50,11 @@ const NotificationButton = ({ className }: NotificationButtonProps) => {
       </BrowserView>
       <MobileView>
         {triger}
-        <Drawer lazy={true} onClose={onCloseDrawer} isOpen={isOpen}>
-          <NotificationList data={Notifications} isLoading={isLoading} />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer lazy={true} onClose={onCloseDrawer} isOpen={isOpen}>
+            <NotificationList data={Notifications} isLoading={isLoading} />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </div>
   )

@@ -17,6 +17,11 @@ body {
   min-height: 100vh;
 }
 
+.app_drawer {
+  font: var(--font-m);
+  color: var(--text-color);
+}
+
 .routerWrapper {
   width: 100%;
   flex-grow: 1;
