@@ -1,5 +1,5 @@
-import { Article } from 'entities/Article'
-import { User } from 'entities/User'
+import { Article } from '@/entities/Article'
+import { User } from '@/entities/User'
 
 export interface ArticleCrud extends Omit<Article, 'id' | 'user'> {
   id?: string

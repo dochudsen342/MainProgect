@@ -1,7 +1,7 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/lib/CustomTypes/DeepPartial'
 import { getProfileForm } from './getProfileForm'
-import { Profile } from 'entities/Profile'
+import { Profile } from '@/entities/Profile'
 
 describe('getLoginError.test', () => {
   const profileFormData: Profile = {

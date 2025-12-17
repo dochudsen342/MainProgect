@@ -2,9 +2,9 @@ import { Menu, Popover as HPopover } from '@headlessui/react'
 import popupCl from '../styles/popup.module.scss'
 import cl from './Popover.module.scss'
 import { ReactNode } from 'react'
-import { DropDownDirection } from 'shared/types/ui'
+import { DropDownDirection } from '@/shared/types/ui'
 import { mapDirectionClass } from '../styles/consts'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 
 interface PopoverProps {
   className?: string

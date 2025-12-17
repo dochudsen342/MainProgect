@@ -1,11 +1,11 @@
 import React, { useCallback } from 'react'
 import cl from './AvatarDropdown.module.scss'
-import { Dropdown } from 'shared/ui/Popus'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import Avatar from 'shared/ui/Avatar/Avatar'
+import { Dropdown } from '@/shared/ui/Popus'
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import Avatar from '@/shared/ui/Avatar/Avatar'
 import { useSelector } from 'react-redux'
-import { getAuthData, isUserAdmin, isUserManager, userAction } from 'entities/User'
+import { getAuthData, isUserAdmin, isUserManager, userAction } from '@/entities/User'
 import { useTranslation } from 'react-i18next'
 
 interface AvatarDropdownProps {

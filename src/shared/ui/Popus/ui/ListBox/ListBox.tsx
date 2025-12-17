@@ -2,7 +2,7 @@ import { Fragment, ReactNode } from 'react'
 import { Listbox as HListBox } from '@headlessui/react'
 import cl from './ListBox.module.scss'
 import popupCl from '../styles/popup.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import Button, { ThemeButton } from '../../../Button/Button'
 import { HStack } from '../../../Stack'
 

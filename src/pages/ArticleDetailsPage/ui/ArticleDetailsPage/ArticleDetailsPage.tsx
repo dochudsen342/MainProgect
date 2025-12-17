@@ -1,14 +1,14 @@
 import { memo } from 'react'
-import { ArticleDetails } from 'entities/Article'
+import { ArticleDetails } from '@/entities/Article'
 // prettier-ignore
-import { ArticleRecomendationsList } from 'features/articleRecomendationsList'
+import { ArticleRecomendationsList } from '@/features/articleRecomendationsList'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import DynamicReducerLoader, {
   ReducerList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
 import { articleDetailsPageReducers } from '../../model/slices'
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ArticleList } from 'entities/Article'
+import { ArticleList } from '@/entities/Article'
 import { useSelector } from 'react-redux'
 import { getArticleList } from '../../model/slice/articlePageSlice'
 import {

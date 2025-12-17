@@ -1,9 +1,9 @@
 import React, { Suspense } from 'react'
-import Modal from 'shared/ui/Modal/Modal'
+import Modal from '@/shared/ui/Modal/Modal'
 import { LoginFormAsync } from '../LoginForm/LoginForm.async'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cl from './LoginForm.module.scss'
-import Spiner from 'shared/ui/Spiner/Spiner'
+import Spiner from '@/shared/ui/Spiner/Spiner'
 
 interface LoginModalProps {
   className?: string

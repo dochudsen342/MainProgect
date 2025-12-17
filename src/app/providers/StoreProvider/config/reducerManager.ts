@@ -1,7 +1,7 @@
 import { combineReducers, Reducer, ReducersMapObject, UnknownAction } from '@reduxjs/toolkit'
 import { StateSchema } from '..'
 import { ReducerManager, StateSchemaKey } from './stateSchema'
-import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
+import { DeepPartial } from '@/shared/lib/CustomTypes/DeepPartial'
 
 export function createReducerManager(
   initialReducers: ReducersMapObject<StateSchema>

@@ -1,4 +1,4 @@
-import { Theme } from 'app/providers/ThemeProvider'
+import { Theme } from '@/app/providers/ThemeProvider'
 
 const ThemeDecorator = (theme: Theme) => (Story: any) => {
   return (

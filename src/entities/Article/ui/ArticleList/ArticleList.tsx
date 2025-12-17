@@ -1,11 +1,11 @@
 import { HTMLAttributeAnchorTarget, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArcticleSortField, Article, ArticleView } from '../../model/types/article'
 import ArticleItem from '../ArticleItem/ArticleItem'
 import ArticleItemSkeleton from '../ArticleItem/ArticleItemSkeleton'
 import cl from './ArticleList.module.scss'
-import { SortOrder } from 'shared/types'
-import Text, { TextSize } from 'shared/ui/Text/Text'
+import { SortOrder } from '@/shared/types'
+import Text, { TextSize } from '@/shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 
 interface ArticleListProps {

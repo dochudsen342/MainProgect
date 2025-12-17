@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import cl from './Code.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import Button, { ButtonSize, ThemeButton } from '../Button/Button'
 import CopyIcon from '../../assets/icons/Vector (1).svg'
 

@@ -1,11 +1,11 @@
 import React from 'react'
 import cl from './ArticleViewSelector.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleView } from 'entities/Article'
-import ListIcon from 'shared/assets/icons/viewBig.svg'
-import TiledIcon from 'shared/assets/icons/viewSmall.svg'
-import Button, { ThemeButton } from 'shared/ui/Button/Button'
-import Icon from 'shared/ui/Icon/Icon'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleView } from '@/entities/Article'
+import ListIcon from '@/shared/assets/icons/viewBig.svg'
+import TiledIcon from '@/shared/assets/icons/viewSmall.svg'
+import Button, { ThemeButton } from '@/shared/ui/Button/Button'
+import Icon from '@/shared/ui/Icon/Icon'
 
 interface ArticleViewSelectorProps {
   className?: string

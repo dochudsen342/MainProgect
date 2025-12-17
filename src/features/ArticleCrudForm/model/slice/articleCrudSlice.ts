@@ -4,9 +4,9 @@ import {
   Article,
   ArticleBlock,
   ArticleBlockType,
-} from 'entities/Article/model/types/article'
+} from '@/entities/Article/model/types/article'
 import { ArticleCrudShema } from '../types/articleCrudSchema'
-import { fetchArticleById } from 'entities/Article'
+import { fetchArticleById } from '@/entities/Article'
 import { fetchCreateArticle } from '../service/fetchCreateArticle/fetchCreateArticle'
 import { fetchUpdateArticle } from '../service/fetchUpdateArticle/fetchUpdateArticle'
 

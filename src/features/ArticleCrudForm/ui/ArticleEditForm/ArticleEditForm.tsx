@@ -1,25 +1,25 @@
 import React, { ReactNode, useCallback, useEffect, useState } from 'react'
 import cl from './ArticleEditForm.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import ArticleHeaderFields from '../ArticleHeaderFields/ArticleHeaderFields'
 import ArticleTypeSelector from '../ArticleTypeSelector/ArticleTypeSelector'
 import AddBlockPanel from '../AddBlockPanel/AddBlockPanel'
 import { useTranslation } from 'react-i18next'
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article'
+import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/article'
 import TextAreaCrudBlock from '../TextAreaCrudBlock/TextAreaCrudBlock'
-import { InputTheme } from 'shared/ui/CheckboxInput/CheckboxInput'
-import Input from 'shared/ui/Input/Input'
+import { InputTheme } from '@/shared/ui/CheckboxInput/CheckboxInput'
+import Input from '@/shared/ui/Input/Input'
 import { useSelector } from 'react-redux'
 import {
   getCrudArticleData,
   getCrudArticleIsLoading,
 } from '../../model/selectors/getCrudArticleSelectors/getCrudArticleSelectors'
-import { fetchArticleById } from 'entities/Article'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { fetchArticleById } from '@/entities/Article'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { fetchUpdateArticle } from '../../model/service/fetchUpdateArticle/fetchUpdateArticle'
-import Button, { ThemeButton } from 'shared/ui/Button/Button'
-import Skeleton from 'shared/ui/Skeleton/Skeleton'
-import { PageLoader } from 'widgets/PageLoader'
+import Button, { ThemeButton } from '@/shared/ui/Button/Button'
+import Skeleton from '@/shared/ui/Skeleton/Skeleton'
+import { PageLoader } from '@/widgets/PageLoader'
 
 interface ArticleEditFormProps {
   className?: string

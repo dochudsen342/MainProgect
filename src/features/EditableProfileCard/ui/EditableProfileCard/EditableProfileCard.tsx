@@ -1,10 +1,10 @@
 import { memo, useCallback, useEffect } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cl from './EditableProfileCard.module.scss'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { Currency } from 'entities/Currency'
-import { Country } from 'entities/Country'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { Currency } from '@/entities/Currency'
+import { Country } from '@/entities/Country'
 import { useParams } from 'react-router-dom'
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
@@ -13,10 +13,10 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/get
 import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
 import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 import { fetchProfileData } from '../../model/service/fetchDataProfile/fetchProfileData'
-import { ProfileCard } from 'entities/Profile'
+import { ProfileCard } from '@/entities/Profile'
 import DynamicReducerLoader, {
   ReducerList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 
 interface EditableProfileCardProps {
   className?: string

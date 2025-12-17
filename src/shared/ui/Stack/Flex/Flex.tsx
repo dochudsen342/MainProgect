@@ -1,6 +1,6 @@
 import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react'
 import cl from './Flex.module.scss'
-import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
 export type FlexJustify = 'start' | 'centre' | 'end' | 'between'
 export type FlexAlign = 'start' | 'centre' | 'end'

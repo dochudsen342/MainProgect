@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from './CommentList.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import Text from 'shared/ui/Text/Text'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import Text from '@/shared/ui/Text/Text'
 import CommentCard from '../CommentCard/CommentCard'
 import { Comment } from '../../model/types/comment'
 

@@ -1,21 +1,21 @@
 import React, { ReactNode, useCallback, useState } from 'react'
 import cl from './AritlceCreateForm.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import ArticleHeaderFields from '../ArticleHeaderFields/ArticleHeaderFields'
 import ArticleTypeSelector from '../ArticleTypeSelector/ArticleTypeSelector'
 import { useTranslation } from 'react-i18next'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { useSelector } from 'react-redux'
 import {
   getCrudArticleData,
   getCrudArticleIsLoading,
 } from '../../model/selectors/getCrudArticleSelectors/getCrudArticleSelectors'
 import AddBlockPanel from '../AddBlockPanel/AddBlockPanel'
-import { PageLoader } from 'widgets/PageLoader'
+import { PageLoader } from '@/widgets/PageLoader'
 import { fetchCreateArticle } from '../../model/service/fetchCreateArticle/fetchCreateArticle'
-import Button, { ThemeButton } from 'shared/ui/Button/Button'
+import Button, { ThemeButton } from '@/shared/ui/Button/Button'
 import TextAreaCrudBlock from '../TextAreaCrudBlock/TextAreaCrudBlock'
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article'
+import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/article'
 
 interface ArticleCreateFormProps {
   className?: string

@@ -1,5 +1,5 @@
-import { StateSchema } from 'app/providers/StoreProvider'
-import { DeepPartial } from 'shared/lib/CustomTypes/DeepPartial'
+import { StateSchema } from '@/app/providers/StoreProvider'
+import { DeepPartial } from '@/shared/lib/CustomTypes/DeepPartial'
 import { getLoginUsername } from './getLoginUsername'
 
 describe('getLoginError.test', () => {

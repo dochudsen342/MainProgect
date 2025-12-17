@@ -1,16 +1,16 @@
 import React, { useCallback } from 'react'
 import cl from './EditableProfileCardHeader.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
-import { getAuthData } from 'entities/User'
+import { getAuthData } from '@/entities/User'
 import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/service/updateProfileData/uptadeProfileData'
-import { HStack } from 'shared/ui/Stack'
-import Button, { ButtonSize, ThemeButton } from 'shared/ui/Button/Button'
+import { HStack } from '@/shared/ui/Stack'
+import Button, { ButtonSize, ThemeButton } from '@/shared/ui/Button/Button'
 
 interface EditableProfileCardHeaderProps {
   className?: string

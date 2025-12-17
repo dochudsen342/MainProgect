@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react'
 import cl from './TextAreaCrudBlock.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import TextArea from 'shared/ui/TextArea/TextArea'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import TextArea from '@/shared/ui/TextArea/TextArea'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'
 
 interface TextAreaArticleBlockProps {

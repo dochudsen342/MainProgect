@@ -1,5 +1,5 @@
-import { User } from 'entities/User'
-import { SortOrder } from 'shared/types'
+import { User } from '@/entities/User'
+import { SortOrder } from '@/shared/types'
 
 export enum ArcticleSortField {
   VIEWS = 'views',

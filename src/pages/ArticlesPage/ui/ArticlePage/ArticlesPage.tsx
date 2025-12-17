@@ -4,9 +4,9 @@ import { initArticlesPage } from '../../model/service/initArticlesPage/initArtic
 import { useSearchParams } from 'react-router-dom'
 import DynamicReducerLoader, {
   ReducerList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
 import { articlePageReducer } from '../../model/slice/articlePageSlice'
 import ArticlesFillterPage from '../ArticlesFillterPage/ArticlesFillterPage'
 import cl from './ArticlePage.module.scss'

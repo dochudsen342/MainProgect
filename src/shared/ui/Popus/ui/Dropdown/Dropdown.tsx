@@ -1,10 +1,10 @@
 import { Menu } from '@headlessui/react'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cl from './Dropdown.module.scss'
 import popupCl from '../styles/popup.module.scss'
 import { Fragment } from 'react/jsx-runtime'
 import { ReactNode } from 'react'
-import { DropDownDirection } from 'shared/types/ui'
+import { DropDownDirection } from '@/shared/types/ui'
 import { Link, To } from 'react-router-dom'
 import { mapDirectionClass } from '../styles/consts'
 

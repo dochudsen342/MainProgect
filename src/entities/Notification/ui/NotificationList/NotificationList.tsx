@@ -1,10 +1,9 @@
 import React from 'react'
 import cl from './NotificationList.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { useGetNotificationsList } from '../../api/notificationApi'
-import { VStack } from 'shared/ui/Stack'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { VStack } from '@/shared/ui/Stack'
 import NotificationItem from '../NotificationItem/NotificationItem'
-import Skeleton from 'shared/ui/Skeleton/Skeleton'
+import Skeleton from '@/shared/ui/Skeleton/Skeleton'
 import { Notification } from '../../model/types/Notification'
 
 interface NotificationListProps {

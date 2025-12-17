@@ -1,9 +1,9 @@
 import React, { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import cl from './LoginForm.module.scss'
-import Button, { ThemeButton } from 'shared/ui/Button/Button'
-import Input from 'shared/ui/Input/Input'
+import Button, { ThemeButton } from '@/shared/ui/Button/Button'
+import Input from '@/shared/ui/Input/Input'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginAction, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/service/loginByUsername/loginByUsername'
@@ -13,7 +13,7 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLo
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import DynamicReducerLoader, {
   ReducerList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 
 export interface LoginFormProps {
   className?: string

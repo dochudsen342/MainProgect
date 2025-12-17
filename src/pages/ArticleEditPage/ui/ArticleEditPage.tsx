@@ -1,14 +1,14 @@
 import React from 'react'
 import cl from './ArticleEditPage.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import PageWrapper from 'shared/ui/PageWrapper/PageWrapper'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
 import { useParams } from 'react-router-dom'
 import DynamicReducerLoader, {
   ReducerList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import { articleCrudFormReducer, getCrudArticleIsCreated } from 'features/ArticleCrudForm'
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { articleCrudFormReducer, getCrudArticleIsCreated } from '@/features/ArticleCrudForm'
 import { useSelector } from 'react-redux'
-import ArticleEditForm from 'features/ArticleCrudForm/ui/ArticleEditForm/ArticleEditForm'
+import ArticleEditForm from '@/features/ArticleCrudForm/ui/ArticleEditForm/ArticleEditForm'
 
 interface ArticleEditPageProps {
   className?: string

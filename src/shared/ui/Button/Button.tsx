@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react'
 import cl from './Button.module.scss'
-import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
 export enum ThemeButton {
   CLEAR = 'clear',

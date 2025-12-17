@@ -1,9 +1,9 @@
 import React, { useCallback, useMemo } from 'react'
 import cl from './ArticlesFillterPage.module.scss'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { ArticleViewSelector } from 'features/ArticleViewSelector'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { ArcticleSortField, ArticleView } from 'entities/Article'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { ArcticleSortField, ArticleView } from '@/entities/Article'
 import { articlePageAction } from '../../model/slice/articlePageSlice'
 import { useSelector } from 'react-redux'
 import {
@@ -14,15 +14,15 @@ import {
   getArticleListView,
 } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
 import { useTranslation } from 'react-i18next'
-import Card from 'shared/ui/Card/Card'
-import Input, { InputTheme } from 'shared/ui/Input/Input'
-import { ArticleSortSelector } from 'features/ArticleSortSelector'
-import { SortOrder } from 'shared/types'
+import Card from '@/shared/ui/Card/Card'
+import Input, { InputTheme } from '@/shared/ui/Input/Input'
+import { ArticleSortSelector } from '@/features/ArticleSortSelector'
+import { SortOrder } from '@/shared/types'
 import { fetchArticleList } from '../../model/service/fetchArticleList.ts/fetchArticleList'
-import { useDebounce } from 'shared/lib/hooks/useDebounce'
-import Tabs, { TabItem } from 'shared/ui/Tabs/Tabs'
-import { ArcticleType } from 'entities/Article/model/types/article'
-import { HStack } from 'shared/ui/Stack'
+import { useDebounce } from '@/shared/lib/hooks/useDebounce'
+import Tabs, { TabItem } from '@/shared/ui/Tabs/Tabs'
+import { ArcticleType } from '@/entities/Article/model/types/article'
+import { HStack } from '@/shared/ui/Stack'
 
 interface ArticlesFillterPageProps {
   className?: string

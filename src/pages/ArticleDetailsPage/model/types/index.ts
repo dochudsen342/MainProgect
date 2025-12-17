@@ -1,4 +1,4 @@
-import { ArticlCommentListSchema } from 'features/ArticleCommentList'
+import { ArticlCommentListSchema } from '@/features/ArticleCommentList'
 import { ArticleDetailsPageRecomendationsSchema } from './articleDetailsPageRecomendationsSchema'
 
 export interface ArticlesDetailsPageSchema {
