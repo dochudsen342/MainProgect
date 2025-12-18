@@ -6,6 +6,7 @@ import { BuildOptions } from './types/config'
 import CopyPlugin from 'copy-webpack-plugin'
 import CircularDependecyPlugin from 'circular-dependency-plugin'
 import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 export function buildPlugins({ path, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -29,5 +30,6 @@ export function buildPlugins({ path, apiUrl }: BuildOptions): webpack.WebpackPlu
     new CopyPlugin({
       patterns: [{ from: path.locales, to: path.buildLocales }],
     }),
+    // new BundleAnalyzerPlugin(),
   ]
 }

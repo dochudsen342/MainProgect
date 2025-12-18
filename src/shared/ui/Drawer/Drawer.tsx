@@ -87,6 +87,7 @@ const DrawerContent = memo(({ className, children, isOpen, lazy, onClose }: Draw
 
 const Drawer = memo((props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
+
   if (!isLoaded) {
     return null
   }

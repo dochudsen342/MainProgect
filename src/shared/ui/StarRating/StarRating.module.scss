@@ -1,0 +1,18 @@
+.StarRating {
+}
+
+.activeStar {
+}
+
+.starIcon {
+    fill: none;
+    cursor: pointer;
+}
+
+.hovered {
+    fill: var(--secondary-color);
+}
+
+.selected {
+    cursor: auto;
+}
