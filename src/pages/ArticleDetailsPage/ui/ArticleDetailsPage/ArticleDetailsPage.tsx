@@ -13,6 +13,7 @@ import { articleDetailsPageReducers } from '../../model/slices'
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import cl from './ArticleDetailsPage.module.scss'
+import { ArticleRating } from '@/features/ArticleRating'
 
 interface ArticleDetailsPageProps {
   className?: string
@@ -40,6 +41,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <ArticleRecomendationsList />
+        <ArticleRating articleId={id} />
         <ArticleDetailsComments articleId={id} />
       </PageWrapper>
     </DynamicReducerLoader>

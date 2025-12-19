@@ -20,7 +20,6 @@ const DynamicReducerLoader: FC<DynamicReducerLoaderProps> = ({
   removeAfterUnmount,
 }) => {
   const store = useStore() as ReduxStoreWidhtManager
-  console.log(store)
   const dispatch = useDispatch()
   useEffect(() => {
     const mountedReducers = store.reducerManager.getReducerMap()

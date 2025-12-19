@@ -1,5 +1,4 @@
 import React from 'react'
-import cl from './CommentList.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import Text from '@/shared/ui/Text/Text'
 import CommentCard from '../CommentCard/CommentCard'
@@ -13,15 +12,10 @@ interface CommentListProps {
 
 const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
   return (
-    <div className={classNames(cl.CommentList, {}, [className])}>
+    <div className={classNames('', {}, [className])}>
       {comments?.length ? (
         comments.map((comment) => (
-          <CommentCard
-            key={comment.id}
-            isLoading={isLoading}
-            className={cl.comment}
-            comment={comment}
-          />
+          <CommentCard key={comment.id} isLoading={isLoading} comment={comment} />
         ))
       ) : (
         <Text text={'Комментарии отсутствуют'} />

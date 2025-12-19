@@ -1,5 +1,4 @@
 import React from 'react'
-import cl from './ArticleEditPage.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
 import { useParams } from 'react-router-dom'
@@ -27,7 +26,7 @@ const ArticleEditPage = ({ className }: ArticleEditPageProps) => {
   return (
     <DynamicReducerLoader reducers={reducerList} removeAfterUnmount={true}>
       {!isCreate ? (
-        <PageWrapper className={classNames(cl.ArticleEditPage, {}, [className])}>
+        <PageWrapper className={classNames('', {}, [className])}>
           {isEdit ? <ArticleEditForm articleId={id} /> : 'Not found'}
         </PageWrapper>
       ) : (

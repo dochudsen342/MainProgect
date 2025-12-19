@@ -1,5 +1,4 @@
 import React, { useCallback } from 'react'
-import cl from './TextAreaCrudBlock.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import TextArea from '@/shared/ui/TextArea/TextArea'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
@@ -34,7 +33,7 @@ const TextAreaCrudBlock = ({
       placeholder={placeholder}
       rows={rows}
       value={value}
-      className={classNames(cl.TextAreaArticleBlock, {}, [className])}
+      className={classNames('', {}, [className])}
     />
   )
 }

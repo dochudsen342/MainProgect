@@ -9,7 +9,7 @@ import { useGetNotificationsList } from '@/entities/Notification/api/notificatio
 import Drawer from '@/shared/ui/Drawer/Drawer'
 import Button, { ThemeButton } from '@/shared/ui/Button/Button'
 import { BrowserView, MobileView } from 'react-device-detect'
-import AnimationProvider from '@/shared/lib/components/AnimationProvider/AnimationProvider'
+import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
 
 interface NotificationButtonProps {
   className?: string
