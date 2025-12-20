@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import { fn } from 'storybook/test'
-import ThemeDecorator from '@/shared/lib/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 import Card from './Card'
 import Text, { TextAligin } from '../Text/Text'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 
 const meta = {
   title: 'shared/Card',

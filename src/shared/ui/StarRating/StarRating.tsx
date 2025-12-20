@@ -3,7 +3,6 @@ import cl from './StarRating.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import StarIcon from '@/shared/assets/icons/Star.svg'
 import Icon from '../Icon/Icon'
-import { useHover } from '@/shared/lib/hooks/useHover'
 
 interface StarRatingProps {
   className?: string
@@ -15,7 +14,6 @@ const stars = [1, 2, 3, 4, 5]
 const StarRating = ({ className, onSelect, selectedStars = 0, size }: StarRatingProps) => {
   const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
-
   const onHover = useCallback(
     (currentStarCount: number) => () => {
       if (!isSelected) {

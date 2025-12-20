@@ -38,7 +38,7 @@ const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     if (id) {
       dispatch(fetchProfileData(id))
     }
-  }, [dispatch])
+  }, [dispatch, id])
 
   const onChangeFirstName = useCallback(
     (value: string) => {

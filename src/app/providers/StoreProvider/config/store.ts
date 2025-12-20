@@ -6,10 +6,14 @@ import { StateSchema, ThunkExtraArg } from './stateSchema'
 import { scrollRestorationReducer } from '@/features/ScrollRestoration'
 import { rtkApi } from '@/shared/api/rtkApi'
 
-export function createReduxStore(initialState?: StateSchema) {
+export function createReduxStore(
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     user: userReducer,
     scrollRestoration: scrollRestorationReducer,
+    ...asyncReducers,
     [rtkApi.reducerPath]: rtkApi.reducer,
   }
 

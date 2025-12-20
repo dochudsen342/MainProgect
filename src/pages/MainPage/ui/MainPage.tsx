@@ -7,16 +7,7 @@ const MainPage = () => {
   const { t } = useTranslation()
 
   const onSelectStarHandler = useCallback((currentStarCount: number) => {}, [])
-  return (
-    <PageWrapper>
-      {t('Главная страница')}
-      <RatingCard
-        title='Как вам статья?'
-        feedbackTitle='Оставьте отзыв о статье'
-        hasFeedback={true}
-      />
-    </PageWrapper>
-  )
+  return <PageWrapper>{t('Главная страница')}</PageWrapper>
 }
 
 export default MainPage

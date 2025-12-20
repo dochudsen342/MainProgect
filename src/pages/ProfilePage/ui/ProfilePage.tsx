@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import Text from '@/shared/ui/Text/Text'
 import EditableProfileCardHeader from '@/features/EditableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader'
 import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
+import { ProfileRating } from '@/features/ProfileRating'
 
 interface ProfilePageProps {
   className?: string
@@ -21,6 +22,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     <PageWrapper>
       <VStack gap='16' max>
         <EditableProfileCardHeader />
+        <ProfileRating userId={id} />
         <EditableProfileCard id={id} />
       </VStack>
     </PageWrapper>

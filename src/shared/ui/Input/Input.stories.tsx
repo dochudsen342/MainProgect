@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import { fn } from 'storybook/test'
-import ThemeDecorator from '@/shared/lib/decorators/theme.decorator'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import Input from './Input'
+import Input from '@/shared/ui/Input/Input'
 
 const meta = {
   title: 'shared/Input',

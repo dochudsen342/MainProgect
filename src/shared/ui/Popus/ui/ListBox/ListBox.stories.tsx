@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import ThemeDecorator from '@/shared/lib/decorators/theme.decorator'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
 import Listbox from './ListBox'
 

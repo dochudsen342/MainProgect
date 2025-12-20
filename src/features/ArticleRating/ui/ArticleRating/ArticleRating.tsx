@@ -24,6 +24,7 @@ const ArticleRating = ({ className, articleId }: ArticleRatingProps) => {
     articleId: articleId,
   })
 
+  console.log(data)
   const handleRateArticle = (starsCount: number, feedback?: string) => {
     dispatch(
       fetchUpdateArticleRating({
