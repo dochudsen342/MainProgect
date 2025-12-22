@@ -1,16 +1,16 @@
 .TextArea {
-    font-size: 20px;
-    width: 90%;
-    min-height: 180px;
-    border: 2px solid var(--secondary-color);
-    outline: none;
-    overflow: hidden;
-    background-color: transparent;
-    color: var(--secondary-color);
-    padding: 18px;
-    resize: none;
+  font-size: 20px;
+  width: 90%;
+  min-height: 180px;
+  border: 2px solid var(--secondary-color);
+  outline: none;
+  overflow: hidden;
+  background-color: transparent;
+  color: var(--secondary-color);
+  padding: 18px;
+  resize: none;
 }
 
 .TextArea::placeholder {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }

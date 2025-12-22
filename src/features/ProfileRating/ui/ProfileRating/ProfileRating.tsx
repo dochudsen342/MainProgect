@@ -1,15 +1,15 @@
-import React, { useEffect } from 'react'
-import cl from './ProfileRating.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { StarRating } from '@/shared/ui/StarRating'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { useSelector } from 'react-redux'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { StarRating } from '@/shared/ui/StarRating'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import {
   getProfileRatingData,
   getProfileRatingIsLoading,
 } from '../../model/selectors/getProfileRatingData'
 import { fetchProfileRating } from '../../model/service/fetchProfileRating/fetchProfileRating'
+import cl from './ProfileRating.module.scss'
 
 interface ProfileRatingProps {
   className?: string

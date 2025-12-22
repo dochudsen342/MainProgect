@@ -1,14 +1,13 @@
-import React from 'react'
-import cl from './ArticleRating.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { RatingCard } from '@/entities/Rating'
-import { useTranslation } from 'react-i18next'
-import { useArticleRatings } from '../../api/articleRatingApi'
-import { useSelector } from 'react-redux'
 import { getAuthData } from '@/entities/User'
-import { Skeleton } from '@/shared/ui/Skeleton'
-import { fetchUpdateArticleRating } from '../../model/service/updateArticleRating'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { Skeleton } from '@/shared/ui/Skeleton'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useArticleRatings } from '../../api/articleRatingApi'
+import { fetchUpdateArticleRating } from '../../model/service/updateArticleRating'
+import cl from './ArticleRating.module.scss'
 
 interface ArticleRatingProps {
   className?: string

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import { StarRating } from './StarRating'
 import AnimationProviderDecorator from '@/shared/config/storybook/decorators/Provider.decorator'
 import RouterDecorator from '@/shared/config/storybook/decorators/Router.decorator'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
+import { StarRating } from './StarRating'
 const meta = {
   title: 'shared/StarRating',
   component: StarRating,

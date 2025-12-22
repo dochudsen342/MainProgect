@@ -1,8 +1,7 @@
-import React from 'react'
-import cl from './ArticleTextBlock.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ArticleTextBlock } from '../../model/types/article'
 import { Text, TextSize } from '@/shared/ui/Text'
+import { ArticleTextBlock } from '../../model/types/article'
+import cl from './ArticleTextBlock.module.scss'
 
 interface ArticleTextBlockComonentProps {
   className?: string

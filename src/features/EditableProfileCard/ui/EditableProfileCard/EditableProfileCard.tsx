@@ -1,20 +1,19 @@
-import { memo, useCallback, useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Currency } from '@/entities/Currency'
 import { Country } from '@/entities/Country'
-import { useParams } from 'react-router-dom'
-import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
-import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
-import { profileActions, profileReducer } from '../../model/slice/profileSlice'
-import { fetchProfileData } from '../../model/service/fetchDataProfile/fetchProfileData'
+import { Currency } from '@/entities/Currency'
 import { ProfileCard } from '@/entities/Profile'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { memo, useCallback, useEffect } from 'react'
+import { useSelector } from 'react-redux'
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError'
+import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm'
+import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading'
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly'
+import { getProfileValidateErrors } from '../../model/selectors/getProfileValidateErrors/getProfileValidateErrors'
+import { fetchProfileData } from '../../model/service/fetchDataProfile/fetchProfileData'
+import { profileActions, profileReducer } from '../../model/slice/profileSlice'
 
 interface EditableProfileCardProps {
   className?: string

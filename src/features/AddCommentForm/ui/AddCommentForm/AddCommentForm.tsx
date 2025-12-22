@@ -1,20 +1,20 @@
-import React, { useCallback } from 'react'
-import cl from './AddCommentForm.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Input, InputTheme } from '@/shared/ui/Input'
+import DynamicReducerLoader, {
+  ReducerList,
+} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { addCommentFormAction, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
-import { useTranslation } from 'react-i18next'
 import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Input, InputTheme } from '@/shared/ui/Input'
+import { HStack } from '@/shared/ui/Stack'
+import { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import {
   getAddCommentFormError,
   getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors'
-import DynamicReducerLoader, {
-  ReducerList,
-} from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import { HStack } from '@/shared/ui/Stack'
+import { addCommentFormAction, addCommentFormReducer } from '../../model/slice/addCommentFormSlice'
+import cl from './AddCommentForm.module.scss'
 
 export interface AddCommentFormProps {
   className?: string

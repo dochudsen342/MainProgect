@@ -1,12 +1,11 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { VStack } from '@/shared/ui/Stack'
 import EditableProfileCard from '@/features/EditableProfileCard/ui/EditableProfileCard/EditableProfileCard'
-import { useParams } from 'react-router-dom'
-import { Text } from '@/shared/ui/Text'
 import EditableProfileCardHeader from '@/features/EditableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader'
-import { PageWrapper } from '@/shared/ui/PageWrapper'
 import { ProfileRating } from '@/features/ProfileRating'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
+import { VStack } from '@/shared/ui/Stack'
+import { Text } from '@/shared/ui/Text'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 
 interface ProfilePageProps {
   className?: string

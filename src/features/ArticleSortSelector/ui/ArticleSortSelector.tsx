@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react'
-import cl from './ArticleSortSelector.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
-import { Select, SelectOptions } from '@/shared/ui/Select'
 import { ArcticleSortField } from '@/entities/Article/model/types/article'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { SortOrder } from '@/shared/types'
+import { Select, SelectOptions } from '@/shared/ui/Select'
+import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
+import cl from './ArticleSortSelector.module.scss'
 
 interface ArticleSortSelectorProps {
   className?: string

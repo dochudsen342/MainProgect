@@ -1,12 +1,10 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
+import CopyPlugin from 'copy-webpack-plugin'
+import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
 import { BuildOptions } from './types/config'
-import CopyPlugin from 'copy-webpack-plugin'
-import CircularDependecyPlugin from 'circular-dependency-plugin'
-import ForkTsCheckerPlugin from 'fork-ts-checker-webpack-plugin'
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 export function buildPlugins({ path, apiUrl }: BuildOptions): webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({

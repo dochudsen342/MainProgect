@@ -1,5 +1,5 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/StoreProvider'
+import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ProfileRating } from '../../types/profileRating'
 
 interface FetchProfileRatingProps {

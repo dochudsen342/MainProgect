@@ -1,16 +1,16 @@
-import { EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { AxiosInstance } from 'axios'
 import { ArticleDetailsSchema } from '@/entities/Article'
 import { UserSchema } from '@/entities/User'
 import { AddCommentFormSchema } from '@/features/AddCommentForm'
 import { ArticleCrudShema } from '@/features/ArticleCrudForm/model/types/articleCrudSchema'
 import { LoginSchema } from '@/features/AuthByUsername'
 import { ProfileSchema } from '@/features/EditableProfileCard'
+import { ProfileRatingSchema } from '@/features/ProfileRating/model/types/profileRating'
 import { ScrollRestorationSchema } from '@/features/ScrollRestoration/types/scrollRestoration'
 import { ArticlesDetailsPageSchema } from '@/pages/ArticleDetailsPage/model/types'
 import { ArticlePageSchema } from '@/pages/ArticlesPage/model/types/articlePageSchema'
 import { rtkApi } from '@/shared/api/rtkApi'
-import { ProfileRatingSchema } from '@/features/ProfileRating/model/types/profileRating'
+import { EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
+import { AxiosInstance } from 'axios'
 
 export interface StateSchema {
   user: UserSchema

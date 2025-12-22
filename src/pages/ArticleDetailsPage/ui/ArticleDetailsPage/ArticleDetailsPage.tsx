@@ -1,19 +1,19 @@
-import { memo } from 'react'
 import { ArticleDetails } from '@/entities/Article'
+import { memo } from 'react'
 // prettier-ignore
+import { ArticleRating } from '@/features/ArticleRating'
 import { ArticleRecomendationsList } from '@/features/articleRecomendationsList'
-import { useTranslation } from 'react-i18next'
-import { useParams } from 'react-router-dom'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import {PageWrapper} from '@/shared/ui/PageWrapper'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
+import { useTranslation } from 'react-i18next'
+import { useParams } from 'react-router-dom'
 import { articleDetailsPageReducers } from '../../model/slices'
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 import cl from './ArticleDetailsPage.module.scss'
-import { ArticleRating } from '@/features/ArticleRating'
 
 interface ArticleDetailsPageProps {
   className?: string

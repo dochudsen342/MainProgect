@@ -1,8 +1,8 @@
-import React, { ChangeEvent, InputHTMLAttributes, useEffect, useRef, useState } from 'react'
-import cl from './CheckboxInput.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Text, TextWeight } from '../Text/Text'
 import { ArcticleType } from '@/entities/Article/model/types/article'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { ChangeEvent, InputHTMLAttributes, useRef } from 'react'
+import { Text, TextWeight } from '../Text/Text'
+import cl from './CheckboxInput.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
 

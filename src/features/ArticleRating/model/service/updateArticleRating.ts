@@ -1,6 +1,6 @@
+import { ThunkConfig } from '@/app/providers/StoreProvider'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { Rating } from '../types/types'
-import { ThunkConfig } from '@/app/providers/StoreProvider'
 
 interface MutationArticleRating {
   userId: string

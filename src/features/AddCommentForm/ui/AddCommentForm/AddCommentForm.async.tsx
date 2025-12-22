@@ -7,5 +7,5 @@ export const AddCommentFormAsync = lazy<FC<AddCommentFormProps>>(
       // @ts-ignore
       // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!!
       setTimeout(() => resolve(import('./AddCommentForm')), 1500)
-    }),
+    })
 )

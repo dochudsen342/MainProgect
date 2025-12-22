@@ -1,19 +1,19 @@
-import React, { memo, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import cl from './LoginForm.module.scss'
-import { Button, ThemeButton } from '@/shared/ui/Button'
-import { Input } from '@/shared/ui/Input'
-import { useDispatch, useSelector } from 'react-redux'
-import { loginAction, loginReducer } from '../../model/slice/loginSlice'
-import { loginByUsername } from '../../model/service/loginByUsername/loginByUsername'
-import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
-import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
-import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLodaing'
-import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Input } from '@/shared/ui/Input'
+import { memo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useDispatch, useSelector } from 'react-redux'
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLodaing'
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername'
+import { loginByUsername } from '../../model/service/loginByUsername/loginByUsername'
+import { loginAction, loginReducer } from '../../model/slice/loginSlice'
+import cl from './LoginForm.module.scss'
 
 export interface LoginFormProps {
   className?: string

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Text, TextAligin, TextSize } from './Text'
 
 const meta = {

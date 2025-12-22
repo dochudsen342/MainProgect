@@ -1,11 +1,10 @@
-import React from 'react'
 import { ArticleList } from '@/entities/Article'
 import { useSelector } from 'react-redux'
-import { getArticleList } from '../../model/slice/articlePageSlice'
 import {
   getArticleListIsLoading,
   getArticleListView,
 } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
+import { getArticleList } from '../../model/slice/articlePageSlice'
 
 interface ArticleInfiniteListProps {
   className?: string

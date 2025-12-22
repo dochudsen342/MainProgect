@@ -1,13 +1,12 @@
-import React from 'react'
+import { articleCrudFormReducer, getCrudArticleIsCreated } from '@/features/ArticleCrudForm'
+import ArticleEditForm from '@/features/ArticleCrudForm/ui/ArticleEditForm/ArticleEditForm'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { PageWrapper } from '@/shared/ui/PageWrapper'
-import { useParams } from 'react-router-dom'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import { articleCrudFormReducer, getCrudArticleIsCreated } from '@/features/ArticleCrudForm'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
 import { useSelector } from 'react-redux'
-import ArticleEditForm from '@/features/ArticleCrudForm/ui/ArticleEditForm/ArticleEditForm'
+import { useParams } from 'react-router-dom'
 
 interface ArticleEditPageProps {
   className?: string

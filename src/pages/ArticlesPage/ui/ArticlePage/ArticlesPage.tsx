@@ -1,16 +1,16 @@
-import { memo, useCallback, useEffect } from 'react'
-import { fetchNextArticlesPart } from '../../model/service/fetchNextArticlesParts/fetchNextArticlesPart'
-import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage'
-import { useSearchParams } from 'react-router-dom'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { PageWrapper } from '@/shared/ui/PageWrapper'
+import { memo, useCallback, useEffect } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { fetchNextArticlesPart } from '../../model/service/fetchNextArticlesParts/fetchNextArticlesPart'
+import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage'
 import { articlePageReducer } from '../../model/slice/articlePageSlice'
+import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
 import ArticlesFillterPage from '../ArticlesFillterPage/ArticlesFillterPage'
 import cl from './ArticlePage.module.scss'
-import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList'
 
 interface ArticlePageProps {
   className?: string

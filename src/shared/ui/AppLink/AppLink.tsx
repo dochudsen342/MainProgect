@@ -1,7 +1,7 @@
-import React, { FC, HTMLAttributeAnchorTarget, PropsWithChildren } from 'react'
-import cl from './AppLink.module.scss'
-import { Link, LinkProps } from 'react-router-dom'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { FC, HTMLAttributeAnchorTarget, PropsWithChildren } from 'react'
+import { Link, LinkProps } from 'react-router-dom'
+import cl from './AppLink.module.scss'
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',

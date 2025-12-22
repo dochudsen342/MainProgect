@@ -1,4 +1,5 @@
-import React, {
+import { classNames } from '@/shared/lib/classNames/classNames'
+import {
   ChangeEvent,
   ReactNode,
   TextareaHTMLAttributes,
@@ -7,7 +8,6 @@ import React, {
   useRef,
 } from 'react'
 import cl from './TextArea.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
 
 type HTMLTextAreaProps = Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, 'value' | 'onChange'>
 

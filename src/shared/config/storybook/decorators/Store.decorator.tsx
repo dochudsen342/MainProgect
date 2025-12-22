@@ -1,11 +1,11 @@
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider'
 import { ArticleDetailsReducers } from '@/entities/Article/model/slice/articleDetailsSlice'
+import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice'
 import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice'
 import { profileReducer } from '@/features/EditableProfileCard/model/slice/profileSlice'
-import { addCommentFormReducer } from '@/features/AddCommentForm/model/slice/addCommentFormSlice'
 import { articleDetailsPageReducers } from '@/pages/ArticleDetailsPage/model/slices'
-import { ReducersMapObject } from '@reduxjs/toolkit'
 import { DeepPartial } from '@/shared/lib/CustomTypes/DeepPartial'
+import { ReducersMapObject } from '@reduxjs/toolkit'
 
 const defaultAsyncReducers: DeepPartial<ReducersMapObject<StateSchema>> = {
   loginForm: loginReducer,

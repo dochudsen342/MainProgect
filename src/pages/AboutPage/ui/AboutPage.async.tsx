@@ -6,5 +6,5 @@ export const AboutPageAsync = lazy(
       // @ts-ignore
       // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!!
       setTimeout(() => resolve(import('./AboutPage')), 1500)
-    }),
+    })
 )

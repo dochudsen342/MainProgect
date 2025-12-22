@@ -1,8 +1,7 @@
-import React from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text } from '@/shared/ui/Text'
-import CommentCard from '../CommentCard/CommentCard'
 import { Comment } from '../../model/types/comment'
+import CommentCard from '../CommentCard/CommentCard'
 
 interface CommentListProps {
   className?: string

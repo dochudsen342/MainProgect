@@ -1,11 +1,11 @@
-import React, { useCallback } from 'react'
-import { Dropdown } from '@/shared/ui/Popus'
+import { getAuthData, isUserAdmin, isUserManager, userAction } from '@/entities/User'
+import { RoutePath } from '@/shared/const/router'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar'
-import { useSelector } from 'react-redux'
-import { getAuthData, isUserAdmin, isUserManager, userAction } from '@/entities/User'
+import { Dropdown } from '@/shared/ui/Popus'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { RoutePath } from '@/shared/const/router'
+import { useSelector } from 'react-redux'
 
 interface AvatarDropdownProps {
   className?: string

@@ -1,6 +1,6 @@
-import React, { memo } from 'react'
-import cl from './LangSwitcher.module.scss'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
+import cl from './LangSwitcher.module.scss'
 
 interface LangSwitcherProps {
   collapsed?: boolean

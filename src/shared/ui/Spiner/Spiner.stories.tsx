@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import { fn } from 'storybook/test'
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
+import { fn } from 'storybook/test'
 import { Spiner } from './Spiner'
 
 const meta = {

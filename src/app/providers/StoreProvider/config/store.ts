@@ -1,11 +1,11 @@
-import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { userReducer } from '@/entities/User'
+import { profileRatingReducer } from '@/features/ProfileRating/model/slice/profileRatingSlice'
+import { scrollRestorationReducer } from '@/features/ScrollRestoration'
 import { $api } from '@/shared/api/api'
+import { rtkApi } from '@/shared/api/rtkApi'
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 import { createReducerManager } from './reducerManager'
 import { StateSchema, ThunkExtraArg } from './stateSchema'
-import { scrollRestorationReducer } from '@/features/ScrollRestoration'
-import { rtkApi } from '@/shared/api/rtkApi'
-import { profileRatingReducer } from '@/features/ProfileRating/model/slice/profileRatingSlice'
 
 export function createReduxStore(initialState?: StateSchema) {
   const rootReducers: ReducersMapObject<StateSchema> = {

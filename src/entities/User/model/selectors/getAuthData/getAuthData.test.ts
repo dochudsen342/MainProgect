@@ -1,7 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider'
 import { DeepPartial } from '@/shared/lib/CustomTypes/DeepPartial'
-import { getAuthData } from './getAuthData'
 import { User } from '../../types/userSchema'
+import { getAuthData } from './getAuthData'
 
 describe('getLoginError.test', () => {
   const authData: User = { id: '1', username: 'Dqizi' }

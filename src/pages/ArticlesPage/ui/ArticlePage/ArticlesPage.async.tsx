@@ -6,5 +6,5 @@ export const ArticlesPageAsync = lazy(
       // @ts-ignore
       // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!!
       setTimeout(() => resolve(import('./ArticlesPage')), 400)
-    }),
+    })
 )

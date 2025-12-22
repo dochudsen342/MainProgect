@@ -1,8 +1,7 @@
-import React from 'react'
-import cl from './ArticleImageBlock.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ArticleImageBlock } from '../../model/types/article'
 import { Text } from '@/shared/ui/Text'
+import { ArticleImageBlock } from '../../model/types/article'
+import cl from './ArticleImageBlock.module.scss'
 
 interface ArticleImageBlockComonentProps {
   className?: string

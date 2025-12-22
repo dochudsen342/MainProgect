@@ -1,7 +1,7 @@
-import React, { useCallback } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { TextArea } from '@/shared/ui/TextArea'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { TextArea } from '@/shared/ui/TextArea'
+import { useCallback } from 'react'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'
 
 interface TextAreaArticleBlockProps {

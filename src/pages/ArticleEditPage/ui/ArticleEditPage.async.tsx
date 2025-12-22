@@ -6,5 +6,5 @@ export const ArticleEditPageAsync = lazy(
       // @ts-ignore
       // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!!
       setTimeout(() => resolve(import('./ArticleEditPage')), 400)
-    }),
+    })
 )

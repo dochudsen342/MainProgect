@@ -1,11 +1,10 @@
-import React from 'react'
-import cl from './ArticleViewSelector.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleView } from '@/entities/Article'
 import ListIcon from '@/shared/assets/icons/viewBig.svg'
 import TiledIcon from '@/shared/assets/icons/viewSmall.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { Icon } from '@/shared/ui/Icon'
+import cl from './ArticleViewSelector.module.scss'
 
 interface ArticleViewSelectorProps {
   className?: string

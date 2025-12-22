@@ -1,14 +1,14 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { fetchArticleById } from '@/entities/Article'
 import {
   ArcticleType,
   Article,
   ArticleBlock,
   ArticleBlockType,
 } from '@/entities/Article/model/types/article'
-import { ArticleCrudShema } from '../types/articleCrudSchema'
-import { fetchArticleById } from '@/entities/Article'
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { fetchCreateArticle } from '../service/fetchCreateArticle/fetchCreateArticle'
 import { fetchUpdateArticle } from '../service/fetchUpdateArticle/fetchUpdateArticle'
+import { ArticleCrudShema } from '../types/articleCrudSchema'
 
 const initialState: ArticleCrudShema = {
   data: {

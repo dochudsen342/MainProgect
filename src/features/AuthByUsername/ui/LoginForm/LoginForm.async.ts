@@ -7,5 +7,5 @@ export const LoginFormAsync = lazy<FC<LoginFormProps>>(
       // @ts-ignore
       // ТАК В РЕАЛЬНЫХ ПРОЕКТАХ НЕ ДЕЛАТЬ!!!!!
       setTimeout(() => resolve(import('./LoginForm')), 400)
-    }),
+    })
 )

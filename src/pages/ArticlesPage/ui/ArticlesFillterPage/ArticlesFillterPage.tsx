@@ -1,10 +1,17 @@
-import React, { useCallback, useMemo } from 'react'
-import cl from './ArticlesFillterPage.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { ArticleViewSelector } from '@/features/ArticleViewSelector'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { ArcticleSortField, ArticleView } from '@/entities/Article'
-import { articlePageAction } from '../../model/slice/articlePageSlice'
+import { ArcticleType } from '@/entities/Article/model/types/article'
+import { ArticleSortSelector } from '@/features/ArticleSortSelector'
+import { ArticleViewSelector } from '@/features/ArticleViewSelector'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { useDebounce } from '@/shared/lib/hooks/useDebounce'
+import { SortOrder } from '@/shared/types'
+import { Card } from '@/shared/ui/Card'
+import { Input, InputTheme } from '@/shared/ui/Input'
+import { HStack } from '@/shared/ui/Stack'
+import { TabItem, Tabs } from '@/shared/ui/Tabs'
+import { useCallback, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import {
   getArticleListOrder,
@@ -13,16 +20,9 @@ import {
   getArticleListTypeValue,
   getArticleListView,
 } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
-import { useTranslation } from 'react-i18next'
-import { Card } from '@/shared/ui/Card'
-import { Input, InputTheme } from '@/shared/ui/Input'
-import { ArticleSortSelector } from '@/features/ArticleSortSelector'
-import { SortOrder } from '@/shared/types'
 import { fetchArticleList } from '../../model/service/fetchArticleList.ts/fetchArticleList'
-import { useDebounce } from '@/shared/lib/hooks/useDebounce'
-import { Tabs, TabItem } from '@/shared/ui/Tabs'
-import { ArcticleType } from '@/entities/Article/model/types/article'
-import { HStack } from '@/shared/ui/Stack'
+import { articlePageAction } from '../../model/slice/articlePageSlice'
+import cl from './ArticlesFillterPage.module.scss'
 
 interface ArticlesFillterPageProps {
   className?: string

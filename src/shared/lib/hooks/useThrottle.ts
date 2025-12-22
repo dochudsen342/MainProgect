@@ -13,6 +13,6 @@ export function useThrottle(callbak: (...args: any[]) => void, delay: number) {
         }, delay)
       }
     },
-    [delay, callbak],
+    [delay, callbak]
   )
 }

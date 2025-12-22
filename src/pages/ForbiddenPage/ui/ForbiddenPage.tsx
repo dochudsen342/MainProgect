@@ -1,6 +1,5 @@
-import React from 'react'
-import cl from './ForbiddenPage.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import cl from './ForbiddenPage.module.scss'
 
 interface ForbiddenPageProps {
   className?: string

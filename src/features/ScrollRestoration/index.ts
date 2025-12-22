@@ -1,10 +1,10 @@
-import type { ScrollRestorationSchema } from './types/scrollRestoration'
 import { getScrollRestorationByPath } from './selectors/getScrollRestoration'
 import { scrollRestorationAction, scrollRestorationReducer } from './slices/scrollRestorationSlice'
+import type { ScrollRestorationSchema } from './types/scrollRestoration'
 
 export {
-  ScrollRestorationSchema,
   getScrollRestorationByPath,
   scrollRestorationAction,
   scrollRestorationReducer,
+  ScrollRestorationSchema,
 }

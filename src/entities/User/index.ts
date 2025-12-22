@@ -1,16 +1,16 @@
-import { userReducer, userAction } from './model/slice/userSlice'
 import { getAuthData } from './model/selectors/getAuthData/getAuthData'
-import type { UserSchema, User } from './model/types/userSchema'
 import { isUserAdmin, isUserManager } from './model/selectors/roleSelector/roleSelector'
+import { userAction, userReducer } from './model/slice/userSlice'
+import type { User, UserSchema } from './model/types/userSchema'
 import { UserRole } from './model/types/userSchema'
 
 export {
-  userReducer,
-  userAction,
   getAuthData,
-  UserSchema,
-  User,
   isUserAdmin,
   isUserManager,
+  User,
+  userAction,
+  userReducer,
   UserRole,
+  UserSchema,
 }

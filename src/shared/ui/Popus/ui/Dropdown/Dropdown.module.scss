@@ -1,59 +1,59 @@
 .Dropdown {
-    position: relative;
+  position: relative;
 }
 
 .btn {
-    padding: 0;
-    margin: 0;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .menu {
-    outline: none;
-    background-color: var(--card-bg);
-    position: absolute;
-    z-index: 100000;
-    border-radius: 8px;
-    padding: 6px 6px;
-    display: flex;
-    flex-direction: column;
+  outline: none;
+  background-color: var(--card-bg);
+  position: absolute;
+  z-index: 100000;
+  border-radius: 8px;
+  padding: 6px 6px;
+  display: flex;
+  flex-direction: column;
 }
 
 .item {
-    padding: 10px 25px;
-    width: 100%;
-    border: 1px solid var(--inverted-secondary-color);
-    border-radius: 8px;
-    background: none;
-    outline: none;
-    margin-bottom: 8px;
-    color: var(--text-color);
-    cursor: pointer;
+  padding: 10px 25px;
+  width: 100%;
+  border: 1px solid var(--inverted-secondary-color);
+  border-radius: 8px;
+  background: none;
+  outline: none;
+  margin-bottom: 8px;
+  color: var(--text-color);
+  cursor: pointer;
 }
 
 .active {
-    background-color: var(--inverted-secondary-color);
+  background-color: var(--inverted-secondary-color);
 }
 
 .optionsBottomLeft {
-    top: 100%;
-    right: 0;
+  top: 100%;
+  right: 0;
 }
 
 .optionsBottomRight {
-    top: 100%;
-    left: 0;
+  top: 100%;
+  left: 0;
 }
 
 .optionsTopRight {
-    bottom: 100%;
-    left: 0;
+  bottom: 100%;
+  left: 0;
 }
 
 .optionsTopLeft {
-    right: 0;
-    bottom: 100%;
+  right: 0;
+  bottom: 100%;
 }

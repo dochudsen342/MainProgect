@@ -1,7 +1,7 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/StoreProvider'
-import { getAuthData } from '@/entities/User'
 import { Article } from '@/entities/Article/model/types/article'
+import { getAuthData } from '@/entities/User'
+import { createAsyncThunk } from '@reduxjs/toolkit'
 import { getCrudArticleData } from '../../selectors/getCrudArticleSelectors/getCrudArticleSelectors'
 
 export const fetchCreateArticle = createAsyncThunk<Article, void, ThunkConfig<string>>(

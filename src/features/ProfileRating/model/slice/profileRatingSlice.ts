@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { ProfileRating, ProfileRatingSchema } from '../types/profileRating'
 import { fetchProfileRating } from '../service/fetchProfileRating/fetchProfileRating'
+import { ProfileRating, ProfileRatingSchema } from '../types/profileRating'
 
 const initialState: ProfileRatingSchema = {
   rate: undefined,

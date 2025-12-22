@@ -1,13 +1,4 @@
-import React, {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
-import { deflate } from 'zlib'
+import { createContext, ReactNode, useContext, useEffect, useMemo, useRef, useState } from 'react'
 
 interface AnimationContextProps {
   Gesture?: GestureType

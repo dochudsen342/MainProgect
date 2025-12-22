@@ -12,6 +12,6 @@ export function useDebounce(callbak: (...args: any[]) => void, delay: number) {
         callbak(...args)
       }, delay)
     },
-    [delay, callbak],
+    [delay, callbak]
   )
 }

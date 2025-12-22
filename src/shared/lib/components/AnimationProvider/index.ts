@@ -1,4 +1,3 @@
-import AnimationProvider from './AnimationProvider'
-import { useAnimationLibs } from './AnimationProvider'
+import AnimationProvider, { useAnimationLibs } from './AnimationProvider'
 
 export { AnimationProvider, useAnimationLibs }

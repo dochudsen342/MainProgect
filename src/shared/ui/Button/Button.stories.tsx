@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import { fn } from 'storybook/test'
-import { Button, ThemeButton } from './Button'
 import { Theme } from '@/app/providers/ThemeProvider'
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
+import { fn } from 'storybook/test'
+import { Button, ThemeButton } from './Button'
 
 const meta = {
   title: 'shared/Button',

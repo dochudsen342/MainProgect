@@ -1,7 +1,6 @@
-import React from 'react'
-import cl from './PageError.module.scss'
-import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
+import { useTranslation } from 'react-i18next'
+import cl from './PageError.module.scss'
 
 interface PageErrorProps {
   className?: string

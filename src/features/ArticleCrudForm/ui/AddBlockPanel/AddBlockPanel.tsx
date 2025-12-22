@@ -1,11 +1,11 @@
-import React, { useCallback } from 'react'
-import cl from './AddBlockPanel.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button } from '@/shared/ui/Button'
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { ArticleBlockType } from '@/entities/Article/model/types/article'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { Button } from '@/shared/ui/Button'
+import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'
+import cl from './AddBlockPanel.module.scss'
 
 interface AddBlockPanelProps {
   className?: string

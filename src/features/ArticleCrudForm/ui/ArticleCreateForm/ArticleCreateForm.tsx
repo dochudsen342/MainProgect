@@ -1,21 +1,21 @@
-import React, { useCallback } from 'react'
-import cl from './AritlceCreateForm.module.scss'
+import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/article'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import ArticleHeaderFields from '../ArticleHeaderFields/ArticleHeaderFields'
-import ArticleTypeSelector from '../ArticleTypeSelector/ArticleTypeSelector'
-import { useTranslation } from 'react-i18next'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
+import { Button, ThemeButton } from '@/shared/ui/Button'
+import { PageLoader } from '@/widgets/PageLoader'
+import { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import {
   getCrudArticleData,
   getCrudArticleIsLoading,
 } from '../../model/selectors/getCrudArticleSelectors/getCrudArticleSelectors'
-import AddBlockPanel from '../AddBlockPanel/AddBlockPanel'
-import { PageLoader } from '@/widgets/PageLoader'
 import { fetchCreateArticle } from '../../model/service/fetchCreateArticle/fetchCreateArticle'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import AddBlockPanel from '../AddBlockPanel/AddBlockPanel'
+import ArticleHeaderFields from '../ArticleHeaderFields/ArticleHeaderFields'
+import ArticleTypeSelector from '../ArticleTypeSelector/ArticleTypeSelector'
 import TextAreaCrudBlock from '../TextAreaCrudBlock/TextAreaCrudBlock'
-import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/article'
+import cl from './AritlceCreateForm.module.scss'
 
 interface ArticleCreateFormProps {
   className?: string

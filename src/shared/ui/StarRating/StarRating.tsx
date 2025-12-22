@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react'
-import cl from './StarRating.module.scss'
-import { classNames } from '@/shared/lib/classNames/classNames'
 import StarIcon from '@/shared/assets/icons/Star.svg'
+import { classNames } from '@/shared/lib/classNames/classNames'
+import { useCallback, useState } from 'react'
 import { Icon } from '../Icon/Icon'
+import cl from './StarRating.module.scss'
 
 interface StarRatingProps {
   className?: string

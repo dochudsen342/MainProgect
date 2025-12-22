@@ -1,7 +1,6 @@
-import React, { useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
 import { PageWrapper } from '@/shared/ui/PageWrapper'
-import RatingCard from '@/entities/Rating/ui/RatingCard/RatingCard'
+import { useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const MainPage = () => {
   const { t } = useTranslation()

@@ -1,7 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider'
-import { getArticleDetailsData } from './getArticleDetailsData'
-import { ArcticleType, Article } from '../../types/article'
 import { DeepPartial } from '@/shared/lib/CustomTypes/DeepPartial'
+import { ArcticleType, Article } from '../../types/article'
+import { getArticleDetailsData } from './getArticleDetailsData'
 
 describe('getLoginError.test', () => {
   test('should return ArticleDetaildata', () => {

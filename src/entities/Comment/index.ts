@@ -1,4 +1,4 @@
-import CommentList from './ui/CommentList/CommentList'
 import type { Comment } from './model/types/comment'
+import CommentList from './ui/CommentList/CommentList'
 
-export { CommentList, Comment }
+export { Comment, CommentList }

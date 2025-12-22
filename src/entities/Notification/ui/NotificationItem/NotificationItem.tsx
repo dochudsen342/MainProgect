@@ -1,9 +1,8 @@
-import React from 'react'
-import cl from './NotificationItem.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Notification } from '../../model/types/Notification'
 import { Card, CardTheme } from '@/shared/ui/Card'
 import { Text } from '@/shared/ui/Text'
+import { Notification } from '../../model/types/Notification'
+import cl from './NotificationItem.module.scss'
 
 interface NotificationItemProps {
   className?: string

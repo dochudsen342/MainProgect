@@ -1,6 +1,5 @@
-import React from 'react'
-import cl from './Text.module.scss'
 import { classNames, Mods } from '@/shared/lib/classNames/classNames'
+import cl from './Text.module.scss'
 
 export enum TextSize {
   M = 'size_M',

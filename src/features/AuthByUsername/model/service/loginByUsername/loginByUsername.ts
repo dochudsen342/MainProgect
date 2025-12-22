@@ -1,8 +1,8 @@
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { ThunkConfig } from '@/app/providers/StoreProvider'
 import { User } from '@/entities/User'
 import { userAction } from '@/entities/User/model/slice/userSlice'
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage'
+import { createAsyncThunk } from '@reduxjs/toolkit'
 
 interface LoginByUsenameProps {
   username: string
@@ -24,5 +24,5 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsenameProps, Thunk
     } catch (error) {
       return rejectWithValue('Неверный логин или пароль')
     }
-  },
+  }
 )

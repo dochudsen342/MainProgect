@@ -1,6 +1,6 @@
+import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 import React from 'react'
 import cl from './Icon.module.scss'
-import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 
 interface iconProps extends React.SVGProps<SVGSVGElement> {
   className?: string

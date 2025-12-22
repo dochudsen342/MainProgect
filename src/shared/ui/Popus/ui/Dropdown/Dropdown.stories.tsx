@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
-import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import Dropdown from './Dropdown'
-import { Button } from '../../../Button/Button'
 import RouterDecorator from '@/shared/config/storybook/decorators/Router.decorator'
+import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
+import { Button } from '../../../Button/Button'
+import Dropdown from './Dropdown'
 
 const meta = {
   title: 'shared/Dropdown',
