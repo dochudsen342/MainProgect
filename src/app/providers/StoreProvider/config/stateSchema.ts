@@ -10,10 +10,12 @@ import { ScrollRestorationSchema } from '@/features/ScrollRestoration/types/scro
 import { ArticlesDetailsPageSchema } from '@/pages/ArticleDetailsPage/model/types'
 import { ArticlePageSchema } from '@/pages/ArticlesPage/model/types/articlePageSchema'
 import { rtkApi } from '@/shared/api/rtkApi'
+import { ProfileRatingSchema } from '@/features/ProfileRating/model/types/profileRating'
 
 export interface StateSchema {
   user: UserSchema
   scrollRestoration: ScrollRestorationSchema
+  profileRating: ProfileRatingSchema
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
   //async reducers
   loginForm?: LoginSchema

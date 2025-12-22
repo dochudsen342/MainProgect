@@ -1,10 +1,9 @@
 import { getAuthData, UserRole } from '@/entities/User'
 import { getUserRoles } from '@/entities/User/model/selectors/roleSelector/roleSelector'
-import { ForbiddenPage } from '@/pages/ForbiddenPage'
+import { RoutePath } from '@/shared/const/router'
 import { ReactNode, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 
 interface RequireAuthProps {
   children: ReactNode

@@ -5,15 +5,13 @@ import { createReducerManager } from './reducerManager'
 import { StateSchema, ThunkExtraArg } from './stateSchema'
 import { scrollRestorationReducer } from '@/features/ScrollRestoration'
 import { rtkApi } from '@/shared/api/rtkApi'
+import { profileRatingReducer } from '@/features/ProfileRating/model/slice/profileRatingSlice'
 
-export function createReduxStore(
-  initialState?: StateSchema,
-  asyncReducers?: ReducersMapObject<StateSchema>
-) {
+export function createReduxStore(initialState?: StateSchema) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     user: userReducer,
     scrollRestoration: scrollRestorationReducer,
-    ...asyncReducers,
+    profileRating: profileRatingReducer,
     [rtkApi.reducerPath]: rtkApi.reducer,
   }
 

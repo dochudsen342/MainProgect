@@ -2,7 +2,6 @@ import React from 'react'
 import { useCancellReloadPage } from '@/shared/lib/hooks/useСancellReloadPage'
 import { useSelector } from 'react-redux'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import {
   articleCrudFormReducer,
   getCrudArticleCreatedArticleId,
@@ -13,6 +12,7 @@ import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import ArticleCreateForm from '@/features/ArticleCrudForm/ui/ArticleCreateForm/ArticleCreateForm'
+import { RoutePath } from '@/shared/const/router'
 
 interface ArticleCreatePageProps {
   className?: string

@@ -7,13 +7,10 @@ import { LoginModal } from '@/features/AuthByUsername'
 import { useSelector } from 'react-redux'
 import { getAuthData } from '@/entities/User'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink'
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig'
 import { HStack } from '@/shared/ui/Stack'
 import { NotificationButton } from '@/features/NotificationButton'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
-import Drawer from '@/shared/ui/Drawer/Drawer'
-import { NotificationList } from '@/entities/Notification'
-import { useGetNotificationsList } from '@/entities/Notification/api/notificationApi'
+import { RoutePath } from '@/shared/const/router'
 
 interface NavbarProps {
   classNames: string
