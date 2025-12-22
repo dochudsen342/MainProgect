@@ -2,8 +2,8 @@ import React, { memo, ReactNode, useEffect } from 'react'
 import cl from './Drawer.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTheme } from '@/app/providers/ThemeProvider'
-import Portal from '../Portal/Portal'
-import Overlay from '../Overlay/Overlay'
+import { Portal } from '../Portal/Portal'
+import { Overlay } from '../Overlay/Overlay'
 import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider/AnimationProvider'
 
 interface DrawerProps {
@@ -85,7 +85,7 @@ const DrawerContent = memo(({ className, children, isOpen, lazy, onClose }: Draw
   )
 })
 
-const Drawer = memo((props: DrawerProps) => {
+export const Drawer = memo((props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs()
 
   if (!isLoaded) {
@@ -93,5 +93,3 @@ const Drawer = memo((props: DrawerProps) => {
   }
   return <DrawerContent {...props} />
 })
-
-export default Drawer

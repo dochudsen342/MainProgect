@@ -1,6 +1,6 @@
 import { memo, useMemo, useState } from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import Button, { ThemeButton } from '@/shared/ui/Button/Button'
+import { Button, ThemeButton } from '@/shared/ui/Button'
 import { LangSwitcher } from '@/widgets/LangSwitcher'
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
 import SideBarItem from '../SideBarItem/SideBarItem'

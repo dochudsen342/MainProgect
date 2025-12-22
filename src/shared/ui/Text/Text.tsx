@@ -48,7 +48,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
   [TextSize.M]: 'h2',
 }
 
-const Text = ({
+export const Text = ({
   className,
   textWeight = TextWeight.MEDIUM,
   title,
@@ -75,5 +75,3 @@ const Text = ({
     </div>
   )
 }
-
-export default Text

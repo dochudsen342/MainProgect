@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
-import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
+import {PageWrapper} from '@/shared/ui/PageWrapper'
 import { articleDetailsPageReducers } from '../../model/slices'
 import ArticleDetailsComments from '../ArticleDetailsComments/ArticleDetailsComments'
 import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'

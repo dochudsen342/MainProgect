@@ -14,13 +14,13 @@ import {
   getArticleListView,
 } from '../../model/selectors/getArticlePageSelectors/getArticlePageSelectors'
 import { useTranslation } from 'react-i18next'
-import Card from '@/shared/ui/Card/Card'
-import Input, { InputTheme } from '@/shared/ui/Input/Input'
+import { Card } from '@/shared/ui/Card'
+import { Input, InputTheme } from '@/shared/ui/Input'
 import { ArticleSortSelector } from '@/features/ArticleSortSelector'
 import { SortOrder } from '@/shared/types'
 import { fetchArticleList } from '../../model/service/fetchArticleList.ts/fetchArticleList'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce'
-import Tabs, { TabItem } from '@/shared/ui/Tabs/Tabs'
+import { Tabs, TabItem } from '@/shared/ui/Tabs'
 import { ArcticleType } from '@/entities/Article/model/types/article'
 import { HStack } from '@/shared/ui/Stack'
 

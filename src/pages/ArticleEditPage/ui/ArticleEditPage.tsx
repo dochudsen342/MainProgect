@@ -1,6 +1,6 @@
 import React from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
 import { useParams } from 'react-router-dom'
 import DynamicReducerLoader, {
   ReducerList,

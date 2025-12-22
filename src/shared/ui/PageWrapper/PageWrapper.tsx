@@ -21,7 +21,7 @@ interface PageWrapperProps {
   onScrollEnd?: () => void
 }
 
-const PageWrapper = ({
+export const PageWrapper = ({
   className,
   children,
   onScrollEnd,
@@ -59,5 +59,3 @@ const PageWrapper = ({
     </main>
   )
 }
-
-export default PageWrapper

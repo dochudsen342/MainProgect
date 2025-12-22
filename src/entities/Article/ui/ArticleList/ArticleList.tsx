@@ -5,7 +5,7 @@ import ArticleItem from '../ArticleItem/ArticleItem'
 import ArticleItemSkeleton from '../ArticleItem/ArticleItemSkeleton'
 import cl from './ArticleList.module.scss'
 import { SortOrder } from '@/shared/types'
-import Text, { TextSize } from '@/shared/ui/Text/Text'
+import { Text, TextSize } from '@/shared/ui/Text'
 import { useTranslation } from 'react-i18next'
 
 interface ArticleListProps {

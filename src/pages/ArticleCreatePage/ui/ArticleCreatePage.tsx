@@ -1,13 +1,13 @@
 import React from 'react'
 import { useCancellReloadPage } from '@/shared/lib/hooks/useСancellReloadPage'
 import { useSelector } from 'react-redux'
-import { AppLink } from '@/shared/ui/AppLink/AppLink'
+import { AppLink } from '@/shared/ui/AppLink'
 import {
   articleCrudFormReducer,
   getCrudArticleCreatedArticleId,
   getCrudArticleIsCreated,
 } from '@/features/ArticleCrudForm'
-import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'

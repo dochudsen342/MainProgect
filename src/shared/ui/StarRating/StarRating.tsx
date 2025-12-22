@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react'
 import cl from './StarRating.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import StarIcon from '@/shared/assets/icons/Star.svg'
-import Icon from '../Icon/Icon'
+import { Icon } from '../Icon/Icon'
 
 interface StarRatingProps {
   className?: string
@@ -11,7 +11,7 @@ interface StarRatingProps {
   selectedStars?: number
 }
 const stars = [1, 2, 3, 4, 5]
-const StarRating = ({ className, onSelect, selectedStars = 0, size }: StarRatingProps) => {
+export const StarRating = ({ className, onSelect, selectedStars = 0, size }: StarRatingProps) => {
   const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars)
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars))
   const onHover = useCallback(
@@ -59,5 +59,3 @@ const StarRating = ({ className, onSelect, selectedStars = 0, size }: StarRating
     </div>
   )
 }
-
-export default StarRating

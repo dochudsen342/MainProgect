@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react'
 import cl from './Modal.module.scss'
 import { classNames, Mods } from '@/shared/lib/classNames/classNames'
-import Portal from '../Portal/Portal'
+import { Portal } from '../Portal/Portal'
 import { useTheme } from '@/app/providers/ThemeProvider'
-import Overlay from '../Overlay/Overlay'
+import { Overlay } from '../Overlay/Overlay'
 import { useModal } from '@/shared/lib/hooks/useModal'
 
 interface ModalProps {
@@ -14,7 +14,7 @@ interface ModalProps {
   lazy?: boolean
 }
 
-const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
+export const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
   const { theme } = useTheme()
   const { isMounted, onCloseHandler } = useModal({ isOpen, onClose })
 
@@ -33,5 +33,3 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     </Portal>
   )
 }
-
-export default Modal

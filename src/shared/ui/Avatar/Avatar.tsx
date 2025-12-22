@@ -9,7 +9,7 @@ interface AvatarProps {
   alt?: string
 }
 
-const Avatar = ({ src, className, size, alt }: AvatarProps) => {
+export const Avatar = ({ src, className, size, alt }: AvatarProps) => {
   const style = useMemo(() => {
     return {
       width: size || 100,
@@ -21,5 +21,3 @@ const Avatar = ({ src, className, size, alt }: AvatarProps) => {
     <img src={src} className={classNames(cl.Avatar, {}, [className])} style={style} alt={alt} />
   )
 }
-
-export default Avatar

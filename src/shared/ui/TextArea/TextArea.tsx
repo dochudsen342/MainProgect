@@ -18,7 +18,13 @@ interface TextAreaProps extends HTMLTextAreaProps {
   onChange?: (value: string) => void
 }
 
-const TextArea = ({ className, children, value, onChange, ...othersProps }: TextAreaProps) => {
+export const TextArea = ({
+  className,
+  children,
+  value,
+  onChange,
+  ...othersProps
+}: TextAreaProps) => {
   const textareaRef = useRef<HTMLTextAreaElement | null>(null)
   useEffect(() => {
     const textarea = textareaRef.current
@@ -47,5 +53,3 @@ const TextArea = ({ className, children, value, onChange, ...othersProps }: Text
     </textarea>
   )
 }
-
-export default TextArea

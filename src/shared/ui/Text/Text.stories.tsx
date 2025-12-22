@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import Text, { TextAligin, TextSize } from './Text'
+import { Text, TextAligin, TextSize } from './Text'
 
 const meta = {
   title: 'shared/Text',

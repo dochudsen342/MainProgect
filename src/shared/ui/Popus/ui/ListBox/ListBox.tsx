@@ -3,7 +3,7 @@ import { Listbox as HListBox } from '@headlessui/react'
 import cl from './ListBox.module.scss'
 import popupCl from '../styles/popup.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import Button, { ThemeButton } from '../../../Button/Button'
+import { Button } from '../../../Button/Button'
 import { HStack } from '../../../Stack'
 
 export interface ListBoxItem {
@@ -25,7 +25,7 @@ interface ListBoxProps {
   onChange: (value: string) => void
 }
 
-const Listbox = ({
+export const Listbox = ({
   items,
   className,
   value,
@@ -80,5 +80,3 @@ const Listbox = ({
     </HStack>
   )
 }
-
-export default Listbox

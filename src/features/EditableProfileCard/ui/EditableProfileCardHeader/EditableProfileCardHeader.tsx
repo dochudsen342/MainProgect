@@ -10,7 +10,7 @@ import { getAuthData } from '@/entities/User'
 import { profileActions } from '../../model/slice/profileSlice'
 import { updateProfileData } from '../../model/service/updateProfileData/uptadeProfileData'
 import { HStack } from '@/shared/ui/Stack'
-import Button, { ButtonSize, ThemeButton } from '@/shared/ui/Button/Button'
+import { Button, ThemeButton } from '@/shared/ui/Button'
 
 interface EditableProfileCardHeaderProps {
   className?: string

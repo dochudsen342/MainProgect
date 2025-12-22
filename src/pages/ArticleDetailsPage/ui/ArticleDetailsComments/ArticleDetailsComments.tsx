@@ -1,12 +1,15 @@
 import React, { useCallback, useEffect } from 'react'
-import Text from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { addCommentForArticle } from '../../model/service/addCommentForArticle/addCommentForArticle'
 import { useSelector } from 'react-redux'
 import { getArticleComments } from '@/features/ArticleCommentList/model/slice/ArticleCommentListSlice'
-import { fetchCommentsByArticleId, getArticleCommentsIsLoading } from '@/features/ArticleCommentList'
+import {
+  fetchCommentsByArticleId,
+  getArticleCommentsIsLoading,
+} from '@/features/ArticleCommentList'
 import { useTranslation } from 'react-i18next'
 
 interface ArticleDetailsCommentsProps {

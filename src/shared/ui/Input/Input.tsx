@@ -20,7 +20,7 @@ interface InputProps extends HTMLInputProps {
   disabled?: boolean
 }
 
-const Input = memo((props: InputProps) => {
+export const Input = memo((props: InputProps) => {
   const {
     className,
     type = 'text',
@@ -63,5 +63,3 @@ const Input = memo((props: InputProps) => {
     </div>
   )
 })
-
-export default Input

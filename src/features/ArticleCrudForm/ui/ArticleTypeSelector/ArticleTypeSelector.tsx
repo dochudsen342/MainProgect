@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import cl from './ArticleTypeSelector.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import CheckboxInput from '@/shared/ui/CheckboxInput/CheckboxInput'
+import { CheckboxInput } from '@/shared/ui/CheckboxInput'
 import { ArcticleType } from '@/entities/Article/model/types/article'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'

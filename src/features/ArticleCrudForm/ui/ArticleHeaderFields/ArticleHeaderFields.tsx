@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import cl from './ArticleHeaderFields.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import Input, { InputTheme } from '@/shared/ui/Input/Input'
+import { Input, InputTheme } from '@/shared/ui/Input'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'

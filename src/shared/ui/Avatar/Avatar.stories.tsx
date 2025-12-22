@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import { fn } from 'storybook/test'
 import { Theme } from '@/app/providers/ThemeProvider'
-import Avatar from './Avatar'
+import { Avatar } from './Avatar'
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 
 const meta = {

@@ -13,12 +13,15 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   theme?: CardTheme
 }
 
-const Card = ({ className, children, theme = CardTheme.NORMAL, ...otherProps }: CardProps) => {
+export const Card = ({
+  className,
+  children,
+  theme = CardTheme.NORMAL,
+  ...otherProps
+}: CardProps) => {
   return (
     <div {...otherProps} className={classNames(cl.Card, {}, [className, cl[theme]])}>
       {children}
     </div>
   )
 }
-
-export default Card

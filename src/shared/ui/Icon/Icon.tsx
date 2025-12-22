@@ -13,12 +13,10 @@ export enum IconFill {
   SECONDARY = 'secondary',
 }
 
-const Icon = ({ className, Svg, theme = IconFill.SECONDARY, ...othersProps }: iconProps) => {
+export const Icon = ({ className, Svg, theme = IconFill.SECONDARY, ...othersProps }: iconProps) => {
   const mods: Mods = {
     [cl[theme]]: true,
   }
 
   return <Svg {...othersProps} className={classNames(cl.icon, mods, [className])} />
 }
-
-export default Icon

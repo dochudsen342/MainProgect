@@ -1,8 +1,8 @@
 import React from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { ArticleCodeBlock } from '../../model/types/article'
-import Text from '@/shared/ui/Text/Text'
-import Code from '@/shared/ui/Code/Code'
+import { Text } from '@/shared/ui/Text'
+import { Code } from '@/shared/ui/Code'
 
 interface ArticleCodeBlockComonentProps {
   className?: string

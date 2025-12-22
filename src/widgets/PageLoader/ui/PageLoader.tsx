@@ -1,6 +1,6 @@
 import React from 'react'
 import cl from './PageLoader.module.scss'
-import Spiner from '@/shared/ui/Spiner/Spiner'
+import { Spiner } from '@/shared/ui/Spiner'
 
 const PageLoader = () => {
   return (

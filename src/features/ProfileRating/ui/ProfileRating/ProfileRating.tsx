@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import cl from './ProfileRating.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import StarRating from '@/shared/ui/StarRating/StarRating'
-import Skeleton from '@/shared/ui/Skeleton/Skeleton'
+import { StarRating } from '@/shared/ui/StarRating'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import {

@@ -1,7 +1,7 @@
 import React, { ChangeEvent, InputHTMLAttributes, useEffect, useRef, useState } from 'react'
 import cl from './CheckboxInput.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import Text, { TextWeight } from '../Text/Text'
+import { Text, TextWeight } from '../Text/Text'
 import { ArcticleType } from '@/entities/Article/model/types/article'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
@@ -24,7 +24,7 @@ interface CheckboxInputProps extends HTMLInputProps {
   disabled?: boolean
 }
 
-const CheckboxInput = (props: CheckboxInputProps) => {
+export const CheckboxInput = (props: CheckboxInputProps) => {
   const {
     className,
     chekboxText,
@@ -68,5 +68,3 @@ const CheckboxInput = (props: CheckboxInputProps) => {
     </div>
   )
 }
-
-export default CheckboxInput

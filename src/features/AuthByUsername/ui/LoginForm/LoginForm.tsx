@@ -2,8 +2,8 @@ import React, { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cl from './LoginForm.module.scss'
-import Button, { ThemeButton } from '@/shared/ui/Button/Button'
-import Input from '@/shared/ui/Input/Input'
+import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Input } from '@/shared/ui/Input'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginAction, loginReducer } from '../../model/slice/loginSlice'
 import { loginByUsername } from '../../model/service/loginByUsername/loginByUsername'
@@ -35,14 +35,14 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     (value: string) => {
       dispatch(loginAction.setUserName(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onChangePassword = useCallback(
     (value: string) => {
       dispatch(loginAction.setPassword(value))
     },
-    [dispatch],
+    [dispatch]
   )
 
   const onLoginClick = useCallback(() => {

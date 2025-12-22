@@ -1,7 +1,7 @@
 import React, { ReactNode, useCallback } from 'react'
 import cl from './Tabs.module.scss'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import Card, { CardTheme } from '../Card/Card'
+import { Card, CardTheme } from '../Card/Card'
 
 export interface TabItem {
   value: string
@@ -15,7 +15,7 @@ interface TabsProps {
   onTabClick?: (tab: TabItem) => void
 }
 
-const Tabs = ({ className, tabs, value, onTabClick }: TabsProps) => {
+export const Tabs = ({ className, tabs, value, onTabClick }: TabsProps) => {
   const clickHandle = useCallback((tab: TabItem) => {
     return () => {
       if (onTabClick) {
@@ -38,5 +38,3 @@ const Tabs = ({ className, tabs, value, onTabClick }: TabsProps) => {
     </div>
   )
 }
-
-export default Tabs

@@ -4,7 +4,7 @@ import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator
 import { Theme } from '@/app/providers/ThemeProvider'
 import AnimationProviderDecorator from '@/shared/config/storybook/decorators/Provider.decorator'
 import RouterDecorator from '@/shared/config/storybook/decorators/Router.decorator'
-import Modal from './Modal'
+import { Modal } from './Modal'
 
 const meta = {
   title: 'shared/Modal',

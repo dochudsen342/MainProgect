@@ -6,7 +6,7 @@ import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
 import { articlePageReducer } from '../../model/slice/articlePageSlice'
 import ArticlesFillterPage from '../ArticlesFillterPage/ArticlesFillterPage'
 import cl from './ArticlePage.module.scss'

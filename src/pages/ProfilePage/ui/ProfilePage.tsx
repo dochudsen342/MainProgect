@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { VStack } from '@/shared/ui/Stack'
 import EditableProfileCard from '@/features/EditableProfileCard/ui/EditableProfileCard/EditableProfileCard'
 import { useParams } from 'react-router-dom'
-import Text from '@/shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text'
 import EditableProfileCardHeader from '@/features/EditableProfileCard/ui/EditableProfileCardHeader/EditableProfileCardHeader'
-import PageWrapper from '@/shared/ui/PageWrapper/PageWrapper'
+import { PageWrapper } from '@/shared/ui/PageWrapper'
 import { ProfileRating } from '@/features/ProfileRating'
 
 interface ProfilePageProps {

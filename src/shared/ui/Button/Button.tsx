@@ -26,7 +26,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean
 }
 
-const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
+export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
   const {
     theme = ThemeButton.OUTLINE,
     children,
@@ -54,5 +54,3 @@ const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
     </button>
   )
 }
-
-export default Button

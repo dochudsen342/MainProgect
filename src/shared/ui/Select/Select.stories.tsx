@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5'
 import { fn } from 'storybook/test'
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import Select from './Select'
+import { Select } from './Select'
 
 const meta = {
   title: 'shared/Select',

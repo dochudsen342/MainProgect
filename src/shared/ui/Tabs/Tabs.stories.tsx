@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
 import { Theme } from '@/app/providers/ThemeProvider'
-import Tabs from './Tabs'
+import { Tabs } from './Tabs'
 
 const meta = {
   title: 'shared/Tabs',
