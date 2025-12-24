@@ -10,10 +10,11 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
     exclude: /node_modules/,
     use: {
       loader: 'babel-loader',
+
       options: {
+        cacheDirectory: true,
         presets: ['@babel/preset-env'],
         plugins: [
-          ['i18next-extract'],
           ['@babel/plugin-transform-runtime', { isTsx }],
           ['@babel/plugin-transform-typescript'],
         ],
