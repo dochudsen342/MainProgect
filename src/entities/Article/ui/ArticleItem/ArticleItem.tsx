@@ -1,5 +1,5 @@
 import EyeIcon from '@/shared/assets/icons/EyeView.svg'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useHover } from '@/shared/lib/hooks/useHover'
 import { AppLink } from '@/shared/ui/AppLink'
@@ -53,7 +53,7 @@ const ArticleItem = ({
           <img src={article?.img} alt={article?.title} className={cl.img} />
           {textBlock && <ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />}
           <div className={cl.footer}>
-            <AppLink target={target} to={RoutePath.article_deteails + article?.id}>
+            <AppLink target={target} to={getRouteArticleDetails(article?.id)}>
               <Button className={cl.readForBtn} theme={ThemeButton.OUTLINE}>
                 {t('Читать далее...')}
               </Button>
@@ -68,7 +68,7 @@ const ArticleItem = ({
   return (
     <AppLink
       target={target}
-      to={RoutePath.article_deteails + article?.id}
+      to={getRouteArticleDetails(article?.id)}
       {...(bindHover as object)}
       className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
     >

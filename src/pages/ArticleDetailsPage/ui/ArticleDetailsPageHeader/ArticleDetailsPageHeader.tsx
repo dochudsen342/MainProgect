@@ -1,5 +1,5 @@
 import { getArticleDetailsData } from '@/entities/Article'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { useCallback } from 'react'
@@ -19,10 +19,10 @@ const ArticleDetailsPageHeader = ({ className }: ArticleDetailsPageHeaderProps) 
   const isEditing = useSelector(getCanUserEditinsArticle)
   const articleData = useSelector(getArticleDetailsData)
   const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles)
+    navigate(getRouteArticles())
   }, [navigate])
   const onEditArticle = useCallback(() => {
-    navigate(`${RoutePath.article_deteails}${articleData?.id}/edit`)
+    navigate(getRouteArticleEdit(articleData?.id))
   }, [articleData?.id, navigate])
 
   return (

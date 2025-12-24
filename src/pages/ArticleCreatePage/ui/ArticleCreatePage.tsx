@@ -4,7 +4,7 @@ import {
   getCrudArticleIsCreated,
 } from '@/features/ArticleCrudForm'
 import ArticleCreateForm from '@/features/ArticleCrudForm/ui/ArticleCreateForm/ArticleCreateForm'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleDetails } from '@/shared/const/router'
 import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
@@ -32,7 +32,7 @@ const ArticleCreatePage = ({ className }: ArticleCreatePageProps) => {
         {isCreated ? (
           <div>
             Статья создана!
-            <AppLink to={RoutePath.article_deteails + createdArticleId}>
+            <AppLink to={getRouteArticleDetails(createdArticleId)}>
               Перейти на созданную статью
             </AppLink>
           </div>

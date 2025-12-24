@@ -2,7 +2,7 @@ import { getAuthData } from '@/entities/User'
 import { LoginModal } from '@/features/AuthByUsername'
 import { AvatarDropdown } from '@/features/AvatarDropdown'
 import { NotificationButton } from '@/features/NotificationButton'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteArticleCreate } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Button, ThemeButton } from '@/shared/ui/Button'
@@ -30,11 +30,7 @@ export const Navbar = () => {
   if (userAuthData) {
     return (
       <div className={classNames(cl.navbar)}>
-        <AppLink
-          className={cl.createBtn}
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.article_create}
-        >
+        <AppLink className={cl.createBtn} theme={AppLinkTheme.PRIMARY} to={getRouteArticleCreate()}>
           {t('Создать статью')}
         </AppLink>
         <HStack gap={'16'} className={cl.actions}>

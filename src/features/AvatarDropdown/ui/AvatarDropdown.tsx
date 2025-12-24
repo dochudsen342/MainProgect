@@ -1,5 +1,5 @@
 import { getAuthData, isUserAdmin, isUserManager, userAction } from '@/entities/User'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown } from '@/shared/ui/Popus'
@@ -36,10 +36,10 @@ const AvatarDropdown = ({ className, setIsModalAuth }: AvatarDropdownProps) => {
       items={[
         {
           content: t('Профиль'),
-          href: RoutePath.profile + userAuthData?.id,
+          href: getRouteProfile(userAuthData?.id),
         },
         { content: t('Выйти'), onClick: onLogout, href: '' },
-        ...(isAdminPanelAvalible ? [{ content: t('Админка'), href: RoutePath.admin_panel }] : []),
+        ...(isAdminPanelAvalible ? [{ content: t('Админка'), href: getRouteAdminPanel() }] : []),
       ]}
       trigger={<Avatar size={30} src={userAuthData.avatar} />}
     />

@@ -20,11 +20,6 @@ const reducers: ReducerList = {
   articlePage: articlePageReducer,
 }
 
-const obj1 = {
-  className: '1',
-  b: 1,
-}
-
 const ArticlePage = ({ className }: ArticlePageProps) => {
   const dispatch = useAppDispatch()
 

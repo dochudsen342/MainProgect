@@ -1,6 +1,6 @@
 import { getAuthData, UserRole } from '@/entities/User'
 import { getUserRoles } from '@/entities/User/model/selectors/roleSelector/roleSelector'
-import { RoutePath } from '@/shared/const/router'
+import { getRouteForbidden, getRouteMain } from '@/shared/const/router'
 import { ReactNode, useMemo } from 'react'
 import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
@@ -23,9 +23,9 @@ export const RequireAuth = ({ children, roles }: RequireAuthProps) => {
   }, [roles, userRoles])
 
   if (!auth) {
-    return <Navigate to={RoutePath.main} />
+    return <Navigate to={getRouteMain()} />
   } else if (!hasRequiredRoles) {
-    return <Navigate to={RoutePath.forbidden} />
+    return <Navigate to={getRouteForbidden()} />
   }
 
   return children

@@ -1,4 +1,4 @@
-import { RoutePath } from '@/shared/const/router'
+import { getRouteProfile } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
@@ -29,7 +29,7 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
     <div className={classNames(cl.CommentCard, {}, [className])}>
       <AppLink
         theme={AppLinkTheme.INVERTED}
-        to={`${RoutePath.profile}${comment?.user.id}`}
+        to={getRouteProfile(comment?.user.id)}
         className={cl.header}
       >
         {comment?.user.avatar ? <Avatar src={comment?.user.avatar} size={30} /> : null}
