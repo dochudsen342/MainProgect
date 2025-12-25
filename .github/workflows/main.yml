@@ -10,8 +10,8 @@ jobs:
       - name: install dep
         run: npm i
 
-      # - name: run unit tests
-      #   run: npm run unit
+      - name: run unit tests
+        run: npm run unit
 
       - name: run build dev
         run: npm run build:dev

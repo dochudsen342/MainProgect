@@ -18,6 +18,7 @@ export default {
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
