@@ -2,11 +2,13 @@ import EyeIcon from '@/shared/assets/icons/EyeView.svg'
 import { getRouteArticleDetails } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useHover } from '@/shared/lib/hooks/useHover'
+import AppImage from '@/shared/ui/AppImage/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
+import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text } from '@/shared/ui/Text'
 import { HTMLAttributeAnchorTarget } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -50,7 +52,12 @@ const ArticleItem = ({
           </div>
           <Text className={cl.title} title={article?.title} />
           {types}
-          <img src={article?.img} alt={article?.title} className={cl.img} />
+          <AppImage
+            className={cl.img}
+            fallback={<Skeleton width={'100%'} height={250} />}
+            src={article?.img}
+            alt={article?.title}
+          />
           {textBlock && <ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />}
           <div className={cl.footer}>
             <AppLink target={target} to={getRouteArticleDetails(article?.id)}>
@@ -74,7 +81,12 @@ const ArticleItem = ({
     >
       <Card>
         <div className={cl.imageWrapper}>
-          <img alt={article?.title} className={cl.img} src={article?.img} />
+          <AppImage
+            className={cl.img}
+            fallback={<Skeleton width={200} height={200} />}
+            src={article?.img}
+            alt={article?.title}
+          />
           <Text text={article?.createdDate} className={cl.date} />
         </div>
         <div className={cl.infoWrapper}>
