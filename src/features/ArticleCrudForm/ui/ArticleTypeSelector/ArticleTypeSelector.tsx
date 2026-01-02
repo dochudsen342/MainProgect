@@ -2,7 +2,7 @@ import { ArcticleType } from '@/entities/Article/model/types/article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { CheckboxInput } from '@/shared/ui/CheckboxInput'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { getCrudArticleData } from '../../model/selectors/getCrudArticleSelectors/getCrudArticleSelectors'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'
@@ -12,7 +12,7 @@ interface TypeArticleFormProps {
   className?: string
 }
 
-const ArticleTypeSelector = ({ className }: TypeArticleFormProps) => {
+const ArticleTypeSelector = memo(({ className }: TypeArticleFormProps) => {
   const dispatch = useAppDispatch()
   const articleData = useSelector(getCrudArticleData)
   const onAddArticleType = useCallback(
@@ -72,6 +72,6 @@ const ArticleTypeSelector = ({ className }: TypeArticleFormProps) => {
       </div>
     </div>
   )
-}
+})
 
 export default ArticleTypeSelector

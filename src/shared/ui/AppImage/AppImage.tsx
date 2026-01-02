@@ -1,4 +1,4 @@
-import { ImgHTMLAttributes, ReactNode, useLayoutEffect, useState } from 'react'
+import { ImgHTMLAttributes, memo, ReactNode, useLayoutEffect, useState } from 'react'
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string
@@ -6,40 +6,35 @@ interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFallback?: ReactNode
 }
 
-const AppImage = ({
-  className,
-  src,
-  alt = 'img',
-  fallback,
-  errorFallback,
-  ...otherProps
-}: AppImageProps) => {
-  const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
+const AppImage = memo(
+  ({ className, src, alt = 'img', fallback, errorFallback, ...otherProps }: AppImageProps) => {
+    const [isLoading, setIsLoading] = useState(true)
+    const [hasError, setHasError] = useState(false)
 
-  useLayoutEffect(() => {
-    const img = new Image()
-    img.src = src ?? ''
+    useLayoutEffect(() => {
+      const img = new Image()
+      img.src = src ?? ''
 
-    img.onload = () => {
-      setIsLoading(false)
+      img.onload = () => {
+        setIsLoading(false)
+      }
+
+      img.onerror = () => {
+        setIsLoading(false)
+        setHasError(true)
+      }
+    }, [])
+
+    if (isLoading && fallback) {
+      return fallback
     }
 
-    img.onerror = () => {
-      setIsLoading(false)
-      setHasError(true)
+    if (hasError && errorFallback) {
+      return errorFallback
     }
-  }, [])
 
-  if (isLoading && fallback) {
-    return fallback
+    return <img {...otherProps} src={src} alt={alt} className={className} />
   }
-
-  if (hasError && errorFallback) {
-    return errorFallback
-  }
-
-  return <img {...otherProps} src={src} alt={alt} className={className} />
-}
+)
 
 export default AppImage

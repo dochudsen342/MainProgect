@@ -1,6 +1,6 @@
 import { ArcticleType } from '@/entities/Article/model/types/article'
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { ChangeEvent, InputHTMLAttributes, useRef } from 'react'
+import { ChangeEvent, InputHTMLAttributes, memo, useRef } from 'react'
 import { Text, TextWeight } from '../Text/Text'
 import cl from './CheckboxInput.module.scss'
 
@@ -24,7 +24,7 @@ interface CheckboxInputProps extends HTMLInputProps {
   disabled?: boolean
 }
 
-export const CheckboxInput = (props: CheckboxInputProps) => {
+export const CheckboxInput = memo((props: CheckboxInputProps) => {
   const {
     className,
     chekboxText,
@@ -67,4 +67,4 @@ export const CheckboxInput = (props: CheckboxInputProps) => {
       />
     </div>
   )
-}
+})

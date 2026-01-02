@@ -1,6 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { VStack } from '@/shared/ui/Stack'
+import { memo } from 'react'
 import { Notification } from '../../model/types/Notification'
 import NotificationItem from '../NotificationItem/NotificationItem'
 import cl from './NotificationList.module.scss'
@@ -11,7 +12,7 @@ interface NotificationListProps {
   data?: Notification[]
 }
 
-const NotificationList = ({ className, isLoading, data }: NotificationListProps) => {
+const NotificationList = memo(({ className, isLoading, data }: NotificationListProps) => {
   if (isLoading) {
     return (
       <VStack gap='16' max className={classNames(cl.NotificationList, {}, [className])}>
@@ -28,6 +29,6 @@ const NotificationList = ({ className, isLoading, data }: NotificationListProps)
       ))}
     </VStack>
   )
-}
+})
 
 export default NotificationList

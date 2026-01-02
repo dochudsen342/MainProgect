@@ -10,7 +10,7 @@ import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text } from '@/shared/ui/Text'
-import { HTMLAttributeAnchorTarget } from 'react'
+import { HTMLAttributeAnchorTarget, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/article'
 import ArticleTextBlockComonent from '../ArticleTextBlockComponent/ArticleTextBlockComonent'
@@ -23,80 +23,77 @@ interface ArticleItemProps {
   target?: HTMLAttributeAnchorTarget
 }
 
-const ArticleItem = ({
-  className,
-  article,
-  view = ArticleView.SMALL,
-  target,
-}: ArticleItemProps) => {
-  const { t } = useTranslation()
-  const [bindHover] = useHover()
-  const types = <Text text={article?.type.join(',')} className={cl.types} />
-  const views = (
-    <>
-      <Text text={String(article?.views)} className={cl.views} />
-      <Icon className={cl.icon} Svg={EyeIcon} />
-    </>
-  )
-  if (view === ArticleView.BIG) {
-    let textBlock = article?.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT
-    ) as ArticleTextBlock
+const ArticleItem = memo(
+  ({ className, article, view = ArticleView.SMALL, target }: ArticleItemProps) => {
+    const { t } = useTranslation()
+    const [bindHover] = useHover()
+    const types = <Text text={article?.type.join(',')} className={cl.types} />
+    const views = (
+      <>
+        <Text text={String(article?.views)} className={cl.views} />
+        <Icon className={cl.icon} Svg={EyeIcon} />
+      </>
+    )
+    if (view === ArticleView.BIG) {
+      let textBlock = article?.blocks.find(
+        (block) => block.type === ArticleBlockType.TEXT
+      ) as ArticleTextBlock
+      return (
+        <div className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+          <Card>
+            <div className={cl.header}>
+              <Avatar size={30} src={article?.user?.avatar} />
+              <Text text={article?.user.username} className={cl.userName} />
+              <Text text={article?.createdDate} className={cl.date} />
+            </div>
+            <Text className={cl.title} title={article?.title} />
+            {types}
+            <AppImage
+              className={cl.img}
+              fallback={<Skeleton width={'100%'} height={250} />}
+              src={article?.img}
+              alt={article?.title}
+            />
+            {textBlock && <ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />}
+            <div className={cl.footer}>
+              <AppLink target={target} to={getRouteArticleDetails(article?.id)}>
+                <Button className={cl.readForBtn} theme={ThemeButton.OUTLINE}>
+                  {t('Читать далее...')}
+                </Button>
+              </AppLink>
+              {views}
+            </div>
+          </Card>
+        </div>
+      )
+    }
+
     return (
-      <div className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+      <AppLink
+        target={target}
+        to={getRouteArticleDetails(article?.id)}
+        {...(bindHover as object)}
+        className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
+      >
         <Card>
-          <div className={cl.header}>
-            <Avatar size={30} src={article?.user?.avatar} />
-            <Text text={article?.user.username} className={cl.userName} />
+          <div className={cl.imageWrapper}>
+            <AppImage
+              className={cl.img}
+              fallback={<Skeleton width={200} height={200} />}
+              src={article?.img}
+              alt={article?.title}
+            />
             <Text text={article?.createdDate} className={cl.date} />
           </div>
-          <Text className={cl.title} title={article?.title} />
-          {types}
-          <AppImage
-            className={cl.img}
-            fallback={<Skeleton width={'100%'} height={250} />}
-            src={article?.img}
-            alt={article?.title}
-          />
-          {textBlock && <ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />}
-          <div className={cl.footer}>
-            <AppLink target={target} to={getRouteArticleDetails(article?.id)}>
-              <Button className={cl.readForBtn} theme={ThemeButton.OUTLINE}>
-                {t('Читать далее...')}
-              </Button>
-            </AppLink>
+          <div className={cl.infoWrapper}>
+            {types}
             {views}
           </div>
+          <Text text={article?.title} className={cl.title} />
         </Card>
-      </div>
+      </AppLink>
     )
   }
-
-  return (
-    <AppLink
-      target={target}
-      to={getRouteArticleDetails(article?.id)}
-      {...(bindHover as object)}
-      className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
-    >
-      <Card>
-        <div className={cl.imageWrapper}>
-          <AppImage
-            className={cl.img}
-            fallback={<Skeleton width={200} height={200} />}
-            src={article?.img}
-            alt={article?.title}
-          />
-          <Text text={article?.createdDate} className={cl.date} />
-        </div>
-        <div className={cl.infoWrapper}>
-          {types}
-          {views}
-        </div>
-        <Text text={article?.title} className={cl.title} />
-      </Card>
-    </AppLink>
-  )
-}
+)
 
 export default ArticleItem

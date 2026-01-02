@@ -6,6 +6,7 @@ import { Avatar } from '@/shared/ui/Avatar'
 import { Input, InputTheme } from '@/shared/ui/Input'
 import { Spiner } from '@/shared/ui/Spiner'
 import { HStack, VStack } from '@/shared/ui/Stack'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Profile } from '../../model/types/profile'
 import cl from './ProfileCard.module.scss'
@@ -26,7 +27,7 @@ interface ProfileCardProps {
   onChangeCountry?: (counry: Country) => void
 }
 
-const ProfileCard = (props: ProfileCardProps) => {
+const ProfileCard = memo((props: ProfileCardProps) => {
   const { t } = useTranslation('profile')
   const {
     data,
@@ -154,6 +155,6 @@ const ProfileCard = (props: ProfileCardProps) => {
       />
     </VStack>
   )
-}
+})
 
 export default ProfileCard

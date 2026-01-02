@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Input, InputTheme } from '@/shared/ui/Input'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCrudArticleData } from '../../model/selectors/getCrudArticleSelectors/getCrudArticleSelectors'
@@ -11,7 +11,7 @@ interface TitleArticleFormProps {
   className?: string
 }
 
-const ArticleHeaderFields = ({ className }: TitleArticleFormProps) => {
+const ArticleHeaderFields = memo(({ className }: TitleArticleFormProps) => {
   const { t } = useTranslation()
   const dispatch = useDispatch()
   const articleData = useSelector(getCrudArticleData)
@@ -61,6 +61,6 @@ const ArticleHeaderFields = ({ className }: TitleArticleFormProps) => {
       />
     </div>
   )
-}
+})
 
 export default ArticleHeaderFields

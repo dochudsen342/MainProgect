@@ -1,6 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import {
   ChangeEvent,
+  memo,
   ReactNode,
   TextareaHTMLAttributes,
   useCallback,
@@ -18,38 +19,34 @@ interface TextAreaProps extends HTMLTextAreaProps {
   onChange?: (value: string) => void
 }
 
-export const TextArea = ({
-  className,
-  children,
-  value,
-  onChange,
-  ...othersProps
-}: TextAreaProps) => {
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null)
-  useEffect(() => {
-    const textarea = textareaRef.current
-    if (textarea) {
-      textarea.style.height = `${textarea.scrollHeight}px`
-    }
-  }, [])
-  const handleInput = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
-    const textarea = textareaRef.current
-    if (textarea) {
-      textarea.style.height = 'auto'
-      textarea.style.height = `${textarea.scrollHeight}px`
-    }
-    onChange?.(e.target.value)
-  }, [])
-  return (
-    <textarea
-      className={classNames(cl.TextArea, {}, [className])}
-      onChange={handleInput}
-      value={value}
-      style={{}}
-      ref={textareaRef}
-      {...othersProps}
-    >
-      {children}
-    </textarea>
-  )
-}
+export const TextArea = memo(
+  ({ className, children, value, onChange, ...othersProps }: TextAreaProps) => {
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null)
+    useEffect(() => {
+      const textarea = textareaRef.current
+      if (textarea) {
+        textarea.style.height = `${textarea.scrollHeight}px`
+      }
+    }, [])
+    const handleInput = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
+      const textarea = textareaRef.current
+      if (textarea) {
+        textarea.style.height = 'auto'
+        textarea.style.height = `${textarea.scrollHeight}px`
+      }
+      onChange?.(e.target.value)
+    }, [])
+    return (
+      <textarea
+        className={classNames(cl.TextArea, {}, [className])}
+        onChange={handleInput}
+        value={value}
+        style={{}}
+        ref={textareaRef}
+        {...othersProps}
+      >
+        {children}
+      </textarea>
+    )
+  }
+)

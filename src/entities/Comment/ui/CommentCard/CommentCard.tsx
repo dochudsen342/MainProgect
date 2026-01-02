@@ -4,6 +4,7 @@ import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { Text } from '@/shared/ui/Text'
+import { memo } from 'react'
 import { Comment } from '../../model/types/comment'
 import cl from './CommentCard.module.scss'
 
@@ -13,7 +14,7 @@ interface CommentCardProps {
   isLoading?: boolean
 }
 
-const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
+const CommentCard = memo(({ className, comment, isLoading }: CommentCardProps) => {
   if (isLoading) {
     return (
       <div className={classNames(cl.CommentCard, {}, [className])}>
@@ -38,6 +39,6 @@ const CommentCard = ({ className, comment, isLoading }: CommentCardProps) => {
       <Text className={cl.text} text={comment?.text} />
     </div>
   )
-}
+})
 
 export default CommentCard

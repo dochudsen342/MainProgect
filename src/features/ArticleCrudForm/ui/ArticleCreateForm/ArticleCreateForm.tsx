@@ -3,7 +3,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { PageLoader } from '@/widgets/PageLoader'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import {
@@ -21,7 +21,7 @@ interface ArticleCreateFormProps {
   className?: string
 }
 
-const ArticleCreateForm = ({ className }: ArticleCreateFormProps) => {
+const ArticleCreateForm = memo(({ className }: ArticleCreateFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const articleData = useSelector(getCrudArticleData)
@@ -90,6 +90,6 @@ const ArticleCreateForm = ({ className }: ArticleCreateFormProps) => {
       </Button>
     </>
   )
-}
+})
 
 export default ArticleCreateForm

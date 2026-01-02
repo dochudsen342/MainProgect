@@ -3,7 +3,7 @@ import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Dropdown } from '@/shared/ui/Popus'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
@@ -12,7 +12,7 @@ interface AvatarDropdownProps {
   setIsModalAuth: (state: boolean) => void
 }
 
-const AvatarDropdown = ({ className, setIsModalAuth }: AvatarDropdownProps) => {
+const AvatarDropdown = memo(({ className, setIsModalAuth }: AvatarDropdownProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const userAuthData = useSelector(getAuthData)
@@ -44,6 +44,6 @@ const AvatarDropdown = ({ className, setIsModalAuth }: AvatarDropdownProps) => {
       trigger={<Avatar size={30} src={userAuthData.avatar} />}
     />
   )
-}
+})
 
 export default AvatarDropdown

@@ -4,6 +4,7 @@ import TiledIcon from '@/shared/assets/icons/viewSmall.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { Icon } from '@/shared/ui/Icon'
+import { memo } from 'react'
 import cl from './ArticleViewSelector.module.scss'
 
 interface ArticleViewSelectorProps {
@@ -23,9 +24,8 @@ const viewTypes = [
   },
 ]
 
-const ArticleViewSelector = ({ className, onViewClick, view }: ArticleViewSelectorProps) => {
+const ArticleViewSelector = memo(({ className, onViewClick, view }: ArticleViewSelectorProps) => {
   const onClick = (newView: ArticleView) => () => {
-    console.log(newView)
     onViewClick?.(newView)
   }
   return (
@@ -42,6 +42,6 @@ const ArticleViewSelector = ({ className, onViewClick, view }: ArticleViewSelect
       })}
     </div>
   )
-}
+})
 
 export default ArticleViewSelector

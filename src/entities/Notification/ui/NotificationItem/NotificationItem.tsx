@@ -1,6 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Card, CardTheme } from '@/shared/ui/Card'
 import { Text } from '@/shared/ui/Text'
+import { memo } from 'react'
 import { Notification } from '../../model/types/Notification'
 import cl from './NotificationItem.module.scss'
 
@@ -9,7 +10,7 @@ interface NotificationItemProps {
   notification: Notification
 }
 
-const NotificationItem = ({ className, notification }: NotificationItemProps) => {
+const NotificationItem = memo(({ className, notification }: NotificationItemProps) => {
   const content = (
     <Card theme={CardTheme.OUTLINED} className={classNames(cl.NotificationItem, {}, [className])}>
       <Text title={notification.title} text={notification.description} />
@@ -24,6 +25,6 @@ const NotificationItem = ({ className, notification }: NotificationItemProps) =>
     )
   }
   return content
-}
+})
 
 export default NotificationItem

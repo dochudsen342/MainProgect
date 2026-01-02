@@ -1,5 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text, TextSize } from '@/shared/ui/Text'
+import { memo } from 'react'
 import { ArticleTextBlock } from '../../model/types/article'
 import cl from './ArticleTextBlock.module.scss'
 
@@ -8,7 +9,7 @@ interface ArticleTextBlockComonentProps {
   block?: ArticleTextBlock
 }
 
-const ArticleTextBlockComonent = ({ className, block }: ArticleTextBlockComonentProps) => {
+const ArticleTextBlockComonent = memo(({ className, block }: ArticleTextBlockComonentProps) => {
   return (
     <div className={classNames(cl.ArticleTextBlockComonent, {}, [className])}>
       {block?.title && <Text size={TextSize.L} title={block.title} className={cl.title} />}
@@ -17,6 +18,6 @@ const ArticleTextBlockComonent = ({ className, block }: ArticleTextBlockComonent
       ))}
     </div>
   )
-}
+})
 
 export default ArticleTextBlockComonent

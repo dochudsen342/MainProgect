@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { StarRating } from '@/shared/ui/StarRating'
-import { useEffect } from 'react'
+import { memo, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import {
   getProfileRatingData,
@@ -16,7 +16,7 @@ interface ProfileRatingProps {
   userId: string
 }
 
-const ProfileRating = ({ className, userId }: ProfileRatingProps) => {
+const ProfileRating = memo(({ className, userId }: ProfileRatingProps) => {
   // const { data, isLoading } = useArticleRatings({ userId: userId ?? '' })
 
   const dispatch = useAppDispatch()
@@ -36,6 +36,6 @@ const ProfileRating = ({ className, userId }: ProfileRatingProps) => {
       <StarRating selectedStars={profileRate} size={40} />
     </div>
   )
-}
+})
 
 export default ProfileRating

@@ -6,7 +6,7 @@ import { Button, ThemeButton } from '@/shared/ui/Button'
 import { InputTheme } from '@/shared/ui/CheckboxInput'
 import { Input } from '@/shared/ui/Input'
 import { Skeleton } from '@/shared/ui/Skeleton'
-import { useCallback, useEffect } from 'react'
+import { memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import {
@@ -25,7 +25,7 @@ interface ArticleEditFormProps {
   articleId: string
 }
 
-const ArticleEditForm = ({ className, articleId }: ArticleEditFormProps) => {
+const ArticleEditForm = memo(({ className, articleId }: ArticleEditFormProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const articleData = useSelector(getCrudArticleData)
@@ -113,6 +113,6 @@ const ArticleEditForm = ({ className, articleId }: ArticleEditFormProps) => {
       </Button>
     </>
   )
-}
+})
 
 export default ArticleEditForm

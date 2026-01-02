@@ -1,5 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Text } from '@/shared/ui/Text'
+import { memo } from 'react'
 import { Comment } from '../../model/types/comment'
 import CommentCard from '../CommentCard/CommentCard'
 
@@ -9,7 +10,7 @@ interface CommentListProps {
   isLoading?: boolean
 }
 
-const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
+const CommentList = memo(({ className, comments, isLoading }: CommentListProps) => {
   return (
     <div className={classNames('', {}, [className])}>
       {comments?.length ? (
@@ -21,6 +22,6 @@ const CommentList = ({ className, comments, isLoading }: CommentListProps) => {
       )}
     </div>
   )
-}
+})
 
 export default CommentList

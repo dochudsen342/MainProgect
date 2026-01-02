@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { TextArea } from '@/shared/ui/TextArea'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { articleCrudFormAction } from '../../model/slice/articleCrudSlice'
 
 interface TextAreaArticleBlockProps {
@@ -12,30 +12,26 @@ interface TextAreaArticleBlockProps {
   rows?: number
 }
 
-const TextAreaCrudBlock = ({
-  className,
-  id,
-  placeholder,
-  value,
-  rows,
-}: TextAreaArticleBlockProps) => {
-  const dispatch = useAppDispatch()
+const TextAreaCrudBlock = memo(
+  ({ className, id, placeholder, value, rows }: TextAreaArticleBlockProps) => {
+    const dispatch = useAppDispatch()
 
-  const onChangeHandler = useCallback(
-    (value: string) => {
-      dispatch(articleCrudFormAction.updateBlockContent({ id: id, content: value }))
-    },
-    [id]
-  )
-  return (
-    <TextArea
-      onChange={onChangeHandler}
-      placeholder={placeholder}
-      rows={rows}
-      value={value}
-      className={classNames('', {}, [className])}
-    />
-  )
-}
+    const onChangeHandler = useCallback(
+      (value: string) => {
+        dispatch(articleCrudFormAction.updateBlockContent({ id: id, content: value }))
+      },
+      [id]
+    )
+    return (
+      <TextArea
+        onChange={onChangeHandler}
+        placeholder={placeholder}
+        rows={rows}
+        value={value}
+        className={classNames('', {}, [className])}
+      />
+    )
+  }
+)
 
 export default TextAreaCrudBlock

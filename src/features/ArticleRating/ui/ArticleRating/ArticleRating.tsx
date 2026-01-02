@@ -3,6 +3,7 @@ import { getAuthData } from '@/entities/User'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Skeleton } from '@/shared/ui/Skeleton'
+import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useArticleRatings } from '../../api/articleRatingApi'
@@ -14,7 +15,7 @@ interface ArticleRatingProps {
   articleId: string
 }
 
-const ArticleRating = ({ className, articleId }: ArticleRatingProps) => {
+const ArticleRating = memo(({ className, articleId }: ArticleRatingProps) => {
   const { t } = useTranslation()
   const userData = useSelector(getAuthData)
   const dispatch = useAppDispatch()
@@ -59,6 +60,6 @@ const ArticleRating = ({ className, articleId }: ArticleRatingProps) => {
       />
     </div>
   )
-}
+})
 
 export default ArticleRating

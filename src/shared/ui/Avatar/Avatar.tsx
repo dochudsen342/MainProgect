@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { useMemo } from 'react'
+import { memo, useMemo } from 'react'
 import UserIcon from '../../assets/icons/userDefaultAvatar.svg'
 import AppImage from '../AppImage/AppImage'
 import { Icon } from '../Icon'
@@ -13,7 +13,7 @@ interface AvatarProps {
   alt?: string
 }
 
-export const Avatar = ({ src, className, size, alt }: AvatarProps) => {
+export const Avatar = memo(({ src, className, size, alt }: AvatarProps) => {
   const style = useMemo(() => {
     return {
       width: size || 100,
@@ -33,4 +33,4 @@ export const Avatar = ({ src, className, size, alt }: AvatarProps) => {
       alt={alt}
     />
   )
-}
+})

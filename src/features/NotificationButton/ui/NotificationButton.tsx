@@ -7,7 +7,7 @@ import { Button, ThemeButton } from '@/shared/ui/Button'
 import { Drawer } from '@/shared/ui/Drawer'
 import { Icon, IconFill } from '@/shared/ui/Icon'
 import { Popover } from '@/shared/ui/Popus'
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { BrowserView, MobileView } from 'react-device-detect'
 import cl from './NotificationButton.module.scss'
 
@@ -15,7 +15,7 @@ interface NotificationButtonProps {
   className?: string
 }
 
-const NotificationButton = ({ className }: NotificationButtonProps) => {
+const NotificationButton = memo(({ className }: NotificationButtonProps) => {
   const { data: Notifications, isLoading } = useGetNotificationsList(null, {
     pollingInterval: 10000,
   })
@@ -58,6 +58,6 @@ const NotificationButton = ({ className }: NotificationButtonProps) => {
       </MobileView>
     </div>
   )
-}
+})
 
 export default NotificationButton

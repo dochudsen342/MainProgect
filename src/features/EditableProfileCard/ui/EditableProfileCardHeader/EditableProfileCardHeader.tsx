@@ -2,7 +2,7 @@ import { getAuthData } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Button, ThemeButton } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
@@ -15,7 +15,7 @@ interface EditableProfileCardHeaderProps {
   className?: string
 }
 
-const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps) => {
+const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeaderProps) => {
   const { t } = useTranslation('profile')
   const readonly = useSelector(getProfileReadonly)
   const profileData = useSelector(getProfileData)
@@ -58,6 +58,6 @@ const EditableProfileCardHeader = ({ className }: EditableProfileCardHeaderProps
       )}
     </HStack>
   )
-}
+})
 
 export default EditableProfileCardHeader

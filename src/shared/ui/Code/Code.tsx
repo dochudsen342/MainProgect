@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { useCallback } from 'react'
+import { memo, useCallback } from 'react'
 import CopyIcon from '../../assets/icons/Vector (1).svg'
 import { Button, ButtonSize, ThemeButton } from '../Button/Button'
 import cl from './Code.module.scss'
@@ -9,7 +9,7 @@ interface CodeProps {
   text: string
 }
 
-export const Code = ({ className, text }: CodeProps) => {
+export const Code = memo(({ className, text }: CodeProps) => {
   const onCopy = useCallback(() => {
     navigator.clipboard.writeText(text)
   }, [text])
@@ -27,4 +27,4 @@ export const Code = ({ className, text }: CodeProps) => {
       <code>{text}</code>
     </pre>
   )
-}
+})

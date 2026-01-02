@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { DropDownDirection } from '@/shared/types/ui'
 import { Popover as HPopover } from '@headlessui/react'
-import { ReactNode } from 'react'
+import { memo, ReactNode } from 'react'
 import { mapDirectionClass } from '../styles/consts'
 import popupCl from '../styles/popup.module.scss'
 import cl from './Popover.module.scss'
@@ -13,7 +13,7 @@ interface PopoverProps {
   children: ReactNode
 }
 
-const Popover = (props: PopoverProps) => {
+const Popover = memo((props: PopoverProps) => {
   const { trigger, direction = 'bottom right', className, children } = props
   const panelClasses = [mapDirectionClass[direction], className]
 
@@ -23,6 +23,6 @@ const Popover = (props: PopoverProps) => {
       <HPopover.Panel className={classNames(cl.panel, {}, panelClasses)}>{children}</HPopover.Panel>
     </HPopover>
   )
-}
+})
 
 export default Popover
