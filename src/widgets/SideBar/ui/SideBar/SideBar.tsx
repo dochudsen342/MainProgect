@@ -33,6 +33,7 @@ const SideBar = memo(({ className }: SideBarProps) => {
       className={classNames(cl.SideBar, { [cl.collapsed]: collapsed }, [className])}
     >
       <Button
+        data-testid='sidebar-toggle'
         square={false}
         theme={ThemeButton.BACKGROUND_INVERTED}
         onClick={onToggle}

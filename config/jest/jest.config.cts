@@ -1,12 +1,13 @@
-/*
- * For a detailed explanation regarding each configuration property and type check, visit:
- * https://jestjs.io/docs/configuration
- */
-
 import path from 'path'
 
 export default {
+  globals: {
+    __IS_DEV__: true,
+    __API__: '',
+    __PROJECT__: 'jest',
+  },
   clearMocks: true,
+  verbose: true,
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
@@ -14,6 +15,7 @@ export default {
   modulePaths: ['<rootDir>src'],
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   rootDir: '../../',
+  setupFiles: ['<rootDir>/config/jest/setupFiles.ts'],
   setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
@@ -112,9 +114,6 @@ export default {
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
-
-  // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
