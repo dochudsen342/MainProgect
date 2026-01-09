@@ -5,7 +5,7 @@ import SideBar from './SideBar'
 describe('SideBar', () => {
   test('without param', () => {
     componentRender(<SideBar />)
-    expect(screen.getByTestId('sidebar')).toBeInTheDocument()
+    expect(screen.getByTestId('sidebarasd')).toBeInTheDocument()
     screen.debug()
   })
   test('test toggle', () => {
