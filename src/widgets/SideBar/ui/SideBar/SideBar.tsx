@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { VStack } from '@/shared/ui/Stack'
 import { LangSwitcher } from '@/widgets/LangSwitcher'
 import { ThemeSwitcher } from '@/widgets/ThemeSwitcher'
@@ -35,7 +35,7 @@ const SideBar = memo(({ className }: SideBarProps) => {
       <Button
         data-testid='sidebar-toggle'
         square={false}
-        theme={ThemeButton.BACKGROUND_INVERTED}
+        theme='backgroundInverted'
         onClick={onToggle}
         className={cl.SideBarBtn}
       >

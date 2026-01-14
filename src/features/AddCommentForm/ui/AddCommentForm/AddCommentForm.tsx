@@ -3,7 +3,7 @@ import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { Input, InputTheme } from '@/shared/ui/Input'
 import { HStack } from '@/shared/ui/Stack'
 import { useCallback } from 'react'
@@ -63,7 +63,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
           data-testid='addCommentButton'
           className={cl.sendBtn}
           onClick={onSendHandler}
-          theme={ThemeButton.OUTLINE}
+          theme='outline'
         >
           {t('Отправить')}
         </Button>

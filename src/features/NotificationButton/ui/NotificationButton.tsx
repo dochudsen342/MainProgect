@@ -3,7 +3,7 @@ import { useGetNotificationsList } from '@/entities/Notification/api/notificatio
 import NotificationIcon from '@/shared/assets/icons/Notifications.svg'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { Drawer } from '@/shared/ui/Drawer'
 import { Icon, IconFill } from '@/shared/ui/Icon'
 import { Popover } from '@/shared/ui/Popus'
@@ -28,7 +28,7 @@ const NotificationButton = memo(({ className }: NotificationButtonProps) => {
   }
   const [isOpen, setIsOpen] = useState(false)
   const triger = (
-    <Button theme={ThemeButton.CLEAR} onClick={onOpenDrawer}>
+    <Button theme='clear' onClick={onOpenDrawer}>
       <Icon Svg={NotificationIcon} />
     </Button>
   )

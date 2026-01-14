@@ -1,7 +1,7 @@
 import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { PageLoader } from '@/widgets/PageLoader'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -85,7 +85,7 @@ const ArticleCreateForm = memo(({ className }: ArticleCreateFormProps) => {
         <div className={cl.blocksWrapper}>{articleData?.blocks.map(renderBlocks)}</div>
         <AddBlockPanel />
       </div>
-      <Button onClick={onCreateArticle} theme={ThemeButton.OUTLINE}>
+      <Button onClick={onCreateArticle} theme='outline'>
         {t('Создать статью')}
       </Button>
     </>

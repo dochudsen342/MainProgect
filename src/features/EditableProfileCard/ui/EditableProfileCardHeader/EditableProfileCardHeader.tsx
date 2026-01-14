@@ -1,6 +1,6 @@
 import { getAuthData } from '@/entities/User'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -41,7 +41,7 @@ const EditableProfileCardHeader = memo(({ className }: EditableProfileCardHeader
       {canEdit && (
         <>
           {readonly ? (
-            <Button onClick={onEdit} className={cl.editBtn} theme={ThemeButton.OUTLINE}>
+            <Button onClick={onEdit} className={cl.editBtn} theme='outline'>
               {t('Редактировать')}
             </Button>
           ) : (

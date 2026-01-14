@@ -5,7 +5,7 @@ import { useHover } from '@/shared/lib/hooks/useHover'
 import AppImage from '@/shared/ui/AppImage/AppImage'
 import { AppLink } from '@/shared/ui/AppLink'
 import { Avatar } from '@/shared/ui/Avatar'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Icon } from '@/shared/ui/Icon'
 import { Skeleton } from '@/shared/ui/Skeleton'
@@ -57,7 +57,7 @@ const ArticleItem = memo(
             {textBlock && <ArticleTextBlockComonent block={textBlock} className={cl.textBlock} />}
             <div className={cl.footer}>
               <AppLink target={target} to={getRouteArticleDetails(article?.id)}>
-                <Button className={cl.readForBtn} theme={ThemeButton.OUTLINE}>
+                <Button className={cl.readForBtn} theme='outline'>
                   {t('Читать далее...')}
                 </Button>
               </AppLink>

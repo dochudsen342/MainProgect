@@ -5,7 +5,7 @@ import { NotificationButton } from '@/features/NotificationButton'
 import { getRouteArticleCreate } from '@/shared/const/router'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { HStack } from '@/shared/ui/Stack'
 import { useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -43,7 +43,7 @@ export const Navbar = () => {
 
   return (
     <header className={classNames(cl.navbar)}>
-      <Button square onClick={onOpen} theme={ThemeButton.CLEAR_INVERTED} className={cl.links}>
+      <Button square onClick={onOpen} theme='clear_inverted' className={cl.links}>
         {t('Войти')}
       </Button>
       {isModalAuth && <LoginModal isOpen={isModalAuth} onClose={onClose} />}

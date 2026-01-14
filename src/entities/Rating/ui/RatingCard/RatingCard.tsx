@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import AnimationProvider from '@/shared/lib/components/AnimationProvider/AnimationProvider'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { Card } from '@/shared/ui/Card'
 import { Drawer } from '@/shared/ui/Drawer'
 import { Input } from '@/shared/ui/Input'
@@ -66,7 +66,7 @@ const RatingCard = memo(
         <Input placeholder={t('Ваш отзыв')} />
         <HStack max gap='16'>
           <Button onClick={onAcceptHandler}>{t('Отправить')}</Button>
-          <Button onClick={onCancelHandler} theme={ThemeButton.OUTLINE_RED}>
+          <Button onClick={onCancelHandler} theme='outlineRed'>
             {t('Закрыть')}
           </Button>
         </HStack>

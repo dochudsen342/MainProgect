@@ -2,7 +2,7 @@ import { fetchArticleById } from '@/entities/Article'
 import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/article'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { InputTheme } from '@/shared/ui/CheckboxInput'
 import { Input } from '@/shared/ui/Input'
 import { Skeleton } from '@/shared/ui/Skeleton'
@@ -108,7 +108,7 @@ const ArticleEditForm = memo(({ className, articleId }: ArticleEditFormProps) =>
         <div>{articleData?.blocks.map(renderBlocks)}</div>
         <AddBlockPanel />
       </div>
-      <Button onClick={onApplyChanges} theme={ThemeButton.OUTLINE}>
+      <Button onClick={onApplyChanges} theme='outline'>
         {t('Применить изменения')}
       </Button>
     </>

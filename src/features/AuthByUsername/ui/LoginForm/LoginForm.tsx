@@ -3,7 +3,7 @@ import DynamicReducerLoader, {
   ReducerList,
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
-import { Button, ThemeButton } from '@/shared/ui/Button'
+import { Button } from '@/shared/ui/Button'
 import { Input } from '@/shared/ui/Input'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -70,12 +70,7 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
           className={cl.input}
           type='text'
         />
-        <Button
-          theme={ThemeButton.OUTLINE}
-          disabled={isLoading}
-          onClick={onLoginClick}
-          className={cl.LoginBtn}
-        >
+        <Button theme='outline' disabled={isLoading} onClick={onLoginClick} className={cl.LoginBtn}>
           {t('Войти')}
         </Button>
       </div>
