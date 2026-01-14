@@ -45,15 +45,26 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
 
   return (
     <DynamicReducerLoader removeAfterUnmount={true} reducers={reducers}>
-      <HStack justify='between' max className={classNames(cl.AddCommentForm, {}, [className])}>
+      <HStack
+        data-testid='addCommentForm'
+        justify='between'
+        max
+        className={classNames(cl.AddCommentForm, {}, [className])}
+      >
         <Input
+          data-testid='addCommentInput'
           className={cl.input}
           inputTheme={InputTheme.OUTLINE}
           value={text || ''}
           placeholder={t('Введите комментарий')}
           onChange={onCommentTextChange}
         />
-        <Button className={cl.sendBtn} onClick={onSendHandler} theme={ThemeButton.OUTLINE}>
+        <Button
+          data-testid='addCommentButton'
+          className={cl.sendBtn}
+          onClick={onSendHandler}
+          theme={ThemeButton.OUTLINE}
+        >
           {t('Отправить')}
         </Button>
       </HStack>

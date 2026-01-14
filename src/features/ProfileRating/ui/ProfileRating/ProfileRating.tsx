@@ -17,8 +17,6 @@ interface ProfileRatingProps {
 }
 
 const ProfileRating = memo(({ className, userId }: ProfileRatingProps) => {
-  // const { data, isLoading } = useArticleRatings({ userId: userId ?? '' })
-
   const dispatch = useAppDispatch()
   const isLoading = useSelector(getProfileRatingIsLoading)
   const data = useSelector(getProfileRatingData)

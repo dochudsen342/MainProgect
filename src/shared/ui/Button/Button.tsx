@@ -10,7 +10,6 @@ export enum ThemeButton {
   OUTLINE = 'outline',
   OUTLINE_RED = 'outlineRed',
 }
-
 export enum ButtonSize {
   SIZE_M = 'sizeM',
   SIZE_X = 'sizeX',

@@ -52,6 +52,7 @@ const Flex = memo((props: FlexProps) => {
     direction = 'row',
     gap = '16',
     max,
+    ...otherProps
   } = props
 
   const classes = [
@@ -66,7 +67,11 @@ const Flex = memo((props: FlexProps) => {
     [cl.max]: max,
   }
 
-  return <div className={classNames(cl.Flex, mods, classes)}>{children}</div>
+  return (
+    <div {...otherProps} className={classNames(cl.Flex, mods, classes)}>
+      {children}
+    </div>
+  )
 })
 
 export default Flex

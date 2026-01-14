@@ -19,12 +19,14 @@ export const getSideBarItems = createSelector(getAuthData, (userData) => {
       text: 'О нас',
       Icon: MainIcon,
       authOnly: false,
+      testId: 'AboutLink',
     },
     {
       path: getRouteMain(),
       text: 'Главная',
       Icon: AboutIcon,
       authOnly: false,
+      testId: 'MainLink',
     },
   ]
 
@@ -35,12 +37,14 @@ export const getSideBarItems = createSelector(getAuthData, (userData) => {
         text: 'Профиль',
         Icon: ProfileIcon,
         authOnly: true,
+        testId: 'ProfileLink',
       },
       {
         path: getRouteArticles(),
         text: 'Статьи',
         Icon: ArticlesIcon,
         authOnly: true,
+        testId: 'ArticleLink',
       }
     )
   }

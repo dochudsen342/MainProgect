@@ -26,6 +26,7 @@ export const PageWrapper = ({
   children,
   onScrollEnd,
   overflowY = 'auto',
+  ...otherProps
 }: PageWrapperProps) => {
   const wrapperRef = useRef<HTMLElement | null>(null)
   const triggerRef = useRef<HTMLDivElement | null>(null)
@@ -53,6 +54,7 @@ export const PageWrapper = ({
       onScroll={onScroll}
       ref={wrapperRef}
       className={classNames(cl.PageWrapper, {}, pageWrapperAditionalClasses)}
+      {...otherProps}
     >
       {children}
       <div className={cl.infiniteTrigger} ref={triggerRef}></div>

@@ -18,7 +18,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return <Text text={t('Профиль не найден')}></Text>
   }
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='profile-page'>
       <VStack gap='16' max>
         <EditableProfileCardHeader />
         <ProfileRating userId={id} />

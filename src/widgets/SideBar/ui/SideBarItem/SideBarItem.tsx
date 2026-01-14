@@ -12,7 +12,7 @@ interface SideBarItemProps {
   collapsed: boolean
 }
 
-const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
+const SideBarItem = memo(({ item, collapsed, ...otherProps }: SideBarItemProps) => {
   const { t } = useTranslation()
   const isAuth = useSelector(getAuthData)
 
@@ -25,6 +25,7 @@ const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
       theme={AppLinkTheme.PRIMARY}
       to={item.path}
       className={classNames(cl.item, { [cl.collapsed]: collapsed })}
+      {...otherProps}
     >
       <item.Icon className={cl.icon} />
       <span className={classNames(cl.link)}>{t(item.text)}</span>

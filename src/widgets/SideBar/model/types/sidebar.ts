@@ -15,6 +15,7 @@ export interface SideBarItemType {
   text: string
   Icon: React.FunctionComponent<React.SVGAttributes<SVGElement>>
   authOnly: boolean
+  testId: string
 }
 
 export const SideBarItemsList: SideBarItemType[] = [
@@ -23,23 +24,27 @@ export const SideBarItemsList: SideBarItemType[] = [
     text: 'О нас',
     Icon: MainIcon,
     authOnly: false,
+    testId: 'AboutLink',
   },
   {
     path: getRouteMain(),
     text: 'Главная',
     Icon: AboutIcon,
     authOnly: false,
+    testId: 'MainLink',
   },
   {
     path: getRouteProfile(':id'),
     text: 'Профиль',
     Icon: ProfileIcon,
     authOnly: true,
+    testId: 'ProfileLink',
   },
   {
     path: getRouteArticles(),
     text: 'Статьи',
     Icon: ArticlesIcon,
     authOnly: true,
+    testId: 'ArticlesLink',
   },
 ]
