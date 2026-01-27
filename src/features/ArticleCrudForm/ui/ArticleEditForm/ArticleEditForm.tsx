@@ -3,7 +3,6 @@ import { ArticleBlock, ArticleBlockType } from '@/entities/Article/model/types/a
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Button } from '@/shared/ui/Button'
-import { InputTheme } from '@/shared/ui/CheckboxInput'
 import { Input } from '@/shared/ui/Input'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { memo, useCallback, useEffect } from 'react'
@@ -70,7 +69,7 @@ const ArticleEditForm = memo(({ className, articleId }: ArticleEditFormProps) =>
             <Input
               className={cl.inputMainInfo}
               placeholder={t('Введите ссылку на фото...')}
-              inputTheme={InputTheme.OUTLINE}
+              inputTheme='outline'
               id={item.id}
               key={item.id}
               value={item.src}

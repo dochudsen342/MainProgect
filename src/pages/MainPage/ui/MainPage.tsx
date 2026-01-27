@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next'
 const MainPage = () => {
   const { t } = useTranslation()
 
-  const onSelectStarHandler = useCallback((currentStarCount: number) => {}, [])
-  return <PageWrapper>{t('Главная страница')}</PageWrapper>
+  const onSelectStarHandler = useCallback((currentStarCount: number) => { }, [])
+  return <PageWrapper data-testid='Main-page'>{t('Главная страница')}</PageWrapper>
 }
 
 export default MainPage

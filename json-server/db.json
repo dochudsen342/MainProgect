@@ -534,6 +534,13 @@
       "password": "123",
       "roles": ["user"],
       "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
+    },
+    {
+      "id": "3",
+      "username": "testUser",
+      "password": "123",
+      "roles": [],
+      "avatar": "https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1BqQp8.img?w=3000&h=2000&m=4&q=74"
     }
   ],
   "profile": [
@@ -557,6 +564,17 @@
       "country": "Russia",
       "city": "Volgograd",
       "username": "Dimanchik",
+      "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
+    },
+    {
+      "id": "3",
+      "firstname": "Test228",
+      "lastname": "test322",
+      "age": 23,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Volgograd",
+      "username": "TestDimanchik",
       "avatar": "https://masterpiecer-images.s3.yandex.net/074dd84679a511eebabdd659965eed18:upscaled"
     }
   ],

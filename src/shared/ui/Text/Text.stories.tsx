@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5'
 
 import { Theme } from '@/app/providers/ThemeProvider'
 import ThemeDecorator from '@/shared/config/storybook/decorators/theme.decorator'
-import { Text, TextAligin, TextSize } from './Text'
+import { Text } from './Text'
 
 const meta = {
   title: 'shared/Text',
@@ -35,7 +35,7 @@ export const TextLightCentre: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    aligin: TextAligin.CENTRE,
+    aligin: 'centre',
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }
@@ -44,7 +44,7 @@ export const TextDarkCentre: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    aligin: TextAligin.CENTRE,
+    aligin: 'centre',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -53,7 +53,7 @@ export const TextDarkSizeL: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    size: TextSize.L,
+    size: 'size_L',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
 }
@@ -62,7 +62,7 @@ export const TextLightSizeL: Story = {
   args: {
     title: 'Title',
     text: 'Text',
-    size: TextSize.L,
+    size: 'size_L',
   },
   decorators: [ThemeDecorator(Theme.LIGHT)],
 }

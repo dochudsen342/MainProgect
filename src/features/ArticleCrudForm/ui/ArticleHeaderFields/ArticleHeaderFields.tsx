@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { Input, InputTheme } from '@/shared/ui/Input'
+import { Input } from '@/shared/ui/Input'
 import { memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
@@ -41,21 +41,21 @@ const ArticleHeaderFields = memo(({ className }: TitleArticleFormProps) => {
       <Input
         onChange={onChangeArticleTitle}
         className={cl.inputMainInfo}
-        inputTheme={InputTheme.OUTLINE}
+        inputTheme='outline'
         placeholder={t('Заголовок статьи')}
         value={articleData?.title}
       />
       <Input
         onChange={onChangeArticleSubtitle}
         className={cl.inputMainInfo}
-        inputTheme={InputTheme.OUTLINE}
+        inputTheme='outline'
         placeholder={t('Подзаголовок статьи')}
         value={articleData?.subtitle}
       />
       <Input
         onChange={onChangeArticleImgLink}
         className={cl.inputMainInfo}
-        inputTheme={InputTheme.OUTLINE}
+        inputTheme='outline'
         placeholder={t('Ссылка на фото статьи')}
         value={articleData?.img}
       />

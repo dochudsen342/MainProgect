@@ -5,11 +5,7 @@ import { Text, TextWeight } from '../Text/Text'
 import cl from './CheckboxInput.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
-
-export enum InputTheme {
-  OUTLINE = 'outline',
-  CLEAR = 'clear',
-}
+export type InputTheme = 'outline' | 'clear'
 
 interface CheckboxInputProps extends HTMLInputProps {
   className?: string
@@ -33,9 +29,9 @@ export const CheckboxInput = memo((props: CheckboxInputProps) => {
     onChange,
     onDeleteValue,
     isChecked,
-    inputTheme = InputTheme.OUTLINE,
+    inputTheme = 'outline',
     disabled,
-    textWeight = TextWeight.MEDIUM,
+    textWeight = 'medium',
     ...outherProps
   } = props
 

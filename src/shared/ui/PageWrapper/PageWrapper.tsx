@@ -18,7 +18,8 @@ interface PageWrapperProps {
   className?: string
   children: ReactNode
   overflowY?: PageWrapperOwerflowY
-  onScrollEnd?: () => void
+  onScrollEnd?: () => void,
+
 }
 
 export const PageWrapper = ({

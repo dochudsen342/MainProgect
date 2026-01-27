@@ -7,7 +7,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { useDebounce } from '@/shared/lib/hooks/useDebounce'
 import { SortOrder } from '@/shared/types'
 import { Card } from '@/shared/ui/Card'
-import { Input, InputTheme } from '@/shared/ui/Input'
+import { Input } from '@/shared/ui/Input'
 import { HStack } from '@/shared/ui/Stack'
 import { TabItem, Tabs } from '@/shared/ui/Tabs'
 import { useCallback, useMemo } from 'react'
@@ -127,8 +127,9 @@ const ArticlesFillterPage = ({ className }: ArticlesFillterPageProps) => {
           value={search}
           onChange={onChangeSearch}
           className={cl.searchInput}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
         />
+        
       </Card>
       <Tabs tabs={typeTabs} value={typeValue} onTabClick={onChangeTabs} />
     </div>

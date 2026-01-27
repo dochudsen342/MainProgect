@@ -4,7 +4,7 @@ import DynamicReducerLoader, {
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Button } from '@/shared/ui/Button'
-import { Input, InputTheme } from '@/shared/ui/Input'
+import { Input } from '@/shared/ui/Input'
 import { HStack } from '@/shared/ui/Stack'
 import { useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -54,7 +54,7 @@ const AddCommentForm = ({ className, onSendComment }: AddCommentFormProps) => {
         <Input
           data-testid='addCommentInput'
           className={cl.input}
-          inputTheme={InputTheme.OUTLINE}
+          inputTheme='outline'
           value={text || ''}
           placeholder={t('Введите комментарий')}
           onChange={onCommentTextChange}

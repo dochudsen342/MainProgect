@@ -2,27 +2,10 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames'
 import { memo } from 'react'
 import cl from './Text.module.scss'
 
-export enum TextSize {
-  M = 'size_M',
-  L = 'size_L',
-}
-
-export enum TextWeight {
-  SMALL = 'small',
-  MEDIUM = 'medium',
-  LARGE = 'large',
-}
-
-export enum ThemeText {
-  PRIMARY = 'primary',
-  ERROR = 'error',
-}
-
-export enum TextAligin {
-  CENTRE = 'centre',
-  LEFT = 'left',
-  RIGHT = 'right',
-}
+export type TextSize = 'size_M' | 'size_L'
+export type TextWeight = 'small' | 'medium' | 'large'
+export type ThemeText = 'primary' | 'error'
+export type TextAligin = 'centre' | 'left' | 'right'
 type HeaderTag = 'h1' | 'h2' | 'h3'
 type TextMarginTop = '0' | '8' | '12' | '16'
 
@@ -44,19 +27,19 @@ const TextMarginTopClasses: Record<TextMarginTop, string> = {
   '16': cl.margin16,
 }
 const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
-  [TextSize.L]: 'h1',
-  [TextSize.M]: 'h2',
+  size_L: 'h1',
+  size_M: 'h2',
 }
 
 export const Text = memo(
   ({
     className,
-    textWeight = TextWeight.MEDIUM,
+    textWeight = 'medium',
     title,
     text,
-    theme = ThemeText.PRIMARY,
-    aligin = TextAligin.LEFT,
-    size = TextSize.M,
+    theme = 'primary',
+    aligin = 'left',
+    size = 'size_M',
     marginTop = '0',
   }: TextProps) => {
     const mods: Mods = {

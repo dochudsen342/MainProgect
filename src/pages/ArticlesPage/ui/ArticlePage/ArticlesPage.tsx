@@ -33,7 +33,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
   }, [dispatch])
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
-      <PageWrapper onScrollEnd={onLoadNextPart} className={cl.pageWrapper}>
+      <PageWrapper data-testid='Articles-page' onScrollEnd={onLoadNextPart} className={cl.pageWrapper}>
         <ArticlesFillterPage />
         <ArticleInfiniteList className={cl.list} />
       </PageWrapper>

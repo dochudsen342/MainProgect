@@ -18,7 +18,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "build-storybook": "storybook build -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:e2e":"npx cypress open"
   },
   "keywords": [],
   "author": "",
@@ -62,6 +63,7 @@
     "circular-dependency-plugin": "^5.2.2",
     "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^6.10.0",
+    "cypress": "^15.9.0",
     "eslint": "^9.36.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-dqqizi-path-checker": "^0.0.1",

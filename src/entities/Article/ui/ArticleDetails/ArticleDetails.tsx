@@ -6,9 +6,9 @@ import DynamicReducerLoader, {
 } from '@/shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch'
 import { Avatar } from '@/shared/ui/Avatar'
-import { Icon, IconFill } from '@/shared/ui/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import { Skeleton } from '@/shared/ui/Skeleton'
-import { Text, TextAligin, TextSize } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/Text'
 import { memo, useCallback, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { getArticleDetailsData } from '../../model/selectors/getArticleDetailsData/getArticleDetailsData'
@@ -73,19 +73,14 @@ const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         <div className={cl.avatar}>
           <Avatar size={200} alt={'avatar'} src={article?.img} />
         </div>
-        <Text
-          size={TextSize.L}
-          title={article?.title}
-          aligin={TextAligin.LEFT}
-          text={article?.subtitle}
-        />
+        <Text size='size_L' title={article?.title} aligin='left' text={article?.subtitle} />
         <div className={cl.articleInfo}>
-          <Icon theme={IconFill.SECONDARY} Svg={EyeIcon} />
-          <Text size={TextSize.M} title={String(article?.views)} />
+          <Icon theme='secondary' Svg={EyeIcon} />
+          <Text size='size_M' title={String(article?.views)} />
         </div>
         <div className={cl.articleInfo}>
-          <Icon theme={IconFill.SECONDARY} Svg={Calendar} />
-          <Text size={TextSize.M} title={String(article?.createdDate)} />
+          <Icon theme='secondary' Svg={Calendar} />
+          <Text size='size_M' title={String(article?.createdDate)} />
         </div>
         {article?.blocks.map(renderBlock)}
       </>

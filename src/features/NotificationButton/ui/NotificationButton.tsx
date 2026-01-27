@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { AnimationProvider } from '@/shared/lib/components/AnimationProvider'
 import { Button } from '@/shared/ui/Button'
 import { Drawer } from '@/shared/ui/Drawer'
-import { Icon, IconFill } from '@/shared/ui/Icon'
+import { Icon } from '@/shared/ui/Icon'
 import { Popover } from '@/shared/ui/Popus'
 import { memo, useState } from 'react'
 import { BrowserView, MobileView } from 'react-device-detect'
@@ -39,7 +39,7 @@ const NotificationButton = memo(({ className }: NotificationButtonProps) => {
         <Popover
           className={classNames(cl.NotificationButton, {}, [className])}
           direction='bottom left'
-          trigger={<Icon theme={IconFill.PRIMARY} Svg={NotificationIcon} />}
+          trigger={<Icon theme='primary' Svg={NotificationIcon} />}
         >
           <NotificationList
             data={Notifications}

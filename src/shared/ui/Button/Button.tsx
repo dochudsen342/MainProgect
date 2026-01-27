@@ -11,22 +11,6 @@ export type ThemeButton =
   | 'outline'
   | 'outlineRed'
 
-const buttonSizeClasses: Record<ButtonSize, string> = {
-  sizeM: cl.sizeM,
-  sizeX: cl.sizeX,
-  sizeXL: cl.sizeXl,
-  size_fit_content: cl.size_fit_content,
-}
-
-const themeButtonClasses: Record<ThemeButton, string> = {
-  clear: cl.clear,
-  background: cl.background,
-  backgroundInverted: cl.backgroundInverted,
-  clear_inverted: cl.clear_inverted,
-  outline: cl.outline,
-  outlineRed: cl.outlineRed,
-}
-
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string
   theme?: ThemeButton
@@ -46,9 +30,11 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = (props) => {
     ...otherProps
   } = props
 
-  const classes = [className, buttonSizeClasses[size], themeButtonClasses[theme]]
+  const classes = [className]
 
   const mods: Mods = {
+    [cl[size]]: true,
+    [cl[theme]]: true,
     [cl.square]: square,
     [cl.disabled]: disabled,
   }

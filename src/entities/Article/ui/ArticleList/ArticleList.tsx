@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { SortOrder } from '@/shared/types'
-import { Text, TextSize } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/Text'
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ArcticleSortField, Article, ArticleView } from '../../model/types/article'
@@ -47,7 +47,7 @@ const ArticleList = memo(
     if (!isLoading && !articles?.length) {
       return (
         <div className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
-          <Text size={TextSize.L} title={t('Статьи не найдены')} />
+          <Text size='size_L' title={t('Статьи не найдены')} />
         </div>
       )
     }

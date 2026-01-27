@@ -1,12 +1,131 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
 
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Exo 2', sans-serif;
+    background-color: #0a192f;
+    color: #ccd6f6;
+  }
+
+  * {
+
+    box-sizing: border-box;
+  }
+
+  .main-poster {
+    background-size: cover ;
+   background-position: center center;
+    background-repeat:no-repeat ;
+    background-image:
+      linear-gradient(to bottom,
+        rgba(10, 25, 47, 0.7) 0%,
+        rgba(16, 37, 66, 0.5) 50%,
+        rgba(22, 49, 85, 0.3) 100%), url('https://i.pinimg.com/originals/53/2b/d4/532bd4a1e625316bc323d69aa770857f.png?nii=t');
+
+    box-shadow:  
+      0 25px 50px rgba(0, 0, 0, 0.5),
+      0 0 60px rgba(100, 255, 218, 0.2);
+    
+    width: 90%; 
+    max-width: 900px;
+    height: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+  }
+
+  .main-title {
+    font-family: 'Audiowide', cursive;/* Футуристичный шрифт */
+    font-size: 56px;/* Очень крупный заголовок */
+    color: #ffffff;/* Чистый белый цвет */
+    margin-top: 80px;/* Отступ сверху от границы */
+    margin-bottom: 25px;/* Отступ снизу до подзаголовка */
+    text-shadow: 
+        0 0 10px rgba(100, 255, 218, 0.8),/* Внутреннее свечение */
+        0 0 20px rgba(100, 255, 218, 0.4),/* Среднее свечение */
+        0 0 30px rgba(100, 255, 218, 0.2);/* Внешнее свечение */
+    
+    letter-spacing: 3px;/* Разреживаем буквы */
+    text-transform: uppercase;/* Все буквы заглавные */
+}
+.world-name {
+    color: #64ffda;/* Неоновый бирюзовый */
+    display: inline-block;/* Чтобы применить transform */
+    margin-left: 15px;/* Отступ от основного текста */
+
+    text-shadow:/* Еще более яркое свечение для названия мира */
+        0 0 15px #64ffda,
+        0 0 25px rgba(100, 255, 218, 0.7),
+        0 0 35px rgba(100, 255, 218, 0.4);
+}
+.subtitle {
+    font-size: 24px;/* Крупный подзаголовок */
+    font-weight: 300;/* Светлое начертание */
+    color: #8892b0;/* Серо-голубой цвет */
+    max-width: 700px;/* Ограничиваем ширину для читаемости */
+    margin: 0 auto 20px auto;/* Центрируем: сверху 0, снизу 50px, авто по бокам */
+    padding: 25px 40px;/* Воздух внутри текстового блока */
+    background-color: rgba(17, 34, 64, 0.6); /* Полупрозрачный темный фон */
+    border-radius: 20px;/* Скругленные углы фона */
+    line-height: 1.6;/* Удобный межстрочный интервал */
+    text-shadow: 0 0 5px rgba(136, 146, 176, 0.5); /* Легкое свечение текста */
+}
+.island-counter {
+    padding: 20px 35px;/* Отступы внутри блока */
+    background-color: rgba(100, 255, 218, 0.1);/* Полупрозрачный бирюзовый */
+    border-radius: 15px;/* Скругленные углы */
+    display: inline-block;/* Блок по ширине содержимого */
+    box-shadow:  /* Свечение блока */
+        inset 0 0 20px rgba(100, 255, 218, 0.2),/* Свечение внутрь */
+        0 0 25px rgba(100, 255, 218, 0.15);/* Свечение наружу */
+}
+.counter-number {
+    font-family: 'Audiowide', cursive; /* Футуристичный шрифт для цифры */
+    font-size: 48px;/* Огромная цифра */
+    color: #64ffda;/* Бирюзовый цвет */
+    margin-right: 15px;/* Отступ от текста */
+    
+    text-shadow:  /* Свечение цифры */
+        0 0 10px #64ffda,
+        0 0 20px rgba(100, 255, 218, 0.5);
+}
+.counter-text {
+    font-size: 18px;/* Размер текста */
+    color: #ffffff;/* Белый цвет */
+    letter-spacing: 2px;/* Разреживаем буквы */
+    font-weight: 500;/* Средняя толщина */
+}
+.counter-text {
+    font-size: 18px;/* Размер текста */
+    color: #ffffff;/* Белый цвет */
+    letter-spacing: 2px;/* Разреживаем буквы */
+    font-weight: 500;/* Средняя толщина */
+}
+
+
+</style>
+
+<body>
+  <div id="root"></div>
+  <div class="main-poster">
+    <h1 class="main-title">ЛЕТАЮЩИЕ ОСТРОВА <span class="world-name">ЭФИРИИ</span></h1>
+    <p class="subtitle">Мир парящих в небесах земель и древней магии
+      кристаллов</p>
+    <div class="island-counter">
+      <span class="counter-number">7</span>
+      <span class="counter-text">ОСТРОВОВ В НЕБЕ</span>
+    </div>
+  </div>
+
+</body>
+
 </html>

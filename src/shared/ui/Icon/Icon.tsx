@@ -8,17 +8,12 @@ interface iconProps extends React.SVGProps<SVGSVGElement> {
   theme?: IconFill
 }
 
-export enum IconFill {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-}
+export type IconFill = 'primary' | 'secondary'
 
-export const Icon = memo(
-  ({ className, Svg, theme = IconFill.SECONDARY, ...othersProps }: iconProps) => {
-    const mods: Mods = {
-      [cl[theme]]: true,
-    }
-
-    return <Svg {...othersProps} className={classNames(cl.icon, mods, [className])} />
+export const Icon = memo(({ className, Svg, theme = 'secondary', ...othersProps }: iconProps) => {
+  const mods: Mods = {
+    [cl[theme]]: true,
   }
-)
+
+  return <Svg {...othersProps} className={classNames(cl.icon, mods, [className])} />
+})

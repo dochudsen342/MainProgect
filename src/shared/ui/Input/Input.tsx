@@ -3,11 +3,7 @@ import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef } from 'react
 import cl from './Input.module.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
-
-export enum InputTheme {
-  OUTLINE = 'outline',
-  CLEAR = 'clear',
-}
+type InputTheme = 'outline' | 'clear'
 
 interface InputProps extends HTMLInputProps {
   className?: string
@@ -28,7 +24,7 @@ export const Input = memo((props: InputProps) => {
     onChange,
     placeholder,
     autoFocus,
-    inputTheme = InputTheme.CLEAR,
+    inputTheme = 'clear',
     disabled,
     ...outherProps
   } = props

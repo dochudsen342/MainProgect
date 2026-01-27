@@ -3,7 +3,7 @@ import { Country } from '@/entities/Country/model/types/country'
 import { Currency, CurrencySelect } from '@/entities/Currency'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { Avatar } from '@/shared/ui/Avatar'
-import { Input, InputTheme } from '@/shared/ui/Input'
+import { Input } from '@/shared/ui/Input'
 import { Spiner } from '@/shared/ui/Spiner'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import { memo } from 'react'
@@ -85,7 +85,7 @@ const ProfileCard = memo((props: ProfileCardProps) => {
         <span>{t('Ваше имя:')}</span>
         <Input
           onChange={onChangeFirstName}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
           disabled={readonly}
           className={cl.input}
           value={data?.firstname}
@@ -95,7 +95,7 @@ const ProfileCard = memo((props: ProfileCardProps) => {
         <span>{t('Ваша фамилия:')}</span>
         <Input
           onChange={onChangeLastName}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
           disabled={readonly}
           className={cl.input}
           value={data?.lastname}
@@ -105,7 +105,7 @@ const ProfileCard = memo((props: ProfileCardProps) => {
         <span>{t('Ваш возраст:')}</span>
         <Input
           onChange={onChangeAge}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
           disabled={readonly}
           className={cl.input}
           value={data?.age}
@@ -115,7 +115,7 @@ const ProfileCard = memo((props: ProfileCardProps) => {
         <span>{t('Ваш город:')}</span>
         <Input
           onChange={onChangeCity}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
           disabled={readonly}
           className={cl.input}
           value={data?.city}
@@ -125,7 +125,7 @@ const ProfileCard = memo((props: ProfileCardProps) => {
         <span>{t('Ваш Username:')}</span>
         <Input
           onChange={onChangeUsername}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
           disabled={readonly}
           className={cl.input}
           value={data?.username}
@@ -135,7 +135,7 @@ const ProfileCard = memo((props: ProfileCardProps) => {
         <span>{t('Ссылка на аватар:')}</span>
         <Input
           onChange={onChangeAvatar}
-          inputTheme={InputTheme.CLEAR}
+          inputTheme='clear'
           disabled={readonly}
           className={cl.input}
           value={data?.avatar}
